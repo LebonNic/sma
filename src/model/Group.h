@@ -1,13 +1,12 @@
 #pragma once
-#include "agent.h"
+#include "Unit.h"
 #include <vector>
-
 
 class Group :
 	public Agent
 {
 private:
-	std::vector<Agent *> m_Agents;
+	std::vector<Unit *> m_Units;
 public:
 	Group(void);
 	~Group(void);

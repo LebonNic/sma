@@ -1,15 +1,16 @@
 #pragma once
 
-#include <list>
-#include "Entity.h"
+#include <vector>
 #include "ActiveEntity.h"
+#include "PassiveEntity.h"
 #include "Map.h"
 
 class World :
 	public ActiveEntity
 {
 private:
-	std::list<Entity *> m_Entities;
+	std::vector<ActiveEntity *> m_ActiveEntities;
+	std::vector<PassiveEntity *> m_PassiveEntities;
 	Map * m_Map;
 
 public:

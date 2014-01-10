@@ -1,8 +1,6 @@
 #pragma once
-#include "PassiveEntity.h"
 
-class Map :
-	public PassiveEntity
+class Map
 {
 public:
 	Map(void);

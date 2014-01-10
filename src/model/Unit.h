@@ -1,5 +1,6 @@
 #pragma once
 #include "agent.h"
+
 class Unit :
 	public Agent
 {

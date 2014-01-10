@@ -1,5 +1,6 @@
 #pragma once
-#include "passiveentity.h"
+#include "PassiveEntity.h"
+
 class Ressource :
 	public PassiveEntity
 {
