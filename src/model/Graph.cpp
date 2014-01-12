@@ -20,6 +20,16 @@ Graph::~Graph(void)
 }
 
 
+list<Node *> Graph::nodes(void)
+{
+	return m_Nodes;
+}
+list<Edge *> Graph::edges(void)
+{
+	return m_Edges;
+}
+
+
 void Graph::addNode(Node *node)
 {
 	if(find(m_Nodes.begin(), m_Nodes.end(), node) == m_Nodes.end())

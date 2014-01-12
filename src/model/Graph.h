@@ -13,6 +13,10 @@ public:
 	~Graph(void);
 
 
+	std::list<Node *> nodes(void);
+	std::list<Edge *> edges(void);
+
+
 	void addNode(Node *node);
 	void addNode(double x, double y, double z);
 	void linkNodeFromTo(Node *from, Node *to);
