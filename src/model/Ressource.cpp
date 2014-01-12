@@ -36,7 +36,7 @@ bool Ressource::consume(double quantity)
 	if (quantity > 0 && quantity <= this->quantity())
 	{
 		success = true;
-		setQuantity(this->quantity - quantity);
+		setQuantity(this->quantity() - quantity);
 	}
 
 	return success;
