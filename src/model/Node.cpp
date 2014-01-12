@@ -31,7 +31,7 @@ Location *Node::location(void)
 {
 	return this->m_Location;
 }
-list<Edge *> Node::adjacentEdges(void)
+list<Edge *> & Node::adjacentEdges(void)
 {
 	return this->m_Edges;
 }
@@ -47,7 +47,6 @@ list<Node *> Node::neighbours(void)
 	}
 	return neighbours;
 }
-
 
 double Node::distanceTo(Node *to)
 {
