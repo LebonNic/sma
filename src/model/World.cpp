@@ -58,9 +58,37 @@ vector<vector<EntityDisplayChar>> World::entityMap(void)
 			switch (entityMap[x][y])
 			{
 			case EntityDisplayChar::empty:
-				entityMap[x][y] = EntityDisplayChar::passiveEntity;
+				switch((*it)->type())
+				{
+				case PassiveEntityType::ressource:
+					switch(((Ressource *) (*it))->ressourceType())
+					{
+					// Food Ressource
+					case RessourceType::food:
+						entityMap[x][y] = EntityDisplayChar::ressourceFood;
+						break;
+					// Wood Ressource
+					case RessourceType::wood:
+						entityMap[x][y] = EntityDisplayChar::ressourceWood;
+						break;
+					// Gold Ressource
+					case RessourceType::gold:
+						entityMap[x][y] = EntityDisplayChar::ressourceGold;
+						break;
+					// Unknown Ressource
+					default:
+						entityMap[x][y] = EntityDisplayChar::passiveEntity;
+						break;
+					}
+					break;
+				// Unknown Passive Entity
+				default:
+					entityMap[x][y] = EntityDisplayChar::passiveEntity;
+					break;
+				}
 				break;
 			default:
+				entityMap[x][y] = EntityDisplayChar::multipleEntities;
 				break;
 			}	
 		}
@@ -79,10 +107,8 @@ vector<vector<EntityDisplayChar>> World::entityMap(void)
 			case EntityDisplayChar::empty:
 				entityMap[x][y] = EntityDisplayChar::activeEntity;
 				break;
-			case EntityDisplayChar::passiveEntity:
-				entityMap[x][y] = EntityDisplayChar::bothEntities;
-				break;
 			default:
+				entityMap[x][y] = EntityDisplayChar::multipleEntities;
 				break;
 			}	
 		}
@@ -115,7 +141,7 @@ void World::display(void)
 	{
 		for (unsigned int y = 0; y < height; ++y)
 		{
-			SetConsoleTextAttribute(hConsole,heightMap[x][y] * 16);
+			SetConsoleTextAttribute(hConsole,heightMap[x][y] * 16 + 15);
 			cout << (char) entityMap[x][y];
 		}
 		cout << endl;

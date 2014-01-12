@@ -3,6 +3,7 @@
 #include <vector>
 #include "ActiveEntity.h"
 #include "PassiveEntity.h"
+#include "Ressource.h"
 #include "Graph.h"
 
 enum EntityDisplayChar
@@ -10,7 +11,10 @@ enum EntityDisplayChar
 	empty = ' ',
 	activeEntity = 'A',
 	passiveEntity = 'P',
-	bothEntities = '#'
+	ressourceWood = 'W',
+	ressourceGold = 'G',
+	ressourceFood = 'F',
+	multipleEntities = '#'
 };
 
 class World :

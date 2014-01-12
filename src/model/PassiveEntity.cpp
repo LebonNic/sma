@@ -22,7 +22,3 @@ PassiveEntityType PassiveEntity::type(void)
 {
 	return m_Type;
 }
-double PassiveEntity::quantity(void)
-{
-	return m_dHitPoints;
-}

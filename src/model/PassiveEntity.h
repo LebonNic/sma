@@ -19,6 +19,5 @@ public:
 	~PassiveEntity(void);
 
 	PassiveEntityType type(void);
-	double quantity(void);
 };
 
