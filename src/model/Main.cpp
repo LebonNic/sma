@@ -1,12 +1,13 @@
-#include "Graph.h"
+#include "World.h"
+#include <ctime>
 using namespace std;
+
 
 int main (int argc, char **argv)
 {
-	Graph graph;
-
-	graph.generateRandomPerlin(32.0,48.0,0.1);
-	graph.display();
+	srand((unsigned int) time(NULL));
+	World world(32.0,48.0,0.1,rand());
+	world.display();
 	cin.get();
 
 	return 0;

@@ -38,6 +38,14 @@ list<Edge *> Graph::edges(void)
 {
 	return m_Edges;
 }
+unsigned int Graph::width(void)
+{
+	return m_uWidth;
+}
+unsigned int Graph::height(void)
+{
+	return m_uHeight;
+}
 
 
 void Graph::addNode(Node *node)
@@ -60,7 +68,7 @@ void Graph::linkNodeFromTo(Node *from, Node *to)
 }
 
 
-void Graph::generateRandomPerlin(double xSize, double ySize, double scale)
+void Graph::generateRandomPerlin(double xSize, double ySize, double scale, unsigned int seed)
 {
 	double x = 0.0;
 	double y = 0.0;
@@ -79,22 +87,13 @@ void Graph::generateRandomPerlin(double xSize, double ySize, double scale)
 }
 
 
-void Graph::display(void)
+vector<vector<unsigned int>> Graph::heightMap(void)
 {
-	// Define color palette
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	CONSOLE_SCREEN_BUFFER_INFOEX info;
-    info.cbSize = sizeof(info);
-    GetConsoleScreenBufferInfoEx(hConsole, &info);
-	for (int i = 0; i < 256; i+=16)
-		info.ColorTable[i/16] = RGB(i,i,i);
-	SetConsoleScreenBufferInfoEx(hConsole, &info);
-	
 	// Allocate heightMap
-	vector<vector<unsigned int>> heightMap(m_uWidth);
-	for (unsigned int i = 0; i < m_uWidth; ++i)
+	vector<vector<unsigned int>> heightMap(this->width());
+	for (unsigned int i = 0; i < this->width(); ++i)
 	{
-		vector<unsigned int> vector(m_uHeight);
+		vector<unsigned int> vector(this->height());
 		heightMap[i] = vector;
 	}
 
@@ -107,14 +106,5 @@ void Graph::display(void)
 		heightMap[x][y] = z;
 	}
 
-	// display heightMap
-	for (unsigned int x = 0; x < m_uWidth; ++x)
-	{
-		for (unsigned int y = 0; y < m_uHeight; ++y)
-		{
-			SetConsoleTextAttribute(hConsole,heightMap[x][y] * 16);
-			cout << " ";
-		}
-		cout << endl;
-	}
+	return heightMap;
 }

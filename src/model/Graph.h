@@ -23,6 +23,8 @@ public:
 
 	std::list<Node *> nodes(void);
 	std::list<Edge *> edges(void);
+	unsigned int width(void);
+	unsigned int height(void);
 
 
 	void addNode(Node *node);
@@ -30,9 +32,9 @@ public:
 	void linkNodeFromTo(Node *from, Node *to);
 
 
-	void generateRandomPerlin(double xSize, double ySize, double scale = 1.0);
+	void generateRandomPerlin(double xSize, double ySize, double scale = 1.0, unsigned int seed = 0);
 
 
-	void display(void);
+	std::vector<std::vector<unsigned int>> heightMap(void);
 };
 
