@@ -71,6 +71,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="model\Building.cpp" />
+    <ClCompile Include="model\Edge.cpp" />
+    <ClCompile Include="model\Graph.cpp" />
+    <ClCompile Include="model\Location.cpp" />
+    <ClCompile Include="model\Main.cpp" />
     <ClCompile Include="model\ActiveEntity.cpp" />
     <ClCompile Include="model\Behaviour.cpp" />
     <ClCompile Include="model\Entity.cpp" />
@@ -78,11 +83,17 @@
     <ClCompile Include="model\Map.cpp" />
     <ClCompile Include="model\Memory.cpp" />
     <ClCompile Include="model\PassiveEntity.cpp" />
+    <ClCompile Include="model\PerlinNoise.cpp" />
     <ClCompile Include="model\Ressource.cpp" />
     <ClCompile Include="model\Unit.cpp" />
     <ClCompile Include="model\World.cpp" />
+    <ClCompile Include="model\Node.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="model\Building.h" />
+    <ClInclude Include="model\Edge.h" />
+    <ClInclude Include="model\Graph.h" />
+    <ClInclude Include="model\Location.h" />
     <ClInclude Include="model\ActiveEntity.h" />
     <ClInclude Include="model\Behaviour.h" />
     <ClInclude Include="model\Entity.h" />
@@ -90,9 +101,11 @@
     <ClInclude Include="model\Map.h" />
     <ClInclude Include="model\Memory.h" />
     <ClInclude Include="model\PassiveEntity.h" />
+    <ClInclude Include="model\PerlinNoise.h" />
     <ClInclude Include="model\Ressource.h" />
     <ClInclude Include="model\Unit.h" />
     <ClInclude Include="model\World.h" />
+    <ClInclude Include="model\Node.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,8 +1,8 @@
 #pragma once
-#include "agent.h"
+#include "ActiveEntity.h"
 
 class Unit :
-	public Agent
+	public ActiveEntity
 {
 public:
 	Unit(void);
