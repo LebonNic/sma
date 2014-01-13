@@ -1,158 +1,227 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>cpp</Extensions>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
     </Filter>
-    <Filter Include="Source Files\Model">
-      <UniqueIdentifier>{a511da55-d152-452a-988c-fad0a52b464c}</UniqueIdentifier>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
     </Filter>
-    <Filter Include="Source Files\Model\Graph">
-      <UniqueIdentifier>{c9ecc170-44ac-4545-ab5c-4914513ef52e}</UniqueIdentifier>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
     </Filter>
-    <Filter Include="Source Files\Controller">
-      <UniqueIdentifier>{1f1363a5-abdf-46b7-97b4-0f2d4f689864}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\View">
-      <UniqueIdentifier>{ed5f03ee-b70c-4efc-baac-36982b9ec31e}</UniqueIdentifier>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{584c9963-45e9-40a9-a12e-383f98435fee}</UniqueIdentifier>
-      <Extensions>h;hpp</Extensions>
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{81b048b9-fd10-414a-9deb-63bca787b48a}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{92447496-2649-4062-a34f-f58b5757288f}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Header Files\Model">
-      <UniqueIdentifier>{6e8064d8-1d01-4573-8df5-54ee49fcc75d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Controller">
-      <UniqueIdentifier>{6ba0d88a-98d8-4a12-a4c0-2d25ab6b41dc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\View">
-      <UniqueIdentifier>{3986d27d-1ea4-4315-8842-c52debc3441c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Model\Graph">
-      <UniqueIdentifier>{574b8231-9e59-429e-bde0-a0b2d7b88e14}</UniqueIdentifier>
+      <UniqueIdentifier>{4f24ee0f-1d9e-456b-a1a7-1fbe5bd1fbaf}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Model\World">
-      <UniqueIdentifier>{7cb714ac-fc6b-4abb-9eb9-4b92ba4a3ea1}</UniqueIdentifier>
+      <UniqueIdentifier>{26f2e705-0e11-4749-bc3b-e27eba91eac1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model\Graph">
+      <UniqueIdentifier>{efc8b82e-de29-485d-a0d7-7f5c5d544b86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\View">
+      <UniqueIdentifier>{1b4be560-b44b-4cb6-ae1a-82f779bd0c06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model">
+      <UniqueIdentifier>{b9f6666b-c2ff-4315-9137-acd7842f0a14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\View">
+      <UniqueIdentifier>{1566c6a6-fe40-48b2-a70e-cfaf3b37482c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Model\World">
-      <UniqueIdentifier>{1a87bc6a-aa47-42d1-96b9-9923c219e55b}</UniqueIdentifier>
+      <UniqueIdentifier>{a19349c5-880d-4b46-8dfa-105f17db5ab0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Model\Map">
-      <UniqueIdentifier>{c570fa2d-ad02-4022-86c5-04affac852e2}</UniqueIdentifier>
+    <Filter Include="Source Files\Model\Graph">
+      <UniqueIdentifier>{7b555be6-485e-4cb2-bd45-1cf722bc5f18}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Model\Map">
-      <UniqueIdentifier>{2c35808d-1a54-4ab0-a01e-f745bc4f476a}</UniqueIdentifier>
+    <Filter Include="Ressource Files">
+      <UniqueIdentifier>{d9fe79ba-cdf0-4898-a9f3-073a8e27f03a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="model\ActiveEntity.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="model\Behaviour.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="model\Entity.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="model\Group.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="model\Map.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="model\Memory.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="model\PassiveEntity.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="model\Ressource.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="model\Unit.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="model\World.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="model\Building.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="model\Location.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="model\Edge.cpp">
-      <Filter>Source Files\Model\Graph</Filter>
-    </ClCompile>
-    <ClCompile Include="model\Graph.cpp">
-      <Filter>Source Files\Model\Graph</Filter>
-    </ClCompile>
-    <ClCompile Include="model\Main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="model\Node.cpp">
+    <ClCompile Include="Debug\moc_MainWindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_MainWindow.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_WorldView.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_WorldView.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldView.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindow.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="ActiveEntity.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Attribute.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Behaviour.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Building.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Group.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Location.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="PassiveEntity.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Ressource.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Edge.cpp">
       <Filter>Source Files\Model\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="model\PerlinNoise.cpp">
-      <Filter>Source Files\Model\Map</Filter>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Source Files\Model\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="model\Attribute.cpp">
-      <Filter>Source Files\Model\World</Filter>
+    <ClCompile Include="Node.cpp">
+      <Filter>Source Files\Model\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="PerlinNoise.cpp">
+      <Filter>Source Files\Model\Graph</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="model\ActiveEntity.h">
+    <ClInclude Include="GeneratedFiles\ui_MainWindow.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ActiveEntity.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="model\Behaviour.h">
+    <ClInclude Include="Attribute.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="model\Entity.h">
+    <ClInclude Include="Behaviour.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="model\Group.h">
+    <ClInclude Include="Building.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="model\Map.h">
+    <ClInclude Include="Entity.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="model\Memory.h">
+    <ClInclude Include="Group.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="model\PassiveEntity.h">
+    <ClInclude Include="Location.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="model\Ressource.h">
+    <ClInclude Include="Memory.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="model\Unit.h">
+    <ClInclude Include="PassiveEntity.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="model\World.h">
+    <ClInclude Include="Ressource.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="model\Building.h">
+    <ClInclude Include="Unit.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="model\Location.h">
+    <ClInclude Include="World.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="model\Edge.h">
+    <CustomBuild Include="MainWindow.h">
+      <Filter>Header Files\View</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="MainWindow.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="WorldView.h">
+      <Filter>Header Files\View</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Graph.h">
       <Filter>Header Files\Model\Graph</Filter>
     </ClInclude>
-    <ClInclude Include="model\Graph.h">
+    <ClInclude Include="Node.h">
       <Filter>Header Files\Model\Graph</Filter>
     </ClInclude>
-    <ClInclude Include="model\Node.h">
+    <ClInclude Include="Edge.h">
       <Filter>Header Files\Model\Graph</Filter>
     </ClInclude>
-    <ClInclude Include="model\PerlinNoise.h">
-      <Filter>Header Files\Model\Map</Filter>
+    <ClInclude Include="PerlinNoise.h">
+      <Filter>Header Files\Model\Graph</Filter>
     </ClInclude>
-    <ClInclude Include="model\Attribute.h">
-      <Filter>Header Files\Model\World</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="texture\food0.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\gold0.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\grass0.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\tree0.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

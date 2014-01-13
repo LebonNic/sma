@@ -5,7 +5,7 @@ class Building
 	: public ActiveEntity
 {
 public:
-	Building(void);
+	Building(double x, double y, double z, Owner owner, double maxHitPoints);
 	~Building(void);
 };
 

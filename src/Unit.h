@@ -22,7 +22,7 @@ private:
 
 	void setAttribute(AttributeId id, double value);
 public:
-	Unit(void);
+    Unit(double x, double y, double z, Owner owner, double maxHitPoints);
 	~Unit(void);
 
 
@@ -34,7 +34,6 @@ public:
 
 
 	// Actions
-	void idle(void);
 	void death(void);
 	bool gather(Ressource *ressource);
 	bool attack(ActiveEntity *entity);
