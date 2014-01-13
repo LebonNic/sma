@@ -34,6 +34,9 @@ public:
 	void addActiveEntity(ActiveEntity *entity);
 
 
+	void populateMap(double goldDensity, double woodDensity, double foodDensity);
+
+
 	std::vector<std::vector<EntityDisplayChar>> World::entityMap(void);
 	void display(void);
 };

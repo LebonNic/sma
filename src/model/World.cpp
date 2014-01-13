@@ -33,6 +33,42 @@ void World::addActiveEntity(ActiveEntity *entity)
 }
 
 
+void World::populateMap(double goldDensity, double woodDensity, double foodDensity)
+{
+	list<Node *> nodes = m_Map->nodes();
+	PerlinNoise woodNoise(rand());
+	PerlinNoise goldNoise(rand());
+	PerlinNoise foodNoise(rand());
+
+	for (auto it = nodes.begin(); it != nodes.end(); ++it)
+	{
+		double x = (*it)->x();
+		double y = (*it)->y();
+		double goldScale = 0.25;
+		double woodScale = 0.05;
+		double foodScale = 0.15;
+		double ng = goldNoise.noise(x*goldScale, y*goldScale, 0.5);
+		double nw = woodNoise.noise(x*woodScale, y*woodScale, 0.5);
+		double nf = foodNoise.noise(x*foodScale, y*foodScale, 0.5);
+		if (ng >= 0.5 && ng < 0.5 + goldDensity)
+		{
+			Ressource *ressource = new Ressource(RessourceType::gold, x, y, (*it)->z());
+			this->addPassiveEntity(ressource);
+		}
+		if (nw >= 0.5 && nw < 0.5 + woodDensity)
+		{
+			Ressource *ressource = new Ressource(RessourceType::wood, x, y, (*it)->z());
+			this->addPassiveEntity(ressource);
+		}
+		if (nf >= 0.5 && nf < 0.5 + foodDensity)
+		{
+			Ressource *ressource = new Ressource(RessourceType::food, x, y, (*it)->z());
+			this->addPassiveEntity(ressource);
+		}
+	}
+}
+
+
 vector<vector<EntityDisplayChar>> World::entityMap(void)
 {
 	unsigned int width = m_Map->width();
