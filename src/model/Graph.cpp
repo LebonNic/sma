@@ -80,13 +80,15 @@ void findPathFromtTo(Node * from, Node * to)
 
 	openSet.push(from);
 
-	while(!openSet.empty())
+	bool goalReached = false;
+
+	while(!openSet.empty() && !goalReached)
 	{
 		Node * current = openSet.top();
 
 		if(current == to)
 		{
-			/*Fonction qui reconstitue le path*/
+			goalReached = true;
 		}
 		else
 		{
@@ -94,7 +96,7 @@ void findPathFromtTo(Node * from, Node * to)
 			closedSet.push_back(current);
 			
 			std::list<Node *> neighboursList = current->neighbours();
-			for(list<Node *>::iterator neighbour = neighboursList.begin(); neighbour != neighboursList.end() ++neighbour)
+			for(list<Node *>::iterator neighbour = neighboursList.begin(); neighbour != neighboursList.end(); ++neighbour)
 			{
 				if(std::find(closedSet.begin(), closedSet.end(), neighbour) != closedSet.end())
 				{
@@ -104,18 +106,13 @@ void findPathFromtTo(Node * from, Node * to)
 					{
 						(*neighbour)->setFather(current);
 						(*neighbour)->setGScore(possibleGScore);
-
+						(*neighbour)->setFScore( (*neighbour)->getGScore() + current->distanceTo(*neighbour) );
+						openSet.push(*neighbour);
 					}
-				}
-				else
-				{
-					/*Continue*/
 				}
 			}
 		}
 	}
-
-
 }
 
 
