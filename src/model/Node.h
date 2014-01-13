@@ -23,7 +23,7 @@ public:
 	double y(void);
 	double z(void);
 	Location *location(void);
-	std::list<Edge *> adjacentEdges(void);
+	std::list<Edge *> & adjacentEdges(void);
 	std::list<Node *> neighbours(void);
 
 
