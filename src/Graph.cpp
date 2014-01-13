@@ -69,6 +69,55 @@ void Graph::linkNodeFromTo(Node *from, Node *to)
 	from->linkTo(to);
 }
 
+void findPathFromtTo(Node * from, Node * to)
+{
+	std::priority_queue<Node *, Node::ComparaisonOperator()> openSet;
+	std::list<Node *> closedSet;
+
+	from->setGScore(0);
+	from->setHScore(from->distanceTo(to));
+	from->setFScore(from->getGScore() + from->getHScore());
+
+	openSet.push(from);
+
+	while(!openSet.empty())
+	{
+		Node * current = openSet.top();
+
+		if(current == to)
+		{
+			/*Fonction qui reconstitue le path*/
+		}
+		else
+		{
+			openSet.pop();
+			closedSet.push_back(current);
+			
+			std::list<Node *> neighboursList = current->neighbours();
+			for(list<Node *>::iterator neighbour = neighboursList.begin(); neighbour != neighboursList.end() ++neighbour)
+			{
+				if(std::find(closedSet.begin(), closedSet.end(), neighbour) != closedSet.end())
+				{
+					double possibleGScore = current->getGScore() + current->distanceTo(*neighbour);
+
+					if(possibleGScore < (*neighbour)->getGScore())
+					{
+						(*neighbour)->setFather(current);
+						(*neighbour)->setGScore(possibleGScore);
+
+					}
+				}
+				else
+				{
+					/*Continue*/
+				}
+			}
+		}
+	}
+
+
+}
+
 
 void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double scale, unsigned int seed)
 {
