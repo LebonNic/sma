@@ -55,10 +55,12 @@ void Graph::addNode(Node *node)
 		m_Nodes.push_back(node);
 	}
 }
-void Graph::addNode(double x, double y, double z)
+Node *Graph::addNode(double x, double y, double z)
 {
 	Node *node = new Node(x,y,z);
 	m_Nodes.push_back(node);
+
+	return node;
 }
 void Graph::linkNodeFromTo(Node *from, Node *to)
 {
@@ -68,20 +70,44 @@ void Graph::linkNodeFromTo(Node *from, Node *to)
 }
 
 
-void Graph::generateRandomPerlin(double xSize, double ySize, double scale, unsigned int seed)
+void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double scale, unsigned int seed)
 {
-	double x = 0.0;
-	double y = 0.0;
 	PerlinNoise noise(rand());
-
-	setWidth((unsigned int) xSize);
-	setHeight((unsigned int) ySize);
-	for(x = 0.0; x < xSize; x+=1.0)
+	vector<vector<Node *>> nodeGrid(xSize);
+	for (unsigned int i = 0; i < xSize; ++i)
 	{
-		for(y = 0.0; y < ySize; y+=1.0)
+		vector<Node *> nodeRow(ySize);
+		nodeGrid[i] = nodeRow;
+	}
+
+	setWidth(xSize);
+	setHeight(ySize);
+	for(unsigned int x = 0; x < xSize; ++x)
+	{
+		for(unsigned int y = 0; y < ySize; ++y)
 		{
 			double z = noise.noise(x * scale, y * scale, 0.5);
-			this->addNode(x,y,z);
+			nodeGrid[x][y] = this->addNode(x,y,z);
+		}
+	}
+
+	for(unsigned int i = 0; i < xSize; ++i)
+	{
+		for(unsigned int j = 0; j < ySize; ++j)
+		{
+			if(i > 0)
+			{
+				nodeGrid[i][j]->linkTo(nodeGrid[i-1][j]);
+				if(j > 0)
+					nodeGrid[i][j]->linkTo(nodeGrid[i-1][j-1]);
+			}
+			if(j > 0)
+			{
+				nodeGrid[i][j]->linkTo(nodeGrid[i][j-1]);
+				if (i < xSize - 1)
+					nodeGrid[i][j]->linkTo(nodeGrid[i+1][j-1]);
+			}
+
 		}
 	}
 }

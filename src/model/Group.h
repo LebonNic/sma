@@ -1,13 +1,15 @@
 #pragma once
-#include "Unit.h"
+#include <list>
 #include "ActiveEntity.h"
-#include <vector>
+#include "Unit.h"
+class Unit;
+
 
 class Group : 
 	public ActiveEntity
 {
 private:
-	std::vector<Unit *> m_Units;
+	std::list<Unit *> m_Units;
 public:
 	Group(void);
 	~Group(void);

@@ -9,7 +9,7 @@ int main (int argc, char **argv)
 	srand((unsigned int) time(NULL));
 	unsigned int width = 52;
 	unsigned int height = 79;
-	World world((double) width,(double) height, 0.05, rand());
+	World world(width, height, 0.05, rand());
 
 	for(unsigned int i = 0; i < 8; ++i)
 	{

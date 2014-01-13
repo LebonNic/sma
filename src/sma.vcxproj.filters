@@ -98,6 +98,9 @@
     <ClCompile Include="model\PerlinNoise.cpp">
       <Filter>Source Files\Model\Map</Filter>
     </ClCompile>
+    <ClCompile Include="model\Attribute.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="model\ActiveEntity.h">
@@ -147,6 +150,9 @@
     </ClInclude>
     <ClInclude Include="model\PerlinNoise.h">
       <Filter>Header Files\Model\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="model\Attribute.h">
+      <Filter>Header Files\Model\World</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

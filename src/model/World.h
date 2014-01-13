@@ -26,7 +26,7 @@ private:
 	Graph *m_Map;
 
 public:
-	World(double xSize, double ySize, double scale, unsigned int seed);
+	World(unsigned int xSize, unsigned int ySize, double scale, unsigned int seed);
 	~World(void);
 
 

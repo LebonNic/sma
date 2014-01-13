@@ -2,9 +2,10 @@
 
 
 Ressource::Ressource(RessourceType type, double x, double y, double z, Owner owner, double quantity)
-	: PassiveEntity(PassiveEntityType::ressource,x,y,z,owner,quantity)
+	: PassiveEntity(PassiveEntityType::ressource,x,y,z,owner)
 {
 	setRessourceType(type);
+	setQuantity(quantity);
 }
 Ressource::~Ressource(void)
 {
@@ -17,13 +18,13 @@ void Ressource::setRessourceType(RessourceType type)
 }
 void Ressource::setQuantity(double quantity)
 {
-	m_dHitPoints = quantity;
+	m_dQuantity = quantity;
 }
 
 
 double Ressource::quantity(void)
 {
-	return m_dHitPoints;
+	return m_dQuantity;
 }
 RessourceType Ressource::ressourceType(void)
 {

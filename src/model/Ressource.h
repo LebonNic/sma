@@ -13,6 +13,7 @@ class Ressource :
 {
 private:
 	RessourceType m_RessourceType;
+	double m_dQuantity;
 
 	void setRessourceType(RessourceType type);
 	void setQuantity(double quantity);

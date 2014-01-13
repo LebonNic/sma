@@ -2,7 +2,7 @@
 using namespace std;
 
 
-World::World(double xSize, double ySize, double scale, unsigned int seed)
+World::World(unsigned int xSize, unsigned int ySize, double scale, unsigned int seed)
 {
 	m_Map = new Graph();
 	m_Map->generateRandomPerlin(xSize, ySize, scale, seed);
@@ -119,24 +119,37 @@ vector<vector<EntityDisplayChar>> World::entityMap(void)
 
 void World::display(void)
 {
-	// Define color palette
+	// Clear console screen
+	system("cls");
+
+
+	// Change console attributes
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SMALL_RECT size;
 	CONSOLE_SCREEN_BUFFER_INFOEX info;
     info.cbSize = sizeof(info);
     GetConsoleScreenBufferInfoEx(hConsole, &info);
+	// Change size of console windows
+	size.Bottom = 768;
+	size.Top = 0;
+	size.Left = 0;
+	size.Right = 768;
+	info.srWindow = size;
+	// Define greyscale color palette
 	for (int i = 0; i < 256; i+=16)
 		info.ColorTable[i/16] = RGB(i,i,i);
 	SetConsoleScreenBufferInfoEx(hConsole, &info);
 
 
-	// Get 2d heightMap of map
+	// Get height map
 	vector<vector<unsigned int>> heightMap = m_Map->heightMap();
-	unsigned int width = m_Map->width();
-	unsigned int height = m_Map->height();
 
+	// Get entity map
 	vector<vector<EntityDisplayChar>> entityMap = this->entityMap();
 
-	// display heightMap
+	// Display maps
+	unsigned int width = m_Map->width();
+	unsigned int height = m_Map->height();
 	for (unsigned int x = 0; x < width; ++x)
 	{
 		for (unsigned int y = 0; y < height; ++y)
