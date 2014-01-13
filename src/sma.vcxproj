@@ -180,7 +180,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore;debug;.;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;debug;.;.\GeneratedFiles;$(QTDIR)\include\QtCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>debug\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -382,7 +382,7 @@
   <ImportGroup Label="ExtensionTargets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties Qt5Version_x0020_x64="5.1.1" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" />
+      <UserProperties UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
