@@ -69,7 +69,7 @@ void Graph::linkNodeFromTo(Node *from, Node *to)
 	from->linkTo(to);
 }
 
-void findPathFromTo(Node * from, Node * to)
+/*void findPathFromTo(Node * from, Node * to)
 {
 	std::priority_queue<Node *, Node::ComparaisonOperator()> openSet;
 	std::list<Node *> closedSet;
@@ -86,7 +86,7 @@ void findPathFromTo(Node * from, Node * to)
 
 		if(current == to)
 		{
-			/*Fonction qui reconstitue le path*/
+			
 		}
 		else
 		{
@@ -109,7 +109,7 @@ void findPathFromTo(Node * from, Node * to)
 				}
 				else
 				{
-					/*Continue*/
+					
 				}
 			}
 		}
@@ -117,7 +117,7 @@ void findPathFromTo(Node * from, Node * to)
 
 
 }
-
+*/
 
 void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double scale, unsigned int seed)
 {
