@@ -99,7 +99,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore;release;.;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtCore;release;.;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>release\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
