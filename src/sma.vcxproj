@@ -291,6 +291,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Ressource.cpp" />
+    <ClCompile Include="Score.cpp" />
     <ClCompile Include="Unit.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="WorldView.cpp" />
@@ -330,6 +331,7 @@
     <ClInclude Include="PassiveEntity.h" />
     <ClInclude Include="PerlinNoise.h" />
     <ClInclude Include="Ressource.h" />
+    <ClInclude Include="Score.h" />
     <ClInclude Include="Unit.h" />
     <ClInclude Include="World.h" />
     <CustomBuild Include="WorldView.h">

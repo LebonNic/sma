@@ -1,7 +1,6 @@
 #include "Graph.h"
 using namespace std;
 
-
 Graph::Graph(void)
 {
 }
@@ -69,55 +68,54 @@ void Graph::linkNodeFromTo(Node *from, Node *to)
 	from->linkTo(to);
 }
 
-/*void findPathFromTo(Node * from, Node * to)
+void findPathFromTo(Node * from, Node * to)
 {
-	std::priority_queue<Node *, Node::ComparaisonOperator()> openSet;
-	std::list<Node *> closedSet;
+	bool goalReached = false;
+	std::priority_queue<Score, std::vector<Score>, Score::CompareScore> openSet;
+	std::list<Score> closedSet;
 
-	from->setGScore(0);
-	from->setHScore(from->distanceTo(to));
-	from->setFScore(from->getGScore() + from->getHScore());
+	Score startingNode;
 
-	openSet.push(from);
+	startingNode.m_N = from ;
+	startingNode.m_dGScore = 0 ;
+	startingNode.m_dFScore = startingNode.m_dGScore + startingNode.m_N->distanceTo(to) ;
+	
+	openSet.push(startingNode);
 
-	while(!openSet.empty())
+	while(!openSet.empty() && !goalReached)
 	{
-		Node * current = openSet.top();
+		Score currentNode = openSet.top();
 
-		if(current == to)
+		if(currentNode.m_N == to)
 		{
-			
+			goalReached = true;
 		}
 		else
 		{
 			openSet.pop();
-			closedSet.push_back(current);
+			closedSet.push_back(currentNode);
 			
-			std::list<Node *> neighboursList = current->neighbours();
+			std::list<Node *> neighboursList = currentNode.m_N->neighbours();
 			for(list<Node *>::iterator neighbour = neighboursList.begin(); neighbour != neighboursList.end(); ++neighbour)
 			{
-				if(std::find(closedSet.begin(), closedSet.end(), neighbour) != closedSet.end())
+				Score neighbourNode;
+				neighbourNode.m_N = *neighbour;
+				if(std::find(closedSet.begin(), closedSet.end(), neighbourNode) != closedSet.end())
 				{
-					double possibleGScore = current->getGScore() + current->distanceTo(*neighbour);
+					double possibleGScore = currentNode.m_dGScore + currentNode.m_N->distanceTo(*neighbour); // ou currentNode.m_N->distanceTo(neighbourNode.m_N)
 
-					if(possibleGScore < (*neighbour)->getGScore())
+					if(possibleGScore  < neighbourNode.m_dGScore) //Il manque le test "neighbor not in openset"
 					{
-						(*neighbour)->setFather(current);
-						(*neighbour)->setGScore(possibleGScore);
-
+						neighbourNode.m_Father = currentNode.m_N;
+						neighbourNode.m_dGScore = possibleGScore;
+						neighbourNode.m_dFScore = neighbourNode.m_dGScore + neighbourNode.m_N->distanceTo(to);
+						openSet.push(neighbourNode);
 					}
-				}
-				else
-				{
-					
 				}
 			}
 		}
 	}
-
-
 }
-*/
 
 void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double scale, unsigned int seed)
 {

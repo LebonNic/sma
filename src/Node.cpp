@@ -28,46 +28,6 @@ double Node::z(void)
 	return this->m_Location->z();
 }
 
-double Node::getFScore(void) const
-{
-	return m_dFScore;
-}
-
-double Node::getGScore(void) const
-{
-	return m_dGScore;
-}
-
-double Node::getHScore(void) const
-{
-	return m_dHScore;
-}
-
-void Node::setFScore(double fScore)
-{
-	m_dFScore = fScore;
-}
-
-void Node::setGScore(double gScore)
-{
-	m_dGScore = gScore;
-}
-
-void Node::setHScore(double hScore)
-{
-	m_dHScore = hScore;
-}
-
-Node * Node::getFather() const
-{
-	return m_Father;
-}
-
-void Node::setFather(Node * father) 
-{
-	m_Father = father;
-}
-
 Location *Node::location(void)
 {
 	return this->m_Location;

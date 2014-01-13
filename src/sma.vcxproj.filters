@@ -143,6 +143,9 @@
     <ClCompile Include="PerlinNoise.cpp">
       <Filter>Source Files\Model\Graph</Filter>
     </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>Source Files\Model\Graph</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_MainWindow.h">
@@ -187,6 +190,9 @@
     <CustomBuild Include="MainWindow.h">
       <Filter>Header Files\View</Filter>
     </CustomBuild>
+    <ClInclude Include="Score.h">
+      <Filter>Header Files\Model\Graph</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="MainWindow.ui">
