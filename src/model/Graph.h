@@ -1,6 +1,8 @@
 #pragma once
 #include <list>
 #include <Windows.h>
+#include <queue>
+#include <algorithm>
 #include "Node.h"
 #include "Edge.h"
 #include "PerlinNoise.h"
@@ -30,6 +32,7 @@ public:
 	void addNode(Node *node);
 	Node *addNode(double x, double y, double z);
 	void linkNodeFromTo(Node *from, Node *to);
+	void findPathFromtTo(Node * from, Node * to);
 
 
 	void generateRandomPerlin(unsigned int xSize, unsigned int ySize, double scale = 1.0, unsigned int seed = 0);
