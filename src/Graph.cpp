@@ -72,7 +72,7 @@ void Graph::linkNodeFromTo(Node *from, Node *to)
 
 void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double scale, unsigned int seed)
 {
-	PerlinNoise noise(rand());
+    PerlinNoise noise(seed);
 	vector<vector<Node *>> nodeGrid(xSize);
 	for (unsigned int i = 0; i < xSize; ++i)
 	{
@@ -82,9 +82,9 @@ void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double 
 
 	setWidth(xSize);
 	setHeight(ySize);
-	for(unsigned int x = 0; x < xSize; ++x)
+    for(unsigned int y = 0; y < ySize; ++y)
 	{
-		for(unsigned int y = 0; y < ySize; ++y)
+        for(unsigned int x = 0; x < xSize; ++x)
 		{
 			double z = noise.noise(x * scale, y * scale, 0.5);
 			nodeGrid[x][y] = this->addNode(x,y,z);
