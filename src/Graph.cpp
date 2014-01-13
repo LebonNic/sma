@@ -69,7 +69,7 @@ void Graph::linkNodeFromTo(Node *from, Node *to)
 	from->linkTo(to);
 }
 
-void findPathFromtTo(Node * from, Node * to)
+void findPathFromTo(Node * from, Node * to)
 {
 	std::priority_queue<Node *, Node::ComparaisonOperator()> openSet;
 	std::list<Node *> closedSet;
@@ -94,7 +94,7 @@ void findPathFromtTo(Node * from, Node * to)
 			closedSet.push_back(current);
 			
 			std::list<Node *> neighboursList = current->neighbours();
-			for(list<Node *>::iterator neighbour = neighboursList.begin(); neighbour != neighboursList.end() ++neighbour)
+			for(list<Node *>::iterator neighbour = neighboursList.begin(); neighbour != neighboursList.end(); ++neighbour)
 			{
 				if(std::find(closedSet.begin(), closedSet.end(), neighbour) != closedSet.end())
 				{
