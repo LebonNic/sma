@@ -141,7 +141,7 @@ std::list<Node *> Graph::findPathFromTo(Node * from, Node * to)
 		path.push_back(startingScore.m_N);
 	}
 	else
-		throw runtime_error("Impossible d'atteindre l'objectif.\n");
+		throw runtime_error("[AStar Error] : Impossible d'atteindre l'objectif.\n");
 
 	return path;
 }
