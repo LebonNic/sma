@@ -16,7 +16,7 @@ public:
 	Score & operator=(const Score & s);
 	bool operator==(const Score & s);
 
-	class CompareScore
+	/*class CompareScore
 	{
 		public: 
 			CompareScore(){}
@@ -24,6 +24,6 @@ public:
 		{
 			return a.m_dFScore < b.m_dFScore;
 		}
-	};
+	};*/
 };
 
