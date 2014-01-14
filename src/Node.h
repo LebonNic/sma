@@ -32,7 +32,5 @@ public:
 
 
 	double distanceTo(Node *to);
-	void linkTo(Node *to);
-	
 };
 
