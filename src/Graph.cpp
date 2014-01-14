@@ -68,53 +68,82 @@ void Graph::linkNodeFromTo(Node *from, Node *to)
 	from->linkTo(to);
 }
 
-void findPathFromTo(Node * from, Node * to)
+bool CompareScore(const Score & a, const Score & b)
+{
+	return a.m_dFScore < b.m_dFScore;
+}
+
+
+std::list<Node *> Graph::findPathFromTo(Node * from, Node * to)
 {
 	bool goalReached = false;
-	std::priority_queue<Score, std::vector<Score>, Score::CompareScore> openSet;
-	std::list<Score> closedSet;
+	std::vector<Score>	openSet;
+	std::list<Score>	closedSet;
+	std::list<Node *> path;
 
-	Score startingNode;
+	Score	startingScore,
+			currentScore;
 
-	startingNode.m_N = from ;
-	startingNode.m_dGScore = 0 ;
-	startingNode.m_dFScore = startingNode.m_dGScore + startingNode.m_N->distanceTo(to) ;
+	startingScore.m_N = from ;
+	startingScore.m_dGScore = 0 ;
+	startingScore.m_dFScore = startingScore.m_dGScore + startingScore.m_N->distanceTo(to) ;
 	
-	openSet.push(startingNode);
+	openSet.push_back(startingScore);
 
 	while(!openSet.empty() && !goalReached)
 	{
-		Score currentNode = openSet.top();
+		currentScore = openSet.front();
 
-		if(currentNode.m_N == to)
+		if(currentScore.m_N == to)
 		{
 			goalReached = true;
 		}
 		else
 		{
-			openSet.pop();
-			closedSet.push_back(currentNode);
+			openSet.erase(openSet.begin());
+			closedSet.push_back(currentScore);
 			
-			std::list<Node *> neighboursList = currentNode.m_N->neighbours();
+			std::list<Node *> neighboursList = currentScore.m_N->neighbours();
 			for(list<Node *>::iterator neighbour = neighboursList.begin(); neighbour != neighboursList.end(); ++neighbour)
 			{
 				Score neighbourNode;
 				neighbourNode.m_N = *neighbour;
 				if(std::find(closedSet.begin(), closedSet.end(), neighbourNode) != closedSet.end())
 				{
-					double possibleGScore = currentNode.m_dGScore + currentNode.m_N->distanceTo(*neighbour); // ou currentNode.m_N->distanceTo(neighbourNode.m_N)
+					double possibleGScore = currentScore.m_dGScore + currentScore.m_N->distanceTo(*neighbour); // ou currentNode.m_N->distanceTo(neighbourNode.m_N)
 
-					if(possibleGScore  < neighbourNode.m_dGScore) //Il manque le test "neighbor not in openset"
+					std::vector<Score>::iterator ite = std::find(openSet.begin(), openSet.end(), neighbourNode);
+					if(ite == openSet.end() || possibleGScore  < neighbourNode.m_dGScore) //Il manque le test "neighbor not in openset"
 					{
-						neighbourNode.m_Father = currentNode.m_N;
+						neighbourNode.m_Father = currentScore.m_N;
 						neighbourNode.m_dGScore = possibleGScore;
 						neighbourNode.m_dFScore = neighbourNode.m_dGScore + neighbourNode.m_N->distanceTo(to);
-						openSet.push(neighbourNode);
+
+						if(ite == openSet.end())
+							openSet.push_back(neighbourNode);
 					}
 				}
 			}
 		}
+		std::make_heap(openSet.begin(), openSet.end(), CompareScore);
+		std::sort_heap(openSet.begin(), openSet.end(), CompareScore);
 	}
+
+	/* Reconstruction du path */
+	if(openSet.empty() && goalReached)
+	{
+		Node * current = currentScore.m_N;
+		while(current != startingScore.m_N)
+		{
+			path.push_back(current);
+			current = currentScore.m_Father;
+		}
+		path.push_back(startingScore.m_N);
+	}
+	else
+		throw runtime_error("Impossible d'atteindre l'objectif.\n");
+
+	return path;
 }
 
 void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double scale, unsigned int seed)
