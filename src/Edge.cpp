@@ -8,7 +8,7 @@ Edge::Edge(Node *from, Node *to, bool directed)
 	setTo(to);
 	setDirected(directed);
 	setLength(from->distanceTo(to));
-	setCost(from->z()-to->z());
+	setCost(abs(from->z()-to->z()));
 }
 Edge::~Edge(void)
 {

@@ -4,6 +4,7 @@ using namespace std;
 
 Node::Node(Location *location)
 {
+	m_Location = location;
 }
 Node::Node(double x, double y, double z)
 {
@@ -56,13 +57,4 @@ double Node::distanceTo(Node *to)
 	double dz = to->z() - z();
 
 	return sqrt(dx*dx + dy*dy + dz*dz);
-}
-void Node::linkTo(Node *to)
-{
-	list<Node *> neighbours = this->neighbours();
-	if (find(neighbours.begin(), neighbours.end(), to) == neighbours.end())
-	{
-		Edge *edge = new Edge(this, to);
-		m_Edges.push_back(edge);
-	}
 }
