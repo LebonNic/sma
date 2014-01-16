@@ -58,3 +58,7 @@ double Node::distanceTo(Node *to)
 
 	return sqrt(dx*dx + dy*dy + dz*dz);
 }
+void Node::addEdge(Edge* edge)
+{
+	m_Edges.push_back(edge);
+}

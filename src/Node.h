@@ -27,5 +27,6 @@ public:
 	std::list<Node *> neighbours(void);
 
 	double distanceTo(Node *to);
+	void addEdge(Edge* edge);
 };
 

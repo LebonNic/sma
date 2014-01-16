@@ -65,7 +65,10 @@ void Graph::linkNodeFromTo(Node *from, Node *to)
 {
 	this->addNode(from);
 	this->addNode(to);
-	from->linkTo(to);
+	Edge *edge = new Edge(from,to);
+	this->m_Edges.push_back(edge);
+	from->addEdge(edge);
+	to->addEdge(edge);
 }
 
 bool CompareScore(const Score & a, const Score & b)
@@ -173,15 +176,15 @@ void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double 
 		{
 			if(i > 0)
 			{
-				nodeGrid[i][j]->linkTo(nodeGrid[i-1][j]);
+				this->linkNodeFromTo(nodeGrid[i][j],nodeGrid[i-1][j]);
 				if(j > 0)
-					nodeGrid[i][j]->linkTo(nodeGrid[i-1][j-1]);
+					this->linkNodeFromTo(nodeGrid[i][j],nodeGrid[i-1][j-1]);
 			}
 			if(j > 0)
 			{
-				nodeGrid[i][j]->linkTo(nodeGrid[i][j-1]);
+				this->linkNodeFromTo(nodeGrid[i][j],nodeGrid[i][j-1]);
 				if (i < xSize - 1)
-					nodeGrid[i][j]->linkTo(nodeGrid[i+1][j-1]);
+					this->linkNodeFromTo(nodeGrid[i][j],nodeGrid[i+1][j-1]);
 			}
 
 		}
