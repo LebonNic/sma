@@ -46,7 +46,6 @@ unsigned int Graph::height(void)
 	return m_uHeight;
 }
 
-
 void Graph::addNode(Node *node)
 {
 	if(find(m_Nodes.begin(), m_Nodes.end(), node) == m_Nodes.end())
@@ -63,8 +62,6 @@ Node *Graph::addNode(double x, double y, double z)
 }
 void Graph::linkNodeFromTo(Node *from, Node *to)
 {
-	this->addNode(from);
-	this->addNode(to);
 	Edge *edge = new Edge(from,to);
 	this->m_Edges.push_back(edge);
 	from->addEdge(edge);
@@ -76,77 +73,9 @@ bool CompareScore(const Score & a, const Score & b)
 	return a.m_dFScore < b.m_dFScore;
 }
 
-
 std::list<Node *> Graph::findPathFromTo(Node * from, Node * to)
 {
-	bool goalReached = false;
-	std::vector<Score>	openSet;
-	std::list<Score>	closedSet;
-	std::list<Node *> path;
-
-	Score	startingScore,
-			currentScore;
-
-	startingScore.m_N = from ;
-	startingScore.m_dGScore = 0 ;
-	startingScore.m_dFScore = startingScore.m_dGScore + startingScore.m_N->distanceTo(to) ;
-	
-	openSet.push_back(startingScore);
-
-	while(!openSet.empty() && !goalReached)
-	{
-		currentScore = openSet.front();
-
-		if(currentScore.m_N == to)
-		{
-			goalReached = true;
-		}
-		else
-		{
-			openSet.erase(openSet.begin());
-			closedSet.push_back(currentScore);
-			
-			std::list<Node *> neighboursList = currentScore.m_N->neighbours();
-			for(list<Node *>::iterator neighbour = neighboursList.begin(); neighbour != neighboursList.end(); ++neighbour)
-			{
-				Score neighbourNode;
-				neighbourNode.m_N = *neighbour;
-				if(std::find(closedSet.begin(), closedSet.end(), neighbourNode) != closedSet.end())
-				{
-					double possibleGScore = currentScore.m_dGScore + currentScore.m_N->distanceTo(*neighbour); // ou currentNode.m_N->distanceTo(neighbourNode.m_N)
-
-					std::vector<Score>::iterator ite = std::find(openSet.begin(), openSet.end(), neighbourNode);
-					if(ite == openSet.end() || possibleGScore  < neighbourNode.m_dGScore) //Il manque le test "neighbor not in openset"
-					{
-						neighbourNode.m_Father = currentScore.m_N;
-						neighbourNode.m_dGScore = possibleGScore;
-						neighbourNode.m_dFScore = neighbourNode.m_dGScore + neighbourNode.m_N->distanceTo(to);
-
-						if(ite == openSet.end())
-							openSet.push_back(neighbourNode);
-					}
-				}
-			}
-		}
-		std::make_heap(openSet.begin(), openSet.end(), CompareScore);
-		std::sort_heap(openSet.begin(), openSet.end(), CompareScore);
-	}
-
-	/* Reconstruction du path */
-	if(openSet.empty() && goalReached)
-	{
-		Node * current = currentScore.m_N;
-		while(current != startingScore.m_N)
-		{
-			path.push_back(current);
-			current = currentScore.m_Father;
-		}
-		path.push_back(startingScore.m_N);
-	}
-	else
-		throw runtime_error("[AStar Error] : Impossible d'atteindre l'objectif.\n");
-
-	return path;
+	return m_PathFinder.findPathFromTo(from, to);
 }
 
 void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double scale, unsigned int seed)
@@ -171,22 +100,42 @@ void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double 
 	}
 
 	for(unsigned int i = 0; i < xSize; ++i)
-	{
-		for(unsigned int j = 0; j < ySize; ++j)
-		{
-			if(i > 0)
-			{
-				this->linkNodeFromTo(nodeGrid[i][j],nodeGrid[i-1][j]);
-				if(j > 0)
-					this->linkNodeFromTo(nodeGrid[i][j],nodeGrid[i-1][j-1]);
-			}
-			if(j > 0)
-			{
-				this->linkNodeFromTo(nodeGrid[i][j],nodeGrid[i][j-1]);
-				if (i < xSize - 1)
-					this->linkNodeFromTo(nodeGrid[i][j],nodeGrid[i+1][j-1]);
-			}
+		for(unsigned int j = 0; j < ySize - 1; ++j)
+			this->linkNodeFromTo(nodeGrid[i][j], nodeGrid[i][j+1]);
 
+	for(unsigned int j = 0; j  < ySize; ++j )
+		for(unsigned int i = 0; i < xSize - 1; ++i)
+			this->linkNodeFromTo(nodeGrid[i][j], nodeGrid[i+1][j]);
+
+	////Parcours en diagonale du graphe
+	for(unsigned int slice = 0; slice < xSize + ySize - 1; ++slice)
+	{
+		unsigned int z = slice < xSize ? 0 : slice - xSize + 1;
+
+		for(unsigned int j = z; j < slice - z; ++j)
+		{
+			this->linkNodeFromTo(nodeGrid[j][slice - j], nodeGrid[j + 1][slice - j - 1]);
+		}
+	}
+
+	int zbis = 0;
+	for(int slice = xSize + ySize - 2; slice >=0 ; --slice)
+	{
+		int z;
+
+		if(slice >= (int)(xSize - 1))
+		{
+			z = (slice - xSize + 1);
+		}
+		else
+		{
+			z = 0;
+			zbis--;
+		}
+
+		for(int j = z; j < slice - z; ++j)
+		{
+			this->linkNodeFromTo(nodeGrid[slice - j][slice - j - z - zbis], nodeGrid[slice - j - 1][slice - j - z - zbis - 1]);
 		}
 	}
 }

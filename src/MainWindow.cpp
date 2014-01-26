@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     srand(time(NULL));
-    m_World = new World(64,64,0.05,rand());
+    m_World = new World(10,10,0.05,rand());
     m_World->populateMap(0.05,0.15,0.05);
     m_WorldView = new WorldView(m_World, this);
     this->setCentralWidget(m_WorldView);

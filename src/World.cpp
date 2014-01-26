@@ -83,6 +83,11 @@ void World::populateMap(double goldDensity, double woodDensity, double foodDensi
 	}
 }
 
+Graph * World::getGraph(void)
+{
+	return m_Map;
+}
+
 
 void World::refresh(void)
 {

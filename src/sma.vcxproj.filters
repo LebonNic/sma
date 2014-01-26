@@ -146,6 +146,9 @@
     <ClCompile Include="Score.cpp">
       <Filter>Source Files\Model\Graph</Filter>
     </ClCompile>
+    <ClCompile Include="PathFinder.cpp">
+      <Filter>Source Files\Model\Graph</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_MainWindow.h">
@@ -191,6 +194,9 @@
       <Filter>Header Files\View</Filter>
     </CustomBuild>
     <ClInclude Include="Score.h">
+      <Filter>Header Files\Model\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="PathFinder.h">
       <Filter>Header Files\Model\Graph</Filter>
     </ClInclude>
   </ItemGroup>

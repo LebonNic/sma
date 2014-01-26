@@ -281,6 +281,7 @@
     <ClCompile Include="Memory.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="PassiveEntity.cpp" />
+    <ClCompile Include="PathFinder.cpp" />
     <ClCompile Include="PerlinNoise.cpp" />
     <ClCompile Include="Release\moc_MainWindow.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -329,6 +330,7 @@
     <ClInclude Include="Memory.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="PassiveEntity.h" />
+    <ClInclude Include="PathFinder.h" />
     <ClInclude Include="PerlinNoise.h" />
     <ClInclude Include="Ressource.h" />
     <ClInclude Include="Score.h" />

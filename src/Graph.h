@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include <queue>
 #include <algorithm>
+#include "PathFinder.h"
 #include "Node.h"
 #include "Edge.h"
 #include "PerlinNoise.h"
@@ -17,6 +18,7 @@ private:
 	std::list<Edge *> m_Edges;
 	unsigned int m_uWidth;
 	unsigned int m_uHeight;
+	PathFinder m_PathFinder;
 
 
 void setWidth(unsigned int width);
@@ -24,7 +26,6 @@ void setHeight(unsigned int height);
 public:
 	Graph(void);
 	~Graph(void);
-
 
 	std::list<Node *> nodes(void);
 	std::list<Edge *> edges(void);

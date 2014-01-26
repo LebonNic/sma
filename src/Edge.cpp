@@ -49,7 +49,7 @@ double Edge::cost(void)
 }
 Node *Edge::from(void)
 {
-	return this->m_To;
+	return this->m_From;
 }
 Node *Edge::to(void)
 {

@@ -4,8 +4,9 @@
 class Score
 {
 public:
-	Node	* m_N,
-			* m_Father;
+	Node	* m_N;
+	Score	* m_Father;
+
 	double	m_dFScore,
 			m_dGScore,
 			m_dHScore;
@@ -16,14 +17,20 @@ public:
 	Score & operator=(const Score & s);
 	bool operator==(const Score & s);
 
-	/*class CompareScore
+	class CompareScoreByPointer
 	{
-		public: 
-			CompareScore(){}
-		bool operator()(const Score & a, const Score & b) const
+	private:
+		const Score * m_Score;
+
+	public:
+		explicit CompareScoreByPointer(const Score * score){ m_Score = score; }
+
+		bool operator()(const Score * otherScore) const
 		{
-			return a.m_dFScore < b.m_dFScore;
+			return m_Score->m_N == otherScore->m_N;
 		}
-	};*/
+	};
+
 };
+
 

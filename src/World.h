@@ -27,6 +27,7 @@ public:
 
     std::list<Node *> nodes(void);
     std::list<PassiveEntity *> World::passiveEntities(void);
+	Graph * getGraph(void);
 
 	void populateMap(double goldDensity, double woodDensity, double foodDensity);
 
