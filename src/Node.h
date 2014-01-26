@@ -10,7 +10,6 @@ class Node
 private:
 	Location *m_Location;
 	std::list<Edge *> m_Edges;
-	Node * m_Father;
 	void setLocation(Location *location);
 
 public:

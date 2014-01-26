@@ -23,7 +23,6 @@ public:
 	Edge(Node *from, Node *to, bool directed = false);
 	~Edge(void);
 
-
 	double length(void);
 	double cost(void);
 	Node *from(void);
