@@ -34,6 +34,39 @@ WorldView::WorldView(World *world, QWidget *parent) :
 }
 
 
+//void WorldView::update(void)
+//{
+//    // Reset objects
+//    m_WorldScene->clear();
+//
+//	Graph * map = m_World->getGraph();
+//
+//    list<Node *> nodes = map->nodes();
+//    for(auto it = nodes.begin(); it != nodes.end(); ++it)
+//    {
+//        Node *node = *it;
+//        double x = node->x();
+//        double y = node->y();
+//		m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10);
+//    }
+//
+//	list<Edge *> edges = map->edges();
+//	for(auto it = edges.begin(); it != edges.end(); ++it)
+//    {
+//        Edge	* edge = *it;
+//		Node	* from = edge->from(),
+//				*	to = edge->to();
+//
+//        double	x1 = from->x(),
+//				y1 = from->y(),
+//				x2 = to->x(),
+//				y2 = to->y();
+//
+//		m_WorldScene->addLine(x1 * m_dScale, y1 * m_dScale, x2 * m_dScale, y2 * m_dScale);
+//    }
+//}
+
+
 void WorldView::update(void)
 {
     // Reset objects
@@ -90,7 +123,6 @@ QPixmap WorldView::randomTexture(std::vector<QPixmap> textures)
 {
     return textures[rand() % textures.size()];
 }
-
 
 void WorldView::wheelEvent(QWheelEvent* event)
 {
