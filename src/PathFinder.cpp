@@ -35,12 +35,12 @@ std::list<Node *> PathFinder::findPathFromTo(Node * from, Node * to)
 
 	m_bGoalReached = false;
 
+	this->setGoal(to);
+
 	//Initialisation du noeud de départ
 	this->setStartingNode(from);
 	m_StartingNode.m_dGScore = 0;
 	m_StartingNode.m_dFScore = m_StartingNode.m_dGScore + this->computeHScore(m_StartingNode);
-
-	this->setGoal(to);
 
 	m_OpenSet.push_back(new Score(m_StartingNode));
 
@@ -68,12 +68,16 @@ std::list<Node *> PathFinder::findPathFromTo(Node * from, Node * to)
 			for(auto itCurrentNeighbour = neighboursList.begin(); itCurrentNeighbour != neighboursList.end(); ++itCurrentNeighbour)
 			{
 				neighbour.m_N = (*itCurrentNeighbour);
-				if(std::find_if(m_ClosedSet.begin(), m_ClosedSet.end(), Score::CompareScoreByPointer(&neighbour)) != m_ClosedSet.end())
+
+				//Pour chaque voisin on test s'il n'a pas déjà été exploré
+				if(std::find_if(m_ClosedSet.begin(), m_ClosedSet.end(), Score::CompareScoreByPointer(&neighbour)) == m_ClosedSet.end())
 				{
 					double possibleGScore = current->m_dGScore + computeMovingCost((*current), neighbour); 
 					std::vector<Score *>::iterator ite = std::find_if(m_OpenSet.begin(), m_OpenSet.end(), Score::CompareScoreByPointer(&neighbour));
 
-					if(ite == m_OpenSet.end() || possibleGScore  < neighbour.m_dGScore) //Il manque le test "neighbor not in openset"
+					//Si le voisin en cours n'a pas été exploré ou qu'il se trouve dans liste des noeuds à parcourir
+					//et que le nouveau coût pour l'atteindre a diminué
+					if(ite == m_OpenSet.end() || possibleGScore  < (*ite)->m_dGScore)
 					{
 						neighbour.m_Father = current;
 						neighbour.m_dGScore = possibleGScore;
@@ -85,6 +89,7 @@ std::list<Node *> PathFinder::findPathFromTo(Node * from, Node * to)
 				}
 			}
 		}
+		//Tri de la liste des noeuds à parcourir par ordre croissant de f score
 		std::make_heap(m_OpenSet.begin(), m_OpenSet.end(), CompareScore);
 		std::sort_heap(m_OpenSet.begin(), m_OpenSet.end(), CompareScore);
 	}
