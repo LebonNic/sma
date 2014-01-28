@@ -8,20 +8,22 @@ class Edge;
 class Node
 {
 private:
-	Location *m_Location;
+	Location m_Location;
 	std::list<Edge *> m_Edges;
-	void setLocation(Location *location);
 
 public:
-	Node(Location *location);
+	Node(const Location & location);
 	Node(double x, double y, double z);
+	Node(const Node & n);
+	Node & operator =(const Node & n);
+
 	~Node(void);
 
 	double x(void);
 	double y(void);
 	double z(void);
 
-	Location *location(void);
+	Location location(void);
 	const std::list<Edge *> & adjacentEdges(void);
 	std::list<Node *> neighbours(void);
 

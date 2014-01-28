@@ -34,89 +34,96 @@ WorldView::WorldView(World *world, QWidget *parent) :
 }
 
 
+void WorldView::update(void)
+{
+    // Reset objects
+	std::vector<std::vector<Node *>> nodes;
+
+    m_WorldScene->clear();
+
+	Graph * map = m_World->getMap();
+
+    nodes = map->nodes();
+	for(unsigned int i = 0; i < map->height(); ++i)
+	{
+		for(unsigned int j = 0; j < map->width(); ++j)
+		{
+			 Node *node = nodes[i][j];
+			double x = node->x();
+			double y = node->y();
+			m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10);
+		}
+	}
+
+	/*nodes = map->findPathFromTo(map->*/
+
+	list<Edge *> edges = map->edges();
+	for(auto it = edges.begin(); it != edges.end(); ++it)
+    {
+        Edge	* edge = *it;
+		Node	* from = edge->from(),
+				*	to = edge->to();
+
+        double	x1 = from->x(),
+				y1 = from->y(),
+				x2 = to->x(),
+				y2 = to->y();
+
+		m_WorldScene->addLine(x1 * m_dScale, y1 * m_dScale, x2 * m_dScale, y2 * m_dScale);
+    }
+}
+
+
 //void WorldView::update(void)
 //{
 //    // Reset objects
 //    m_WorldScene->clear();
 //
-//	Graph * map = m_World->getGraph();
-//
-//    list<Node *> nodes = map->nodes();
+//    list<Node *> nodes = m_World->nodes();
 //    for(auto it = nodes.begin(); it != nodes.end(); ++it)
 //    {
 //        Node *node = *it;
 //        double x = node->x();
 //        double y = node->y();
-//		m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10);
+//        QGraphicsPixmapItem *item = m_WorldScene->addPixmap(randomTexture(m_GrassImage));
+//        item->setPos(x*m_dScale,y*m_dScale);
 //    }
 //
-//	list<Edge *> edges = map->edges();
-//	for(auto it = edges.begin(); it != edges.end(); ++it)
+//    list<PassiveEntity *> passiveEntities = m_World->passiveEntities();
+//    for(auto it = passiveEntities.begin(); it != passiveEntities.end(); ++it)
 //    {
-//        Edge	* edge = *it;
-//		Node	* from = edge->from(),
-//				*	to = edge->to();
-//
-//        double	x1 = from->x(),
-//				y1 = from->y(),
-//				x2 = to->x(),
-//				y2 = to->y();
-//
-//		m_WorldScene->addLine(x1 * m_dScale, y1 * m_dScale, x2 * m_dScale, y2 * m_dScale);
+//        PassiveEntity *entity = *it;
+//        double x = entity->x();
+//        double y = entity->y();
+//        QGraphicsPixmapItem *item;
+//        switch(entity->type())
+//        {
+//        case PassiveEntityType::ressource:
+//            switch(((Ressource *) entity)->ressourceType())
+//            {
+//            case RessourceType::wood:
+//                item = m_WorldScene->addPixmap(this->randomTexture(m_TreeImage));
+//                item->setPos(x*m_dScale,y*m_dScale);
+//                break;
+//            case RessourceType::gold:
+//                item = m_WorldScene->addPixmap(this->randomTexture(m_GoldImage));
+//                item->setPos(x*m_dScale,y*m_dScale);
+//                break;
+//            case RessourceType::food:
+//                item = m_WorldScene->addPixmap(this->randomTexture(m_FoodImage));
+//                item->setPos(x*m_dScale,y*m_dScale);
+//                break;
+//            default:
+//                break;
+//            }
+//            break;
+//        default:
+//            break;
+//        }
 //    }
+//
+//    //list<PassiveEntity *> activeEntities = m_World->activeEntities(void);
 //}
-
-
-void WorldView::update(void)
-{
-    // Reset objects
-    m_WorldScene->clear();
-
-    list<Node *> nodes = m_World->nodes();
-    for(auto it = nodes.begin(); it != nodes.end(); ++it)
-    {
-        Node *node = *it;
-        double x = node->x();
-        double y = node->y();
-        QGraphicsPixmapItem *item = m_WorldScene->addPixmap(randomTexture(m_GrassImage));
-        item->setPos(x*m_dScale,y*m_dScale);
-    }
-
-    list<PassiveEntity *> passiveEntities = m_World->passiveEntities();
-    for(auto it = passiveEntities.begin(); it != passiveEntities.end(); ++it)
-    {
-        PassiveEntity *entity = *it;
-        double x = entity->x();
-        double y = entity->y();
-        QGraphicsPixmapItem *item;
-        switch(entity->type())
-        {
-        case PassiveEntityType::ressource:
-            switch(((Ressource *) entity)->ressourceType())
-            {
-            case RessourceType::wood:
-                item = m_WorldScene->addPixmap(this->randomTexture(m_TreeImage));
-                item->setPos(x*m_dScale,y*m_dScale);
-                break;
-            case RessourceType::gold:
-                item = m_WorldScene->addPixmap(this->randomTexture(m_GoldImage));
-                item->setPos(x*m_dScale,y*m_dScale);
-                break;
-            case RessourceType::food:
-                item = m_WorldScene->addPixmap(this->randomTexture(m_FoodImage));
-                item->setPos(x*m_dScale,y*m_dScale);
-                break;
-            default:
-                break;
-            }
-            break;
-        default:
-            break;
-        }
-    }
-
-    //list<PassiveEntity *> activeEntities = m_World->activeEntities(void);
-}
 
 
 QPixmap WorldView::randomTexture(std::vector<QPixmap> textures)

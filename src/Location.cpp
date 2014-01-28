@@ -15,9 +15,25 @@ Location::Location(double x, double y, double z)
 }
 Location::~Location(void)
 {
-
 }
 
+Location::Location(const Location & l)
+{
+	m_dX = l.m_dX;
+	m_dY = l.m_dY;
+	m_dZ = l.m_dZ;
+}
+
+Location & Location::operator=(const Location & l)
+{
+	if(this != &l)
+	{
+		m_dX = l.m_dX;
+		m_dY = l.m_dY;
+		m_dZ = l.m_dZ;
+	}
+	return *this;
+}
 	
 double Location::x()
 {

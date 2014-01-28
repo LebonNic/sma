@@ -1,42 +1,61 @@
 #include "Node.h"
 using namespace std;
 
-
-Node::Node(Location *location)
+Node::Node(const Location & location)
 {
 	m_Location = location;
 }
+
 Node::Node(double x, double y, double z)
 {
-	m_Location = new Location(x,y,z);
-}
-Node::~Node(void)
-{
-	delete m_Location;
+	m_Location.setX(x);
+	m_Location.setY(y);
+	m_Location.setZ(z);
 }
 
+Node::~Node(void)
+{
+}
+
+Node::Node(const Node & n)
+{
+	m_Location = n.m_Location;
+	m_Edges = n.m_Edges;
+}
+
+Node & Node::operator =(const Node & n)
+{
+	if(this != &n)
+	{
+		m_Location = n.m_Location;
+		m_Edges = n.m_Edges;
+	}
+	return *this;
+}
 
 double Node::x(void)
 {
-	return this->m_Location->x();
+	return this->m_Location.x();
 }
 double Node::y(void)
 {
-	return this->m_Location->y();
+	return this->m_Location.y();
 }
 double Node::z(void)
 {
-	return this->m_Location->z();
+	return this->m_Location.z();
 }
 
-Location *Node::location(void)
+Location Node::location(void)
 {
 	return this->m_Location;
 }
+
 const list<Edge *> & Node::adjacentEdges(void)
 {
 	return this->m_Edges;
 }
+
 list<Node *> Node::neighbours(void)
 {
 	list<Node *> neighbours;
