@@ -54,6 +54,7 @@ std::list<Node *> PathFinder::findPathFromTo(Node * from, Node * to)
 		if(current->m_N == m_Goal.m_N)
 		{
 			m_bGoalReached = true;
+			m_Goal.m_Father = current->m_Father;
 		}
 
 		//Sinon...
@@ -123,23 +124,16 @@ void PathFinder::setGoal(Node * node)
 	m_Goal.m_N = node;
 }
 
-
 double PathFinder::computeMovingCost(const Score & current, const Score & next)
 {
-	/*double	dx = abs(current.m_N->x() - next.m_N->x()),
-			dy = abs(current.m_N->y() - next.m_N->y());
-
-	return std::min(dx, dy);*/
-	return (current.m_N)->distanceTo(next.m_N);
+	return (current.m_N)->diagonalDistanceTo2D(next.m_N);
+	/*return (current.m_N)->distanceTo2D(next.m_N);*/
 }
 
 double PathFinder::computeHScore(const Score & current)
 {
-	/*double	dx = abs(current.m_N->x() - m_Goal.m_N->x()),
-			dy = abs(current.m_N->y() - m_Goal.m_N->y());
-
-	return std::min(dx, dy);*/
-	return (current.m_N)->distanceTo(m_Goal.m_N);
+	return (m_Goal.m_N)->diagonalDistanceTo2D(current.m_N);
+	/*return (current.m_N)->distanceTo2D(m_Goal.m_N);*/
 }
 
 std::list<Node *> PathFinder::reconstructPath(void)
@@ -148,8 +142,12 @@ std::list<Node *> PathFinder::reconstructPath(void)
 
 	if(m_bGoalReached)
 	{
-		m_Path.push_back(current->m_N);
-		current = current->m_Father;
+		do
+		{
+			m_Path.push_back(current->m_N);
+			current = current->m_Father;
+
+		}while(current);
 	}
 
 	return m_Path;

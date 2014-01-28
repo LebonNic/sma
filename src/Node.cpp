@@ -58,6 +58,23 @@ double Node::distanceTo(Node *to)
 
 	return sqrt(dx*dx + dy*dy + dz*dz);
 }
+
+double Node::distanceTo2D(Node *to)
+{
+	double dx = to->x() - x();
+	double dy = to->y() - y();
+
+	return sqrt(dx*dx + dy*dy);
+}
+
+double Node::diagonalDistanceTo2D(Node *to)
+{
+	double	dx = abs(this->x() - to->x()),
+			dy = abs(this->y() - to->y());
+
+	return std::max(dx, dy);
+}
+
 void Node::addEdge(Edge* edge)
 {
 	m_Edges.push_back(edge);
