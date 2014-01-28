@@ -24,7 +24,7 @@ Score::Score(const Score & s)
 	this->m_dGScore = s.m_dGScore;
 	this->m_dHScore = s.m_dHScore;
 	this->m_N = s.m_N;
-	this->m_Father = m_Father;
+	this->m_Father = s.m_Father;
 }
 
 Score & Score::operator=(const Score & s)

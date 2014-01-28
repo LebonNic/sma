@@ -138,7 +138,7 @@ void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double 
 			this->linkNodeFromTo(nodeGrid[slice - j][slice - j - z - zbis], nodeGrid[slice - j - 1][slice - j - z - zbis - 1]);
 		}
 	}
-	this->findPathFromTo(nodeGrid[0][0], nodeGrid[5][7]);
+	this->findPathFromTo(nodeGrid[0][0], nodeGrid[3][4]);
 }
 
 

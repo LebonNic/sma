@@ -61,7 +61,7 @@ std::list<Node *> PathFinder::findPathFromTo(Node * from, Node * to)
 		{
 			//On retire le premier élément des noeuds à parcourir
 			m_OpenSet.erase(m_OpenSet.begin());
-			m_ClosedSet.push_back(current);
+			m_ClosedSet.push_back(new Score(*current));
 
 			//Parcours des voisins du noeuds courrant
 			std::list<Node *> neighboursList = (current->m_N)->neighbours();
@@ -126,11 +126,19 @@ void PathFinder::setGoal(Node * node)
 
 double PathFinder::computeMovingCost(const Score & current, const Score & next)
 {
+	/*double	dx = abs(current.m_N->x() - next.m_N->x()),
+			dy = abs(current.m_N->y() - next.m_N->y());
+
+	return std::min(dx, dy);*/
 	return (current.m_N)->distanceTo(next.m_N);
 }
 
 double PathFinder::computeHScore(const Score & current)
 {
+	/*double	dx = abs(current.m_N->x() - m_Goal.m_N->x()),
+			dy = abs(current.m_N->y() - m_Goal.m_N->y());
+
+	return std::min(dx, dy);*/
 	return (current.m_N)->distanceTo(m_Goal.m_N);
 }
 
