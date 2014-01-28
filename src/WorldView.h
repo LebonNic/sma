@@ -14,7 +14,7 @@ class WorldView
     Q_OBJECT
 public:
     explicit WorldView(World *world, QWidget *parent = NULL);
-   void update(void);
+	void update(void);
 signals:
 
 public slots:

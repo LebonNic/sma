@@ -54,9 +54,9 @@ double Node::distanceTo(Node *to)
 {
 	double dx = to->x() - x();
 	double dy = to->y() - y();
-	double dz = to->z() - z();
+	//double dz = to->z() - z();
 
-	return sqrt(dx*dx + dy*dy + dz*dz);
+	return sqrt(dx*dx + dy*dy /*+ dz*dz*/);
 }
 void Node::addEdge(Edge* edge)
 {

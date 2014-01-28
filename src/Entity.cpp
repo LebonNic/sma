@@ -1,21 +1,13 @@
 #include "Entity.h"
 
 
-Entity::Entity(double x, double y, double z, Owner owner, double maxHitPoints)
+Entity::Entity(double x, double y, double z, Graph *map, Owner owner)
 {
 	setLocation(new Location(x,y,z));
+	setMap(map);
 	setOwner(owner);
-	setMaxHitPoints(maxHitPoints);
-	setHitPoints(maxHitPoints);
 }
-Entity::Entity(Location *location, Owner owner, double maxHitPoints)
-{
-	setLocation(location);
-	setOwner(owner);
-	setMaxHitPoints(maxHitPoints);
-	setHitPoints(maxHitPoints);
-}
-Entity::~Entity(void) 
+Entity::~Entity(void)
 {
 	delete m_Location;
 }
@@ -29,24 +21,12 @@ void Entity::setOwner(Owner owner)
 {
 	m_Owner = owner;
 }
-void Entity::setMaxHitPoints(double maxHitPoints)
+void Entity::setMap(Graph *map)
 {
-	m_dMaxHitPoints = maxHitPoints;
-}
-void Entity::setHitPoints(double hitPoints)
-{
-	m_dHitPoints = hitPoints;
+	m_Map = map;
 }
 
 
-double Entity::hitPoints(void)
-{
-	return m_dHitPoints;
-}
-double Entity::maxHitPoints(void)
-{
-	return m_dMaxHitPoints;
-}
 Owner Entity::owner(void)
 {
 	return m_Owner;
@@ -54,6 +34,10 @@ Owner Entity::owner(void)
 Location *Entity::location(void)
 {
 	return m_Location;
+}
+Graph *Entity::map(void)
+{
+	return m_Map;
 }
 double Entity::x()
 {

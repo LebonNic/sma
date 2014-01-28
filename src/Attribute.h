@@ -1,7 +1,8 @@
 #pragma once
 
-enum AttributeId
+enum AttributeType
 {
+	hitPoints,
 	damageClose,
 	damageDistance,
 	damageBuilding,
@@ -9,22 +10,26 @@ enum AttributeId
 	defenseDistance,
 	defenseBuilding,
 	perceptionDistance,
-	stealth
+	stealth,
+	rangeClose,
+	rangeDistance
 };
 
 class Attribute
 {
 private:
-	AttributeId m_Id;
+	AttributeType m_Type;
 	double m_dValue;
 
+public:
+	static const unsigned int COUNT = 11;
+
+	Attribute(AttributeType type, double value);
 
 	void setValue(double value);
-public:
-	Attribute(void);
-	~Attribute(void);
+	void setType(AttributeType type);
 
-
+	AttributeType type(void);
 	double value(void);
 };
 
