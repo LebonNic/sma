@@ -1,6 +1,5 @@
 #include "Location.h"
 
-
 Location::Location()
 {
 	setX(0.0);
@@ -47,7 +46,6 @@ double Location::z()
 {
 	return m_dZ;
 }
-
 
 void Location::setX(double x)
 {
