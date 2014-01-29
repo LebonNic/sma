@@ -51,6 +51,16 @@ void WorldView::update(void)
 	Graph * map = m_World->getMap();
 
     nodes = map->nodes();
+
+	for(int i=10; i<20; ++i)
+		(*map)(5, i)->setReachable(false);
+
+	for(int i=10; i<20; ++i)
+		(*map)(20, i)->setReachable(false);
+
+	for(int i=5; i<20; ++i)
+		(*map)(i, 20)->setReachable(false);
+
 	for(unsigned int i = 0; i < map->height(); ++i)
 	{
 		for(unsigned int j = 0; j < map->width(); ++j)
@@ -58,22 +68,26 @@ void WorldView::update(void)
 			Node *node = nodes[i][j];
 			double x = node->x();
 			double y = node->y();
-			m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10);
+			if(node->isReachable())
+				m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10);
+			else
+				m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10, Qt::SolidLine, Qt::SolidPattern);
 		}
 	}
 
-	path = map->findPathFromTo(((*map)(0, 0)), ((*map)(5, 15)));
+	path = map->findPathFromTo(((*map)(5, 5)), ((*map)(10, 24)));
 	closedSet = map->getPathFinder().getClosedSet();
 	openSet = map->getPathFinder().getOpenSet();
 
-	for(auto ite = openSet.begin(); ite != openSet.end(); ++ite)
+	
+
+	/*for(auto ite = openSet.begin(); ite != openSet.end(); ++ite)
 	{
 		double x = (*ite)->m_N->x();
 		double y = (*ite)->m_N->y();
 		m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10, Qt::SolidLine, openSet_brush);
-	}
+	}*/
 	
-
 	for(auto ite = closedSet.begin(); ite != closedSet.end(); ++ite)
 	{
 		double x = (*ite)->m_N->x();
@@ -88,7 +102,7 @@ void WorldView::update(void)
 		m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10,Qt::SolidLine, path_brush);
 	}
 
-	list<Edge *> edges = map->edges();
+	/*list<Edge *> edges = map->edges();
 	for(auto it = edges.begin(); it != edges.end(); ++it)
     {
         Edge	* edge = *it;
@@ -101,7 +115,7 @@ void WorldView::update(void)
 				y2 = to->y();
 
 		m_WorldScene->addLine(x1 * m_dScale, y1 * m_dScale, x2 * m_dScale, y2 * m_dScale);
-    }
+    }*/
 }
 
 
