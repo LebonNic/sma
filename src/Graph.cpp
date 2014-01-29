@@ -143,6 +143,8 @@ void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double 
 			this->linkNodeFromTo(m_Nodes[slice - j][slice - j - z - zbis], m_Nodes[slice - j - 1][slice - j - z - zbis - 1]);
 		}
 	}
+
+	this->findPathFromTo(m_Nodes[0][0], m_Nodes[14][25]);
 }
 
 //vector<vector<unsigned int>> Graph::heightMap(void)

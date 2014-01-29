@@ -1,16 +1,18 @@
 #include "Node.h"
 using namespace std;
 
-Node::Node(const Location & location)
+Node::Node(const Location & location, bool reachable)
 {
 	m_Location = location;
+	m_bReachable = reachable;
 }
 
-Node::Node(double x, double y, double z)
+Node::Node(double x, double y, double z, bool reachable)
 {
 	m_Location.setX(x);
 	m_Location.setY(y);
 	m_Location.setZ(z);
+	m_bReachable = reachable;
 }
 
 Node::~Node(void)
@@ -21,6 +23,7 @@ Node::Node(const Node & n)
 {
 	m_Location = n.m_Location;
 	m_Edges = n.m_Edges;
+	m_bReachable = n.m_bReachable;
 }
 
 Node & Node::operator =(const Node & n)
@@ -33,15 +36,15 @@ Node & Node::operator =(const Node & n)
 	return *this;
 }
 
-double Node::x(void)
+double Node::x(void) const
 {
 	return this->m_Location.x();
 }
-double Node::y(void)
+double Node::y(void) const
 {
 	return this->m_Location.y();
 }
-double Node::z(void)
+double Node::z(void) const
 {
 	return this->m_Location.z();
 }
@@ -51,12 +54,12 @@ Location Node::location(void)
 	return this->m_Location;
 }
 
-const list<Edge *> & Node::adjacentEdges(void)
+const list<Edge *> & Node::adjacentEdges(void) const
 {
 	return this->m_Edges;
 }
 
-list<Node *> Node::neighbours(void)
+const list<Node *> Node::neighbours(void) const
 {
 	list<Node *> neighbours;
 	for(auto it = m_Edges.begin(); it != m_Edges.end(); ++it)
@@ -97,4 +100,14 @@ double Node::diagonalDistanceTo2D(Node *to)
 void Node::addEdge(Edge* edge)
 {
 	m_Edges.push_back(edge);
+}
+
+bool Node::getReachable() const
+{
+	return m_bReachable;
+}
+
+void Node::setReachable(bool reachable)
+{
+	m_bReachable = reachable;
 }

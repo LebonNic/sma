@@ -12,12 +12,10 @@ public:
 	Location(const Location & l);
 	Location & operator=(const Location & l);
 	~Location(void);
-
 	
-	double x();
-	double y();
-	double z();
-
+	double x() const;
+	double y() const;
+	double z() const;
 
 	void setX(double x);
 	void setY(double y);

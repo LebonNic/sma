@@ -34,15 +34,15 @@ Location & Location::operator=(const Location & l)
 	return *this;
 }
 	
-double Location::x()
+double Location::x() const
 {
 	return m_dX;
 }
-double Location::y()
+double Location::y() const
 {
 	return m_dY;
 }
-double Location::z()
+double Location::z() const
 {
 	return m_dZ;
 }
