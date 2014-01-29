@@ -18,6 +18,11 @@ Graph::~Graph(void)
 	}
 }
 
+const PathFinder & Graph::getPathFinder() const
+{
+	return m_PathFinder;
+}
+
 void Graph::setWidth(unsigned int width)
 {
 	this->m_uWidth = width;
@@ -28,17 +33,17 @@ void Graph::setHeight(unsigned int height)
 	this->m_uHeight = height;
 }
 
-Node Graph::operator()(unsigned int i, unsigned int j) const
+Node * Graph::operator()(unsigned int i, unsigned int j) const
 {
 	if(i < m_uHeight && j < m_uWidth)
 	{
-		return *(m_Nodes[i][j]);
+		return m_Nodes[i][j];
 	}
 	else
 		throw runtime_error("Out of range in the graph's nodes array.");
 }
 
-std::vector<std::vector<Node *>> Graph::nodes(void)
+const std::vector<std::vector<Node *>> & Graph::nodes(void)
 {
 	return m_Nodes;
 }
@@ -61,7 +66,7 @@ unsigned int Graph::height(void)
 Node *Graph::addNode(double x, double y, double z)
 {
 	Node *node = new Node(x,y,z);
-	m_Nodes[x][y] = node;
+	m_Nodes[x][y] = node; //TODO attention au cast implicite
 
 	return node;
 }
@@ -144,7 +149,7 @@ void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double 
 		}
 	}
 
-	this->findPathFromTo(m_Nodes[0][0], m_Nodes[14][25]);
+	//this->findPathFromTo(m_Nodes[0][0], m_Nodes[4][3]);
 }
 
 //vector<vector<unsigned int>> Graph::heightMap(void)

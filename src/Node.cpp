@@ -49,7 +49,7 @@ double Node::z(void) const
 	return this->m_Location.z();
 }
 
-Location Node::location(void)
+Location Node::location(void) const
 {
 	return this->m_Location;
 }
@@ -59,20 +59,26 @@ const list<Edge *> & Node::adjacentEdges(void) const
 	return this->m_Edges;
 }
 
-const list<Node *> Node::neighbours(void) const
+list<Node *> Node::neighbours(void) const
 {
 	list<Node *> neighbours;
 	for(auto it = m_Edges.begin(); it != m_Edges.end(); ++it)
 	{
 		if (this == (*it)->to())
-			neighbours.push_back((*it)->from());
+		{
+			if((*it)->from()->isReachable())
+				neighbours.push_back((*it)->from());
+		}
 		else
-			neighbours.push_back((*it)->to());
+		{
+			if((*it)->to()->isReachable())
+				neighbours.push_back((*it)->to());
+		}
 	}
 	return neighbours;
 }
 
-double Node::distanceTo(Node *to)
+double Node::distanceTo(Node *to) const
 {
 	double dx = to->x() - x();
 	double dy = to->y() - y();
@@ -81,7 +87,7 @@ double Node::distanceTo(Node *to)
 	return sqrt(dx*dx + dy*dy + dz*dz);
 }
 
-double Node::distanceTo2D(Node *to)
+double Node::distanceTo2D(Node *to) const
 {
 	double dx = to->x() - x();
 	double dy = to->y() - y();
@@ -89,7 +95,7 @@ double Node::distanceTo2D(Node *to)
 	return sqrt(dx*dx + dy*dy);
 }
 
-double Node::diagonalDistanceTo2D(Node *to)
+double Node::diagonalDistanceTo2D(Node *to) const
 {
 	double	dx = abs(this->x() - to->x()),
 			dy = abs(this->y() - to->y());
@@ -102,7 +108,7 @@ void Node::addEdge(Edge* edge)
 	m_Edges.push_back(edge);
 }
 
-bool Node::getReachable() const
+bool Node::isReachable() const
 {
 	return m_bReachable;
 }

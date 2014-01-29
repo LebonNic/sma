@@ -24,16 +24,16 @@ public:
 	double y(void) const;
 	double z(void) const;
 
-	Location location(void);
+	Location location(void) const;
 	const std::list<Edge *> & adjacentEdges(void) const;
-	const std::list<Node *> neighbours(void) const;
+	std::list<Node *> neighbours(void) const;
 
-	bool getReachable() const;
+	bool isReachable() const;
 	void setReachable(bool reachable);
 
-	double distanceTo(Node *to);
-	double distanceTo2D(Node *to);
-	double diagonalDistanceTo2D(Node *to);
+	double distanceTo(Node *to) const;
+	double distanceTo2D(Node *to) const;
+	double diagonalDistanceTo2D(Node *to) const;
 	void addEdge(Edge* edge);
 };
 

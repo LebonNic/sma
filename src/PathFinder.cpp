@@ -114,6 +114,16 @@ void PathFinder::processMemoryCleaning()
 	m_Path.clear();
 }
 
+const std::vector<Score *> & PathFinder::getOpenSet() const
+{
+	return m_OpenSet;
+}
+
+const std::vector<Score *> & PathFinder::getClosedSet() const
+{
+	return m_ClosedSet;
+}
+
 void PathFinder::setStartingNode(Node * node)
 {
 	m_StartingNode.m_N = node;
@@ -126,14 +136,14 @@ void PathFinder::setGoal(Node * node)
 
 double PathFinder::computeMovingCost(const Score & current, const Score & next)
 {
-	return (current.m_N)->diagonalDistanceTo2D(next.m_N);
-	/*return (current.m_N)->distanceTo2D(next.m_N);*/
+	/*return (current.m_N)->diagonalDistanceTo2D(next.m_N);*/
+	return (current.m_N)->distanceTo2D(next.m_N);
 }
 
 double PathFinder::computeHScore(const Score & current)
 {
-	return (m_Goal.m_N)->diagonalDistanceTo2D(current.m_N);
-	/*return (current.m_N)->distanceTo2D(m_Goal.m_N);*/
+	/*return (m_Goal.m_N)->diagonalDistanceTo2D(current.m_N);*/
+	return (current.m_N)->distanceTo2D(m_Goal.m_N);
 }
 
 std::list<Node *> PathFinder::reconstructPath(void)

@@ -31,6 +31,8 @@ public:
 	PathFinder(void);
 	~PathFinder(void);
 	std::list<Node *> findPathFromTo(Node * from, Node * to);
+	const std::vector<Score *> & getOpenSet() const;
+	const std::vector<Score *> & getClosedSet() const;
 	Node * getStartingNode(void)const;
 	Node * getGoal(void) const;
 	
