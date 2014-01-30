@@ -17,7 +17,7 @@ private:
 	
 	void setWaterLevel(double waterLevel);
 public:
-	World(unsigned int xSize, unsigned int ySize, double scale, unsigned int seed);
+	World(unsigned int size, double scale, unsigned int seed);
 	~World(void);
 
 

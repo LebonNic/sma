@@ -89,38 +89,38 @@ std::list<Node *> Graph::findPathFromTo(Node * from, Node * to)
 	return m_PathFinder.findPathFromTo(from, to);
 }
 
-void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double scale, unsigned int seed)
+void Graph::generateRandomPerlin(unsigned int size, double scale, unsigned int seed)
 {
     PerlinNoise noise(seed);
-	m_Nodes = vector<vector<Node *>>(xSize);
-	for (unsigned int i = 0; i < xSize; ++i)
+	m_Nodes = vector<vector<Node *>>(size);
+	for (unsigned int i = 0; i < size; ++i)
 	{
-		m_Nodes[i] = vector<Node *>(ySize);
+		m_Nodes[i] = vector<Node *>(size);
 	}
 
-	setWidth(xSize);
-	setHeight(ySize);
-    for(unsigned int y = 0; y < ySize; ++y)
+	setWidth(size);
+	setHeight(size);
+    for(unsigned int y = 0; y < size; ++y)
 	{
-        for(unsigned int x = 0; x < xSize; ++x)
+        for(unsigned int x = 0; x < size; ++x)
 		{
 			double z = noise.noise(x * scale, y * scale, 0.5);
 			m_Nodes[x][y] = this->addNode(x,y,z);
 		}
 	}
 
-	for(unsigned int i = 0; i < xSize; ++i)
-		for(unsigned int j = 0; j < ySize - 1; ++j)
+	for(unsigned int i = 0; i < size; ++i)
+		for(unsigned int j = 0; j < size - 1; ++j)
 			this->linkNodeFromTo(m_Nodes[i][j], m_Nodes[i][j+1]);
 
-	for(unsigned int j = 0; j  < ySize; ++j )
-		for(unsigned int i = 0; i < xSize - 1; ++i)
+	for(unsigned int j = 0; j  < size; ++j )
+		for(unsigned int i = 0; i < size - 1; ++i)
 			this->linkNodeFromTo(m_Nodes[i][j], m_Nodes[i+1][j]);
 
 	////Parcours en diagonale du graphe
-	for(unsigned int slice = 0; slice < xSize + ySize - 1; ++slice)
+	for(unsigned int slice = 0; slice < size + size - 1; ++slice)
 	{
-		unsigned int z = slice < xSize ? 0 : slice - xSize + 1;
+		unsigned int z = slice < size ? 0 : slice - size + 1;
 
 		for(unsigned int j = z; j < slice - z; ++j)
 		{
@@ -129,13 +129,13 @@ void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double 
 	}
 
 	int zbis = 0;
-	for(int slice = xSize + ySize - 2; slice >=0 ; --slice)
+	for(int slice = size + size - 2; slice >=0 ; --slice)
 	{
 		int z;
 
-		if(slice >= (int)(xSize - 1))
+		if(slice >= (int)(size - 1))
 		{
-			z = (slice - xSize + 1);
+			z = (slice - size + 1);
 		}
 		else
 		{
@@ -150,6 +150,16 @@ void Graph::generateRandomPerlin(unsigned int xSize, unsigned int ySize, double 
 	}
 
 	//this->findPathFromTo(m_Nodes[0][0], m_Nodes[4][3]);
+}
+
+void Graph::addObstacle(const Location & l)
+{
+	m_Nodes[l.x()][l.y()]->setReachable(false);
+}
+
+void Graph::addObstacle(unsigned int x, unsigned int y)
+{
+	m_Nodes[x][y]->setReachable(false);
 }
 
 //vector<vector<unsigned int>> Graph::heightMap(void)

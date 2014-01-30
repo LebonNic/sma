@@ -2,11 +2,11 @@
 using namespace std;
 
 
-World::World(unsigned int xSize, unsigned int ySize, double scale, unsigned int seed)
+World::World(unsigned int size, double scale, unsigned int seed)
 {
 	m_Map = new Graph();
 	setWaterLevel(0.25);
-	m_Map->generateRandomPerlin(xSize, ySize, scale, seed);
+	m_Map->generateRandomPerlin(size, scale, seed);
 }
 World::~World(void)
 {

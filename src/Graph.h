@@ -10,8 +10,6 @@
 #include "PerlinNoise.h"
 #include "Score.h"
 
-
-
 class Graph
 {
 private:
@@ -37,8 +35,10 @@ public:
 	Node *addNode(double x, double y, double z);
 	void linkNodeFromTo(Node *from, Node *to);
 	std::list<Node *> findPathFromTo(Node * from, Node * to);
+	void addObstacle(const Location & l);
+	void addObstacle(unsigned int x, unsigned int y);
 
-	void generateRandomPerlin(unsigned int xSize, unsigned int ySize, double scale = 1.0, unsigned int seed = 0);
+	void generateRandomPerlin(unsigned int size, double scale = 1.0, unsigned int seed = 0);
 	const PathFinder & getPathFinder() const;
 
 	/*std::vector<std::vector<unsigned int>> heightMap(void);*/
