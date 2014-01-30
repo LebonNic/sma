@@ -43,8 +43,8 @@ void WorldView::update(void)
 							closedSet;
 
 	QBrush	path_brush(QColor(255, 0, 0), Qt::SolidPattern),
-			closedSet_brush(QColor(0, 255, 0), Qt::Dense3Pattern),
-			openSet_brush(QColor(0, 0, 255), Qt::Dense3Pattern);
+			closedSet_brush(QColor(0, 255, 0), Qt::SolidPattern),
+			openSet_brush(QColor(0, 0, 255), Qt::SolidPattern);
 
     m_WorldScene->clear();
 
@@ -52,14 +52,14 @@ void WorldView::update(void)
 
     nodes = map->nodes();
 
-	for(int i=10; i<20; ++i)
+	/*for(int i=10; i<20; ++i)
 		(*map)(5, i)->setReachable(false);
 
 	for(int i=10; i<20; ++i)
 		(*map)(20, i)->setReachable(false);
 
 	for(int i=5; i<21; ++i)
-		(*map)(i, 20)->setReachable(false);
+		(*map)(i, 20)->setReachable(false);*/
 
 	for(unsigned int i = 0; i < map->height(); ++i)
 	{
@@ -75,11 +75,12 @@ void WorldView::update(void)
 		}
 	}
 
-	path = map->findPathFromTo(((*map)(20, 5)), ((*map)(10, 24)));
+	Node	* startingNode = (*map)(30,30),
+			* goal = (*map)(35, 35);
+
+	path = map->findPathFromTo(startingNode, goal);
 	closedSet = map->getPathFinder().getClosedSet();
 	openSet = map->getPathFinder().getOpenSet();
-
-	
 
 	/*for(auto ite = openSet.begin(); ite != openSet.end(); ++ite)
 	{
@@ -101,6 +102,9 @@ void WorldView::update(void)
 		double y = (*ite)->y();
 		m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10,Qt::SolidLine, path_brush);
 	}
+
+	m_WorldScene->addEllipse(startingNode->x() * m_dScale - 5, startingNode->y() * m_dScale - 5,10,10,Qt::SolidLine, path_brush);
+	m_WorldScene->addEllipse(goal->x() * m_dScale - 5, goal->y() * m_dScale - 5,10,10,Qt::SolidLine, path_brush);
 
 	/*list<Edge *> edges = map->edges();
 	for(auto it = edges.begin(); it != edges.end(); ++it)

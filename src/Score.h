@@ -8,8 +8,7 @@ public:
 	Score	* m_Father;
 
 	double	m_dFScore,
-			m_dGScore,
-			m_dHScore;
+			m_dGScore;
 
 	Score(Node * n, double gScore);
 	Score();

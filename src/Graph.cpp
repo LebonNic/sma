@@ -117,7 +117,7 @@ void Graph::generateRandomPerlin(unsigned int size, double scale, unsigned int s
 		for(unsigned int i = 0; i < size - 1; ++i)
 			this->linkNodeFromTo(m_Nodes[i][j], m_Nodes[i+1][j]);
 
-	////Parcours en diagonale du graphe
+	//Parcours en diagonale du graphe
 	for(unsigned int slice = 0; slice < size + size - 1; ++slice)
 	{
 		unsigned int z = slice < size ? 0 : slice - size + 1;
@@ -128,6 +128,7 @@ void Graph::generateRandomPerlin(unsigned int size, double scale, unsigned int s
 		}
 	}
 
+	//Parcours en diagonale du graphe
 	int zbis = 0;
 	for(int slice = size + size - 2; slice >=0 ; --slice)
 	{
@@ -148,8 +149,6 @@ void Graph::generateRandomPerlin(unsigned int size, double scale, unsigned int s
 			this->linkNodeFromTo(m_Nodes[slice - j][slice - j - z - zbis], m_Nodes[slice - j - 1][slice - j - z - zbis - 1]);
 		}
 	}
-
-	//this->findPathFromTo(m_Nodes[0][0], m_Nodes[4][3]);
 }
 
 void Graph::addObstacle(const Location & l)
