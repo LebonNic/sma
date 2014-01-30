@@ -82,7 +82,7 @@ std::list<Node *> PathFinder::findPathFromTo(Node * from, Node * to)
 					{
 						neighbour.m_Father = current;
 						neighbour.m_dGScore = possibleGScore;
-						neighbour.m_dFScore = neighbour.m_dGScore + this->computeHScore(neighbour);
+						neighbour.m_dFScore = neighbour.m_dGScore +  (this->computeHScore(neighbour)); //TODO Possibilité d'ajouter un tie breaker ici
 
 						if(ite == m_OpenSet.end())
 							m_OpenSet.push_back(new Score(neighbour));

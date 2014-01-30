@@ -58,7 +58,7 @@ void WorldView::update(void)
 	for(int i=10; i<20; ++i)
 		(*map)(20, i)->setReachable(false);
 
-	for(int i=5; i<20; ++i)
+	for(int i=5; i<21; ++i)
 		(*map)(i, 20)->setReachable(false);
 
 	for(unsigned int i = 0; i < map->height(); ++i)
@@ -75,7 +75,7 @@ void WorldView::update(void)
 		}
 	}
 
-	path = map->findPathFromTo(((*map)(5, 5)), ((*map)(10, 24)));
+	path = map->findPathFromTo(((*map)(20, 5)), ((*map)(10, 24)));
 	closedSet = map->getPathFinder().getClosedSet();
 	openSet = map->getPathFinder().getOpenSet();
 
