@@ -1,3 +1,10 @@
+/**
+ * @file Node.cpp
+ * @brief Node class definition
+ * @author Antoine Colmard
+ * @author Nicolas Prugne
+ */
+
 #include "Node.h"
 using namespace std;
 

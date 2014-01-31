@@ -1,3 +1,11 @@
+/**
+ * @file Graph.cpp
+ * @brief Graph class definition
+ * @author Antoine Colmard
+ * @author Nicolas Prugne
+ */
+
+
 #include "Graph.h"
 using namespace std;
 
@@ -63,7 +71,7 @@ unsigned int Graph::height(void)
 	return m_uHeight;
 }
 
-Node *Graph::addNode(double x, double y, double z)
+Node *Graph::addNode(unsigned int x, unsigned int y, double z)
 {
 	Node *node = new Node(x,y,z);
 	m_Nodes[x][y] = node; //TODO attention au cast implicite
