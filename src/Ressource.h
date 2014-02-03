@@ -18,7 +18,7 @@ private:
 	void setRessourceType(RessourceType type);
 	void setQuantity(double quantity);
 public:
-	Ressource(RessourceType type, double x = 0.0, double y = 0.0, double z = 0.0, Owner owner = Entity::NATURE_OWNER, double quantity = 100.0);
+	Ressource(RessourceType type, double x, double y, double z, Graph * map, Owner owner, double quantity);
 	~Ressource(void);
 
 

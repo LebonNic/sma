@@ -1,8 +1,8 @@
 #include "Ressource.h"
 
 
-Ressource::Ressource(RessourceType type, double x, double y, double z, Owner owner, double quantity)
-	: PassiveEntity(PassiveEntityType::ressource,x,y,z,owner)
+Ressource::Ressource(RessourceType type, double x, double y, double z, Graph * map, Owner owner, double quantity)
+	: PassiveEntity(PassiveEntityType::ressource,x,y,z,map,owner)
 {
 	setRessourceType(type);
 	setQuantity(quantity);

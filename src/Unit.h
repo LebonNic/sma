@@ -34,7 +34,7 @@ public:
 
 
 	bool followPath(void);
-	bool moveTo(Location *location);
+	bool moveTo(const Location & location);
 
 
 	// Actions

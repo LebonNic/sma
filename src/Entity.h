@@ -7,11 +7,11 @@ typedef unsigned Owner;
 class Entity
 {
 protected:
-	Location *m_Location;
+	Location m_Location;
 	Owner m_Owner;
 	Graph *m_Map;
 
-	void setLocation(Location *location);
+	void setLocation(const Location & location);
 	void setOwner(Owner owner);
 	void setMap(Graph *map);
 public:
@@ -21,7 +21,7 @@ public:
 	~Entity(void);
 
 	Owner owner(void);
-	Location *location(void);
+	Location location(void);
 	Graph *map(void);
 	double x(void);
 	double y(void);

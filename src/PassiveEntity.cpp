@@ -2,9 +2,10 @@
 #include "Entity.h"
 
 
-PassiveEntity::PassiveEntity(PassiveEntityType type, double x, double y, double z, Owner owner, double quantity)
-	: Entity(x,y,z,owner,quantity)
+PassiveEntity::PassiveEntity(PassiveEntityType type, double x, double y, double z, Graph * map, Owner owner)
+	: Entity(x,y,z, map, owner)
 {
+	
 	setType(type);
 }
 PassiveEntity::~PassiveEntity(void)

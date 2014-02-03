@@ -3,17 +3,16 @@
 
 Entity::Entity(double x, double y, double z, Graph *map, Owner owner)
 {
-	setLocation(new Location(x,y,z));
+	setLocation(Location(x,y,z));
 	setMap(map);
 	setOwner(owner);
 }
 Entity::~Entity(void)
 {
-	delete m_Location;
 }
 
 
-void Entity::setLocation(Location *location)
+void Entity::setLocation(const Location & location)
 {
 	m_Location = location;
 }
@@ -31,7 +30,7 @@ Owner Entity::owner(void)
 {
 	return m_Owner;
 }
-Location *Entity::location(void)
+Location Entity::location(void)
 {
 	return m_Location;
 }
@@ -41,13 +40,13 @@ Graph *Entity::map(void)
 }
 double Entity::x()
 {
-	return m_Location->x();
+	return m_Location.x();
 }
 double Entity::y()
 {
-	return m_Location->y();
+	return m_Location.y();
 }
 double Entity::z()
 {
-	return m_Location->z();
+	return m_Location.z();
 }

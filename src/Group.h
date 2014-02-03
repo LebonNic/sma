@@ -11,7 +11,7 @@ class Group :
 private:
 	std::list<Unit *> m_Units;
 public:
-	Group(double x, double y, double z, Owner owner, double maxHitPoints);
+	Group(double x, double y, double z, Graph *map, Owner owner);
 	~Group(void);
 };
 

@@ -25,11 +25,13 @@ public:
 	void addActiveEntity(ActiveEntity *entity);
 
 
-    std::list<Node *> nodes(void);
-    std::list<PassiveEntity *> World::passiveEntities(void);
+    std::vector<std::vector<Node *>> nodes(void);
+    std::list<PassiveEntity *> passiveEntities(void);
 	Graph * getGraph(void);
 
 	void populateMap(double goldDensity, double woodDensity, double foodDensity);
+
+	Graph * getMap(void);
 
 	void refresh(void);
 	void display(void);
