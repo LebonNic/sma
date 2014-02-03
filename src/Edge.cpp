@@ -1,3 +1,10 @@
+/**
+ * @file Edge.cpp
+ * @brief Edge class definition
+ * @author Antoine Colmard
+ * @author Nicolas Prugne
+ */
+
 #include "Edge.h"
 using namespace std;
 
@@ -62,7 +69,7 @@ bool Edge::isDirected(void)
 
 
 
-void Edge::setUnreachable(void)
+void Edge::setUncrossable(void)
 {
 	setCost(numeric_limits<double>::infinity());
 }

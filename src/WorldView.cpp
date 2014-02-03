@@ -37,20 +37,76 @@ WorldView::WorldView(World *world, QWidget *parent) :
 void WorldView::update(void)
 {
     // Reset objects
+	std::vector<std::vector<Node *>> nodes;
+	std::list<Node *> path;
+	std::vector<Score *>	openSet,
+							closedSet;
+
+	QBrush	path_brush(QColor(255, 0, 0), Qt::SolidPattern),
+			closedSet_brush(QColor(0, 255, 0), Qt::SolidPattern),
+			openSet_brush(QColor(0, 0, 255), Qt::SolidPattern);
+
     m_WorldScene->clear();
 
-	Graph * map = m_World->getGraph();
+	Graph * map = m_World->getMap();
 
-    list<Node *> nodes = map->nodes();
-    for(auto it = nodes.begin(); it != nodes.end(); ++it)
-    {
-        Node *node = *it;
-        double x = node->x();
-        double y = node->y();
-		m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10);
-    }
+    nodes = map->nodes();
 
-	list<Edge *> edges = map->edges();
+	/*for(int i=10; i<20; ++i)
+		(*map)(5, i)->setReachable(false);
+
+	for(int i=10; i<20; ++i)
+		(*map)(20, i)->setReachable(false);
+
+	for(int i=5; i<21; ++i)
+		(*map)(i, 20)->setReachable(false);*/
+
+	for(unsigned int i = 0; i < map->height(); ++i)
+	{
+		for(unsigned int j = 0; j < map->width(); ++j)
+		{
+			Node *node = nodes[i][j];
+			double x = node->x();
+			double y = node->y();
+			if(node->isReachable())
+				m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10);
+			else
+				m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10, Qt::SolidLine, Qt::SolidPattern);
+		}
+	}
+
+	Node	* startingNode = (*map)(30,30),
+			* goal = (*map)(35, 35);
+
+	path = map->findPathFromTo(startingNode, goal);
+	closedSet = map->getPathFinder().getClosedSet();
+	openSet = map->getPathFinder().getOpenSet();
+
+	/*for(auto ite = openSet.begin(); ite != openSet.end(); ++ite)
+	{
+		double x = (*ite)->m_N->x();
+		double y = (*ite)->m_N->y();
+		m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10, Qt::SolidLine, openSet_brush);
+	}*/
+	
+	for(auto ite = closedSet.begin(); ite != closedSet.end(); ++ite)
+	{
+		double x = (*ite)->m_N->x();
+		double y = (*ite)->m_N->y();
+		m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10, Qt::SolidLine, closedSet_brush);
+	}
+
+	for(auto ite = path.begin(); ite != path.end(); ++ite)
+	{
+		double x = (*ite)->x();
+		double y = (*ite)->y();
+		m_WorldScene->addEllipse(x * m_dScale - 5, y * m_dScale - 5,10,10,Qt::SolidLine, path_brush);
+	}
+
+	m_WorldScene->addEllipse(startingNode->x() * m_dScale - 5, startingNode->y() * m_dScale - 5,10,10,Qt::SolidLine, path_brush);
+	m_WorldScene->addEllipse(goal->x() * m_dScale - 5, goal->y() * m_dScale - 5,10,10,Qt::SolidLine, path_brush);
+
+	/*list<Edge *> edges = map->edges();
 	for(auto it = edges.begin(); it != edges.end(); ++it)
     {
         Edge	* edge = *it;
@@ -63,7 +119,7 @@ void WorldView::update(void)
 				y2 = to->y();
 
 		m_WorldScene->addLine(x1 * m_dScale, y1 * m_dScale, x2 * m_dScale, y2 * m_dScale);
-    }
+    }*/
 }
 
 

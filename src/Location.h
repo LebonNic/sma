@@ -10,12 +10,10 @@ public:
 	Location();
 	Location(double x, double y, double z);
 	~Location(void);
-
 	
-	double x();
-	double y();
-	double z();
-
+	double x() const;
+	double y() const;
+	double z() const;
 
 	void setX(double x);
 	void setY(double y);
