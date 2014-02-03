@@ -1,0 +1,11 @@
+hitPoints				100.0
+damageClose				5.0
+damageDistance			7.5
+damageBuilding			2.5
+defenseClose			0.25
+defenseDistance			0.5
+defenseBuilding			0.25
+perceptionDistance		3.0
+stealth					15.0
+rangeClose				1.0
+rangeDistance			10.0

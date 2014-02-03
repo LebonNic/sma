@@ -1,8 +1,8 @@
 #include "Building.h"
 
 
-Building::Building(double x, double y, double z, Owner owner, double maxHitPoints)
-	: ActiveEntity(x,y,z,owner,maxHitPoints)
+Building::Building(double x, double y, double z, Graph *map, Owner owner)
+	: ActiveEntity(x,y,z,map,owner)
 {
 }
 

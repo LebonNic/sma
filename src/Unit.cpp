@@ -141,6 +141,7 @@ bool Unit::moveTo(Location *location)
 {
 	Location *current = this->location();
 	this->m_Path = this->map()->findPathFromTo(
-		this->map((unsigned int) current->x(), (unsigned int) current->y()),
-		this->map((unsigned int) location->x(), (unsigned int) location->y()));
+		(*(this->map())) ( (unsigned int) current->x(), (unsigned int) current->y() ),
+		(*(this->map())) ( (unsigned int) location->x(), (unsigned int) location->y() )
+	);
 }
