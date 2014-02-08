@@ -8,8 +8,7 @@ enum RessourceType
 	food
 };
 
-class Ressource :
-	public PassiveEntity
+class Ressource : public PassiveEntity
 {
 private:
 	RessourceType m_RessourceType;

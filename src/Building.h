@@ -1,11 +1,10 @@
 #pragma once
-#include "ActiveEntity.h"
+#include "Agent.h"
 
-class Building
-	: public ActiveEntity
+class Building : public Agent
 {
 public:
-    Building(double x, double y, double z, Graph *map, Owner owner);
+    Building(double x, double y, double z, Graph *map, Owner owner, Behaviour * behaviour);
 	~Building(void);
 };
 

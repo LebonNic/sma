@@ -6,7 +6,7 @@
 #include "Ressource.h"
 #include "Graph.h"
 
-class World
+class World : public ActiveEntity
 {
 private:
     std::list<ActiveEntity *> m_ActiveEntities;
@@ -30,6 +30,7 @@ public:
 	Graph * getGraph(void);
 
 	void populateMap(double goldDensity, double woodDensity, double foodDensity);
+	void run();
 
 	Graph * getMap(void);
 

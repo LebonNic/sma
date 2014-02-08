@@ -9,3 +9,7 @@ Behaviour::Behaviour(void)
 Behaviour::~Behaviour(void)
 {
 }
+
+void Behaviour::execute()
+{
+}

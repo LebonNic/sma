@@ -1,8 +1,8 @@
 #include "Unit.h"
 
 
-Unit::Unit(const std::string & filename, double x, double y, double z, Graph *map, Owner owner)
-	: ActiveEntity(x,y,z,map,owner,ActiveEntityType::unit)
+Unit::Unit(const std::string & filename, double x, double y, double z, Graph *map, Owner owner, Behaviour * behaviour)
+	: Agent(x, y, z, map, owner, behaviour, AgentType::unit)
 {
 	loadUnit(filename);
 }

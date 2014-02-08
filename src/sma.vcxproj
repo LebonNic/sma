@@ -261,9 +261,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ActiveEntity.cpp" />
+    <ClCompile Include="Agent.cpp" />
     <ClCompile Include="Attribute.cpp" />
     <ClCompile Include="Behaviour.cpp" />
     <ClCompile Include="Building.cpp" />
+    <ClCompile Include="Civilization.cpp" />
     <ClCompile Include="Debug\moc_MainWindow.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
@@ -300,9 +302,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ActiveEntity.h" />
+    <ClInclude Include="Agent.h" />
     <ClInclude Include="Attribute.h" />
     <ClInclude Include="Behaviour.h" />
     <ClInclude Include="Building.h" />
+    <ClInclude Include="Civilization.h" />
     <ClInclude Include="Edge.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="GeneratedFiles\ui_MainWindow.h" />

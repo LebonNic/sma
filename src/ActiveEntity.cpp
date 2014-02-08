@@ -1,17 +1,30 @@
 #include "ActiveEntity.h"
 
-ActiveEntity::ActiveEntity(double x, double y, double z, Graph *map, Owner owner, ActiveEntityType type)
+ActiveEntity::ActiveEntity(double x, double y, double z, Graph *map, Owner owner, Behaviour * behaviour)
     : Entity(x,y,z,map,owner)
 {
-	this->setType(type);
+	m_Behaviour = behaviour;
 }
 
-void ActiveEntity::setType(ActiveEntityType type)
+ActiveEntity::ActiveEntity(const Location & location, Graph *map, Owner owner, Behaviour * behaviour)
+	: Entity(location, map, owner)
 {
-    this->m_Type = type;
+	m_Behaviour = behaviour;
 }
 
-ActiveEntityType ActiveEntity::type(void)
+ActiveEntity::ActiveEntity()
+	:Entity(0, 0, 0, NULL)
 {
-    return m_Type;
+
+}
+
+ActiveEntity::~ActiveEntity()
+{
+	if(m_Behaviour)
+		delete m_Behaviour;
+}
+
+void ActiveEntity::run()
+{
+	m_Behaviour->execute();
 }

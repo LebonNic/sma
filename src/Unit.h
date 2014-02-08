@@ -9,11 +9,11 @@
 #include "Graph.h"
 #include "Node.h"
 #include "Ressource.h"
+#include "Agent.h"
 class Group;
 
 
-class Unit :
-	public ActiveEntity
+class Unit : public Agent
 {
 private:
 	std::vector<Attribute> m_DefaultAttributes;
@@ -27,7 +27,7 @@ private:
 	void setAttribute(AttributeType id, double value);
 	void initializeAttributes(void);
 public:
-    Unit(const std::string & filename, double x, double y, double z, Graph *map, Owner owner);
+	Unit(const std::string & filename, double x, double y, double z, Graph *map, Owner owner, Behaviour * behaviour);
 
 
 	double attribute(AttributeType id);

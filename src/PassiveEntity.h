@@ -7,8 +7,7 @@ enum PassiveEntityType
 };
 
 
-class PassiveEntity :
-	public Entity
+class PassiveEntity : public Entity
 {
 protected:
 	PassiveEntityType m_Type;
