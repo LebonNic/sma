@@ -2,20 +2,20 @@
 
 unsigned int Entity::m_uCurrentId = 0;
 
-Entity::Entity(double x, double y, double z, Graph *map, Owner owner)
+Entity::Entity(double x, double y, double z, Graph *map/*, Owner owner*/)
 {
 	setLocation(Location(x,y,z));
 	setMap(map);
-	setOwner(owner);
+	/*setOwner(owner);*/
 	setId(Entity::m_uCurrentId);
 	Entity::m_uCurrentId++;
 }
 
-Entity::Entity(const Location & location, Graph *map, Owner owner)
+Entity::Entity(const Location & location, Graph *map/*, Owner owner*/)
 {
 	setLocation(location);
 	setMap(map);
-	setOwner(owner);
+	/*setOwner(owner);*/
 	setId(Entity::m_uCurrentId);
 	Entity::m_uCurrentId++;
 }
@@ -34,20 +34,20 @@ void Entity::setLocation(const Location & location)
 	m_Location = location;
 }
 
-void Entity::setOwner(Owner owner)
-{
-	m_Owner = owner;
-}
+//void Entity::setOwner(Owner owner)
+//{
+//	m_Owner = owner;
+//}
 
 void Entity::setMap(Graph *map)
 {
 	m_Map = map;
 }
 
-Owner Entity::owner(void)
-{
-	return m_Owner;
-}
+//Owner Entity::owner(void)
+//{
+//	return m_Owner;
+//}
 Location Entity::location(void)
 {
 	return m_Location;

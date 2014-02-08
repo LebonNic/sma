@@ -1,7 +1,7 @@
 #include "Agent.h"
 
-Agent::Agent(double x, double y, double z, Graph *map, Owner owner, Behaviour * behaviour, AgentType type)
-	: ActiveEntity(Location(x,y,z), map, owner, behaviour)
+Agent::Agent(double x, double y, double z, Graph *map, /*Owner owner,*/ Behaviour * behaviour, AgentType type)
+	: ActiveEntity(Location(x,y,z), map, behaviour)
 {
 	m_uType = type;
 }

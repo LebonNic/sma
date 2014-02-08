@@ -1,13 +1,13 @@
 #include "ActiveEntity.h"
 
-ActiveEntity::ActiveEntity(double x, double y, double z, Graph *map, Owner owner, Behaviour * behaviour)
-    : Entity(x,y,z,map,owner)
+ActiveEntity::ActiveEntity(double x, double y, double z, Graph *map, /*Owner owner,*/ Behaviour * behaviour)
+    : Entity(x,y,z,map)
 {
 	m_Behaviour = behaviour;
 }
 
-ActiveEntity::ActiveEntity(const Location & location, Graph *map, Owner owner, Behaviour * behaviour)
-	: Entity(location, map, owner)
+ActiveEntity::ActiveEntity(const Location & location, Graph *map, /*Owner owner,*/ Behaviour * behaviour)
+	: Entity(location, map)
 {
 	m_Behaviour = behaviour;
 }

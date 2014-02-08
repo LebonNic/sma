@@ -14,7 +14,7 @@ protected:
 
 	void setType(PassiveEntityType type);
 public:
-	PassiveEntity(PassiveEntityType type, double x, double y, double z, Graph * map, Owner owner);
+	PassiveEntity(PassiveEntityType type, double x, double y, double z, Graph * map);
 	~PassiveEntity(void);
 
 	PassiveEntityType type(void);

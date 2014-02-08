@@ -10,7 +10,7 @@ class Group : public Agent
 private:
 	std::list<Unit *> m_Units;
 public:
-	Group(double x, double y, double z, Graph *map, Owner owner, Behaviour * behaviour);
+	Group(double x, double y, double z, Graph *map, Behaviour * behaviour);
 	~Group(void);
 };
 

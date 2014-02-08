@@ -69,18 +69,18 @@ void World::populateMap(double goldDensity, double woodDensity, double foodDensi
 
 			if (ng >= 0.5 && ng < 0.5 + goldDensity)
 			{
-				Ressource *ressource = new Ressource(RessourceType::gold, x, y, nodes[i][j]->z(), m_Map, Ressource::NATURE_OWNER, 500);
+				Ressource *ressource = new Ressource(RessourceType::gold, x, y, nodes[i][j]->z(), m_Map, 500);
 				this->addPassiveEntity(ressource);
 			}
 			if (nw >= 0.5 && nw < 0.5 + woodDensity)
 			{
-				Ressource *ressource = new Ressource(RessourceType::wood, x, y, nodes[i][j]->z(), m_Map, Ressource::NATURE_OWNER, 500);
+				Ressource *ressource = new Ressource(RessourceType::wood, x, y, nodes[i][j]->z(), m_Map, 500);
 				m_Map->addObstacle(x,y);
 				this->addPassiveEntity(ressource);
 			}
 			if (nf >= 0.5 && nf < 0.5 + foodDensity)
 			{
-				Ressource *ressource = new Ressource(RessourceType::food, x, y, nodes[i][j]->z(), m_Map, Ressource::NATURE_OWNER, 500);
+				Ressource *ressource = new Ressource(RessourceType::food, x, y, nodes[i][j]->z(), m_Map, 500);
 				this->addPassiveEntity(ressource);
 			}
 		}

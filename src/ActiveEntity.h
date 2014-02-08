@@ -15,8 +15,8 @@ private:
 	Behaviour * m_Behaviour;
 
 public:
-	ActiveEntity(double x, double y, double z, Graph *map, Owner owner, Behaviour * behaviour);
-	ActiveEntity(const Location & location, Graph *map, Owner owner, Behaviour * behaviour);
+	ActiveEntity(double x, double y, double z, Graph *map, /*Owner owner,*/ Behaviour * behaviour);
+	ActiveEntity(const Location & location, Graph *map, /*Owner owner,*/ Behaviour * behaviour);
 	ActiveEntity();
 	virtual ~ActiveEntity();
 	virtual void run() = 0;
