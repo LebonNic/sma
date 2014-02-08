@@ -155,6 +155,9 @@
     <ClCompile Include="Civilization.cpp">
       <Filter>Source Files\Model\World</Filter>
     </ClCompile>
+    <ClCompile Include="WorldBehaviour.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_MainWindow.h">
@@ -209,6 +212,9 @@
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
     <ClInclude Include="Civilization.h">
+      <Filter>Header Files\Model\World</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldBehaviour.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
   </ItemGroup>

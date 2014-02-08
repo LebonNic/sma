@@ -5,17 +5,15 @@
 #include "PassiveEntity.h"
 #include "Ressource.h"
 #include "Graph.h"
+#include "WorldBehaviour.h"
 
 class World : public ActiveEntity
 {
 private:
     std::list<ActiveEntity *> m_ActiveEntities;
     std::list<PassiveEntity *> m_PassiveEntities;
-	Graph *m_Map;
-	double m_dWaterLevel;
+	Graph * m_Map;
 
-	
-	void setWaterLevel(double waterLevel);
 public:
 	World(unsigned int size, double scale, unsigned int seed);
 	~World(void);

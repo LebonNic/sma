@@ -1,7 +1,7 @@
 #include "Civilization.h"
 
-Civilization::Civilization(double x, double y, double z, Graph *map, /*Owner owner,*/ Behaviour * behaviour)
-	: ActiveEntity(x, y, z, map, behaviour)
+Civilization::Civilization(double x, double y, double z, Behaviour * behaviour)
+	: ActiveEntity(x, y, z, behaviour)
 {
 }
 

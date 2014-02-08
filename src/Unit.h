@@ -17,7 +17,7 @@ class Unit : public Agent
 private:
 	
 public:
-	Unit(double x, double y, double z, Graph *map, Behaviour * behaviour, AgentType type);
+	Unit(double x, double y, double z, Behaviour * behaviour);
 	virtual ~Unit();
 	
 };

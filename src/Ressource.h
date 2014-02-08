@@ -17,7 +17,7 @@ private:
 	void setRessourceType(RessourceType type);
 	void setQuantity(double quantity);
 public:
-	Ressource(RessourceType type, double x, double y, double z, Graph * map, double quantity);
+	Ressource(RessourceType type, double x, double y, double z, double quantity);
 	~Ressource(void);
 
 

@@ -1,21 +1,15 @@
 #include "ActiveEntity.h"
 
-ActiveEntity::ActiveEntity(double x, double y, double z, Graph *map, /*Owner owner,*/ Behaviour * behaviour)
-    : Entity(x,y,z,map)
+ActiveEntity::ActiveEntity(double x, double y, double z, Behaviour * behaviour)
+    : Entity(x,y,z)
 {
 	m_Behaviour = behaviour;
 }
 
-ActiveEntity::ActiveEntity(const Location & location, Graph *map, /*Owner owner,*/ Behaviour * behaviour)
-	: Entity(location, map)
+ActiveEntity::ActiveEntity(const Location & location, Behaviour * behaviour)
+	: Entity(location)
 {
 	m_Behaviour = behaviour;
-}
-
-ActiveEntity::ActiveEntity()
-	:Entity(0, 0, 0, NULL)
-{
-
 }
 
 ActiveEntity::~ActiveEntity()
@@ -27,4 +21,12 @@ ActiveEntity::~ActiveEntity()
 void ActiveEntity::run()
 {
 	m_Behaviour->execute();
+}
+
+void ActiveEntity::setBehaviour(Behaviour * behaviour)
+{
+	if(m_Behaviour)
+		delete m_Behaviour;
+
+	m_Behaviour = behaviour;
 }

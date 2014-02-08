@@ -3,11 +3,12 @@ using namespace std;
 
 
 World::World(unsigned int size, double scale, unsigned int seed)
+	: ActiveEntity(Location(0, 0, 0), new WorldBehaviour(this))
 {
 	m_Map = new Graph();
-	setWaterLevel(0.25);
 	m_Map->generateRandomPerlin(size, scale, seed);
 }
+
 World::~World(void)
 {
 	delete m_Map;
@@ -20,13 +21,6 @@ World::~World(void)
 		delete (*it);
 	}
 }
-
-
-void World::setWaterLevel(double waterLevel)
-{
-	m_dWaterLevel = waterLevel;
-}
-
 
 void World::addPassiveEntity(PassiveEntity *entity)
 {
@@ -69,18 +63,18 @@ void World::populateMap(double goldDensity, double woodDensity, double foodDensi
 
 			if (ng >= 0.5 && ng < 0.5 + goldDensity)
 			{
-				Ressource *ressource = new Ressource(RessourceType::gold, x, y, nodes[i][j]->z(), m_Map, 500);
+				Ressource *ressource = new Ressource(RessourceType::gold, x, y, nodes[i][j]->z(), 500);
 				this->addPassiveEntity(ressource);
 			}
 			if (nw >= 0.5 && nw < 0.5 + woodDensity)
 			{
-				Ressource *ressource = new Ressource(RessourceType::wood, x, y, nodes[i][j]->z(), m_Map, 500);
+				Ressource *ressource = new Ressource(RessourceType::wood, x, y, nodes[i][j]->z(), 500);
 				m_Map->addObstacle(x,y);
 				this->addPassiveEntity(ressource);
 			}
 			if (nf >= 0.5 && nf < 0.5 + foodDensity)
 			{
-				Ressource *ressource = new Ressource(RessourceType::food, x, y, nodes[i][j]->z(), m_Map, 500);
+				Ressource *ressource = new Ressource(RessourceType::food, x, y, nodes[i][j]->z(), 500);
 				this->addPassiveEntity(ressource);
 			}
 		}

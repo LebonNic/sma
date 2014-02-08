@@ -2,8 +2,8 @@
 #include "Entity.h"
 
 
-PassiveEntity::PassiveEntity(PassiveEntityType type, double x, double y, double z, Graph * map)
-	: Entity(x,y,z, map)
+PassiveEntity::PassiveEntity(PassiveEntityType type, double x, double y, double z)
+	: Entity(x,y,z)
 {
 	
 	setType(type);

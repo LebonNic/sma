@@ -5,12 +5,12 @@
 class Unit;
 
 
-class Group : public Agent
+class Group : public ActiveEntity
 {
 private:
 	std::list<Unit *> m_Units;
 public:
-	Group(double x, double y, double z, Graph *map, Behaviour * behaviour);
+	Group(double x, double y, double z, Behaviour * behaviour);
 	~Group(void);
 };
 

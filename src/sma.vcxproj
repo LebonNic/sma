@@ -297,6 +297,7 @@
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="Unit.cpp" />
     <ClCompile Include="World.cpp" />
+    <ClCompile Include="WorldBehaviour.cpp" />
     <ClCompile Include="WorldView.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -313,6 +314,7 @@
     <ClInclude Include="Graph.h" />
     <ClInclude Include="Group.h" />
     <ClInclude Include="Location.h" />
+    <ClInclude Include="WorldBehaviour.h" />
     <CustomBuild Include="MainWindow.h">
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore" "-I.\release" "-I." "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012" "-I.\GeneratedFiles"</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64  "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore" "-I.\release" "-I." "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012" "-I.\GeneratedFiles"</Command>
