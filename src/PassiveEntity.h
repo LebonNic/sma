@@ -17,6 +17,6 @@ public:
 	PassiveEntity(PassiveEntityType type, double x, double y, double z);
 	~PassiveEntity(void);
 
-	PassiveEntityType type(void);
+	PassiveEntityType type(void) const;
 };
 

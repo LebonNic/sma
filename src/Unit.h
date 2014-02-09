@@ -15,10 +15,13 @@ class Group;
 class Unit : public Agent
 {
 private:
-	
+	Group * m_Group;
 public:
-	Unit(double x, double y, double z, Behaviour * behaviour);
+	Unit(double x, double y, double z, Behaviour * behaviour, Civilization * civilization);
 	virtual ~Unit();
+
+	Group * getGroup() const;
+	void setGroup(Group * group);
 	
 };
 

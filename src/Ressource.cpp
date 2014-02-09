@@ -22,11 +22,11 @@ void Ressource::setQuantity(double quantity)
 }
 
 
-double Ressource::quantity(void)
+double Ressource::quantity(void) const
 {
 	return m_dQuantity;
 }
-RessourceType Ressource::ressourceType(void)
+RessourceType Ressource::ressourceType(void) const
 {
 	return m_RessourceType;
 }

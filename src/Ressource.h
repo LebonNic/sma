@@ -21,8 +21,8 @@ public:
 	~Ressource(void);
 
 
-	double quantity(void);
-	RessourceType ressourceType(void);
+	double quantity(void) const;
+	RessourceType ressourceType(void) const;
 	
 	bool consume(double quantity);
 };

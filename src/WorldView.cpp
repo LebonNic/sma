@@ -61,9 +61,9 @@ void WorldView::update(void)
 	for(int i=5; i<21; ++i)
 		(*map)(i, 20)->setReachable(false);*/
 
-	for(unsigned int i = 0; i < map->height(); ++i)
+	for(unsigned int i = 0; i < map->size(); ++i)
 	{
-		for(unsigned int j = 0; j < map->width(); ++j)
+		for(unsigned int j = 0; j < map->size(); ++j)
 		{
 			Node *node = nodes[i][j];
 			double x = node->x();

@@ -19,7 +19,7 @@ void PassiveEntity::setType(PassiveEntityType type)
 }
 
 
-PassiveEntityType PassiveEntity::type(void)
+PassiveEntityType PassiveEntity::type(void) const
 {
 	return m_Type;
 }

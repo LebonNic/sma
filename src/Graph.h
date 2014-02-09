@@ -60,6 +60,11 @@ private:
 	 * @param to The edge's outgoing node
      */
 	void linkNodeFromTo(Node *from, Node *to);
+
+	/**
+     * @brief destroy Processes memory cleannig
+     */
+	void destroy(void);
 public:
 
 	/**
@@ -85,16 +90,22 @@ public:
 	std::list<Edge *> edges(void);
 
 	/**
-     * @brief width Gets the graph's width
-     * @return The graph's width
+     * @brief size Gets the graph's size
+     * @return The graph's size
      */
-	unsigned int width(void);
+	unsigned int size(void) const;
 
-	/**
-     * @brief height Gets the graph's height
-     * @return The graph's height
-     */
-	unsigned int height(void);
+	///**
+ //    * @brief width Gets the graph's width
+ //    * @return The graph's width
+ //    */
+	//unsigned int width(void);
+
+	///**
+ //    * @brief height Gets the graph's height
+ //    * @return The graph's height
+ //    */
+	//unsigned int height(void);
 
 	/**
      * @brief getPathFinder Gets the graph's PathFinder object

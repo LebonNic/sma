@@ -12,7 +12,13 @@ using namespace std;
 Graph::Graph(void)
 {
 }
+
 Graph::~Graph(void)
+{
+	destroy();
+}
+
+void Graph::destroy(void)
 {
 	// Delete Nodes
 	for(unsigned int i = 0; i < m_uHeight; ++i)
@@ -24,6 +30,7 @@ Graph::~Graph(void)
 	{
 		delete (*it);
 	}
+	
 }
 
 const PathFinder & Graph::getPathFinder() const
@@ -61,15 +68,20 @@ list<Edge *> Graph::edges(void)
 	return m_Edges;
 }
 
-unsigned int Graph::width(void)
-{
-	return m_uWidth;
-}
-
-unsigned int Graph::height(void)
+unsigned int Graph::size(void) const
 {
 	return m_uHeight;
 }
+
+//unsigned int Graph::width(void)
+//{
+//	return m_uWidth;
+//}
+//
+//unsigned int Graph::height(void)
+//{
+//	return m_uHeight;
+//}
 
 Node *Graph::addNode(unsigned int x, unsigned int y, double z)
 {
@@ -99,6 +111,7 @@ std::list<Node *> Graph::findPathFromTo(Node * from, Node * to)
 
 void Graph::generateRandomPerlin(unsigned int size, double scale, unsigned int seed)
 {
+	destroy();
     PerlinNoise noise(seed);
 	m_Nodes = vector<vector<Node *>>(size);
 	for (unsigned int i = 0; i < size; ++i)

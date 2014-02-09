@@ -31,12 +31,12 @@ void Entity::setLocation(const Location & location)
 }
 
 
-Location Entity::location(void)
+Location Entity::location(void) const
 {
 	return m_Location;
 }
 
-unsigned int Entity::id()
+unsigned int Entity::id() const
 {
 	return m_uId;
 }
