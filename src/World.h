@@ -7,6 +7,8 @@
 #include "Graph.h"
 #include "WorldBehaviour.h"
 
+class Ressource;
+
 class World : public ActiveEntity
 {
 private:

@@ -1,5 +1,6 @@
 #pragma once
 #include "PassiveEntity.h"
+#include "World.h"
 
 enum RessourceType
 {
@@ -8,16 +9,20 @@ enum RessourceType
 	food
 };
 
+class World;
+
 class Ressource : public PassiveEntity
 {
 private:
 	RessourceType m_RessourceType;
 	double m_dQuantity;
+	World * m_World;
 
 	void setRessourceType(RessourceType type);
 	void setQuantity(double quantity);
+	void setWorld(World * world);
 public:
-	Ressource(RessourceType type, double x, double y, double z, double quantity);
+	Ressource(RessourceType type, double x, double y, double z, double quantity, World * world);
 	~Ressource(void);
 
 

@@ -1,14 +1,24 @@
 #include "Ressource.h"
 
 
-Ressource::Ressource(RessourceType type, double x, double y, double z, double quantity)
+Ressource::Ressource(RessourceType type, double x, double y, double z, double quantity, World * world)
 	: PassiveEntity(PassiveEntityType::ressource,x,y,z)
 {
 	setRessourceType(type);
 	setQuantity(quantity);
+	setWorld(world);
+
+	if(this->m_RessourceType == RessourceType::wood)
+		m_World->getMap()->addObstacle(this->location());
 }
+
 Ressource::~Ressource(void)
 {
+}
+
+void Ressource::setWorld(World * world)
+{
+	m_World = world;
 }
 
 
