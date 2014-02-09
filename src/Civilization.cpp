@@ -25,3 +25,19 @@ void Civilization::run()
 {
 	ActiveEntity::run();
 }
+
+double Civilization::getGoldStock(void)
+{
+	return m_dGoldStock;
+}
+
+double Civilization::getFoodStock(void)
+{
+	return m_dFoodStock;
+}
+
+double Civilization::getWoodStock(void)
+{
+	return m_dWoodStock;
+}
+

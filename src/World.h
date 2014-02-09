@@ -28,7 +28,6 @@ public:
 
 	const std::vector<std::vector<Ressource *>> & getRessourcesMap(void) const;
 	Graph * getMap(void) const;
-	/*void refresh(void);*/
 	void display(void);
 };
 

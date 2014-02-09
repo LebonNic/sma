@@ -4,19 +4,30 @@
 Unit::Unit(double x, double y, double z, Behaviour * behaviour, Civilization * civilization)
 	: Agent(x, y, z, behaviour, civilization)
 {
-	m_Group = NULL;
 }
 
 Unit::~Unit()
 {
 }
 
-Group * Unit::getGroup() const
+void Unit::run()
 {
-	return m_Group;
+	Agent::run();
 }
 
-void Unit::setGroup(Group * group)
+void Unit::attack()
 {
-	m_Group = group;
+}
+
+void Unit::build()
+{
+
+}
+
+void Unit::harvest()
+{
+}
+
+void Unit::move()
+{
 }
