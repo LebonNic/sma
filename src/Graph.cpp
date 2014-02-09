@@ -21,8 +21,8 @@ Graph::~Graph(void)
 void Graph::destroy(void)
 {
 	// Delete Nodes
-	for(unsigned int i = 0; i < m_uHeight; ++i)
-		for(unsigned int j = 0; j < m_uWidth; ++j)
+	for(unsigned int i = 0; i < m_Nodes.size(); ++i)
+		for(unsigned int j = 0; j < m_Nodes[i].size(); ++j)
 			delete m_Nodes[i][j];
 
 	// Delete Edges
@@ -175,6 +175,16 @@ void Graph::generateRandomPerlin(unsigned int size, double scale, unsigned int s
 void Graph::addObstacle(const Location & l)
 {
 	m_Nodes[l.x()][l.y()]->setReachable(false);
+}
+
+void Graph::removeObstacle(const Location & l)
+{
+	m_Nodes[l.x()][l.y()]->setReachable(true);
+}
+
+void Graph::removeObstacle(unsigned int x, unsigned int y)
+{
+	m_Nodes[x][y]->setReachable(true);
 }
 
 void Graph::addObstacle(unsigned int x, unsigned int y)

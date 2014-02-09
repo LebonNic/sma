@@ -144,6 +144,19 @@ public:
 	void addObstacle(unsigned int x, unsigned int y);
 
 	/**
+     * @brief removeObstacle Sets the node specified by the location passed as parameter to reachable
+	 * @param l The node's location
+     */
+	void removeObstacle(const Location & l);
+
+	/**
+     * @brief removeObstacle Sets the node specified by the x and y coordinates to reachable
+	 * @param x The row index of the node
+	 * @param y The column index of the node
+     */
+	void removeObstacle(unsigned int x, unsigned int y);
+
+	/**
      * @brief generateRandomPerlin Generates a map using a Perlin noise to set the nodes' elevation
 	 * @param size The square grid graph
 	 * @param scale A scale value to control the spacing between nodes
