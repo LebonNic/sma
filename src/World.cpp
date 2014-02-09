@@ -17,7 +17,7 @@ World::World(unsigned int size, double scale, unsigned int seed)
 World::~World(void)
 {
 	delete m_Map;
-	for(auto it = m_ActiveEntities.begin(); it != m_ActiveEntities.end(); ++it)
+	for(auto it = m_Civilization.begin(); it != m_Civilization.end(); ++it)
 	{
 		delete (*it);
 	}
@@ -29,12 +29,6 @@ World::~World(void)
 	/*for(auto vec = m_RessourcesMap.begin(); vec != m_RessourcesMap.end(); ++vec)
 		for(auto ressource = (*vec).begin(); ressource != (*vec).end(); ++ressource);
 			delete (*ressource);*/
-}
-
-
-void World::addActiveEntity(ActiveEntity *entity)
-{
-	m_ActiveEntities.push_back(entity);
 }
 
 void World::populateMap(double goldDensity, double woodDensity, double foodDensity)

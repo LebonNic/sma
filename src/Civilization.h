@@ -1,5 +1,7 @@
 #pragma once
 
+#include <list>
+
 #include "ActiveEntity.h"
 #include "World.h"
 #include "Memory.h"
