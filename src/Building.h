@@ -1,5 +1,7 @@
 #pragma once
 #include "Agent.h"
+#include "Civilization.h"
+#include "Behaviour.h"
 
 class Building : public Agent
 {

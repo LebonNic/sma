@@ -1,6 +1,5 @@
 #pragma once
 #include "Location.h"
-#include "Graph.h"
 
 class Entity
 {

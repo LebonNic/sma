@@ -2,6 +2,7 @@
 
 #include "ActiveEntity.h"
 #include "Civilization.h"
+#include "Behaviour.h"
 
 class Agent : public ActiveEntity
 {

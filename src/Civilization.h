@@ -3,6 +3,7 @@
 #include "ActiveEntity.h"
 #include "World.h"
 #include "Memory.h"
+#include "Behaviour.h"
 
 class Civilization : public ActiveEntity
 {

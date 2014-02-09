@@ -1,8 +1,8 @@
 #pragma once
 
 #include <vector>
+
 #include "ActiveEntity.h"
-#include "PassiveEntity.h"
 #include "Ressource.h"
 #include "Graph.h"
 #include "WorldBehaviour.h"

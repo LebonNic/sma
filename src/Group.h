@@ -1,9 +1,12 @@
 #pragma once
-#include <list>
-#include "Agent.h"
-#include "Unit.h"
-class Unit;
 
+#include <list>
+
+#include "ActiveEntity.h"
+#include "Behaviour.h"
+#include "Unit.h"
+
+class Unit;
 
 class Group : public ActiveEntity
 {
