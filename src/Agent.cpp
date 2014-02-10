@@ -14,15 +14,3 @@ void Agent::run()
 {
 	ActiveEntity::run();
 }
-
-void Agent::attack()
-{
-}
-
-void Agent::harvest()
-{
-}
-
-void Agent::move()
-{
-}

@@ -18,10 +18,6 @@ public:
 	Agent(double x, double y, double z, Behaviour * behaviour, Civilization * civilization);
 	virtual ~Agent();
 	virtual void run() = 0;
-	virtual void attack() = 0;
-	virtual void harvest() = 0;
-	virtual void build() = 0;
-	virtual void move()/* = 0*/;
 };
 
 #endif

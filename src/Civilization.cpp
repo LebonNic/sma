@@ -9,6 +9,10 @@ Civilization::Civilization(double x, double y, double z, Behaviour * behaviour, 
 		throw std::invalid_argument("Le pointeur sur le monde passe en parametre du constructeur de Civilization ne peut pas etre NULL.");
 
 	m_Memory = new Memory(m_World->getMap()->size());
+
+	m_dFoodStock = 0;
+	m_dGoldStock = 0;
+	m_dWoodStock = 0;
 }
 
 Civilization::~Civilization()
