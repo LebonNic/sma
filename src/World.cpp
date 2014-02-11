@@ -12,6 +12,14 @@ World::World(unsigned int size, double scale, unsigned int seed)
 	for(auto vec = m_RessourcesMap.begin(); vec != m_RessourcesMap.end(); ++vec)
 		(*vec) = std::vector<Ressource * >(size);
 
+	m_UnitsMap = std::vector<vector<Unit * >>(size);
+	for(auto vec = m_UnitsMap.begin(); vec != m_UnitsMap.end(); ++vec)
+		(*vec) = std::vector<Unit * >(size);
+
+	m_BuildingsMap = std::vector<vector<Building * >>(size);
+	for(auto vec = m_BuildingsMap.begin(); vec != m_BuildingsMap.end(); ++vec)
+		(*vec) = std::vector<Building * >(size);
+
 }
 
 World::~World(void)
@@ -81,9 +89,14 @@ const std::vector<std::vector<Ressource *>> & World::getRessourcesMap(void) cons
 	return m_RessourcesMap;
 }
 
-Graph * World::getMap(void) const
+const Graph & World::getMap(void) const
 {
-	return m_Map;
+	return (*m_Map);
+}
+
+Graph & World::getMap(void)
+{
+	return (*m_Map);
 }
 
 //void World::refresh(void)

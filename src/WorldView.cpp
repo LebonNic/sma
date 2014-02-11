@@ -48,9 +48,9 @@ void WorldView::update(void)
 
     m_WorldScene->clear();
 
-	Graph * map = m_World->getMap();
+	Graph map = m_World->getMap();
 
-    nodes = map->nodes();
+    nodes = map.nodes();
 
 	/*for(int i=10; i<20; ++i)
 		(*map)(5, i)->setReachable(false);
@@ -61,9 +61,9 @@ void WorldView::update(void)
 	for(int i=5; i<21; ++i)
 		(*map)(i, 20)->setReachable(false);*/
 
-	for(unsigned int i = 0; i < map->size(); ++i)
+	for(unsigned int i = 0; i < map.size(); ++i)
 	{
-		for(unsigned int j = 0; j < map->size(); ++j)
+		for(unsigned int j = 0; j < map.size(); ++j)
 		{
 			Node *node = nodes[i][j];
 			double x = node->x();
@@ -75,12 +75,12 @@ void WorldView::update(void)
 		}
 	}
 
-	Node	* startingNode = (*map)(30,30),
-			* goal = (*map)(35, 35);
+	Node	* startingNode = (map)(30,30),
+			* goal = (map)(35, 35);
 
-	path = map->findPathFromTo(startingNode, goal);
-	closedSet = map->getPathFinder().getClosedSet();
-	openSet = map->getPathFinder().getOpenSet();
+	path = map.findPathFromTo(startingNode, goal);
+	closedSet = map.getPathFinder().getClosedSet();
+	openSet = map.getPathFinder().getOpenSet();
 
 	/*for(auto ite = openSet.begin(); ite != openSet.end(); ++ite)
 	{

@@ -31,7 +31,7 @@ void Entity::setLocation(const Location & location)
 }
 
 
-Location Entity::location(void) const
+const Location & Entity::location(void) const
 {
 	return m_Location;
 }

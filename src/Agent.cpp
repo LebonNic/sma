@@ -1,9 +1,8 @@
 #include "Agent.h"
 
-Agent::Agent(double x, double y, double z, Behaviour * behaviour, Civilization * civilization)
+Agent::Agent(double x, double y, double z, Behaviour * behaviour)
 	: ActiveEntity(Location(x,y,z),behaviour)
 {
-	m_Civilization = civilization;
 }
 
 Agent::~Agent()

@@ -9,7 +9,7 @@ Ressource::Ressource(RessourceType type, double x, double y, double z, double qu
 	setWorld(world);
 
 	if(this->m_RessourceType == RessourceType::wood)
-		m_World->getMap()->addObstacle(this->location());
+		(m_World->getMap()).addObstacle(this->location());
 }
 
 Ressource::~Ressource(void)

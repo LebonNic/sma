@@ -7,10 +7,11 @@
 #include "World.h"
 #include "Memory.h"
 #include "Behaviour.h"
-#include "Agent.h"
+#include "Unit.h"
 
 class World;
-class Agent;
+class Unit;
+class Building;
 
 class Civilization : public ActiveEntity
 {
@@ -18,12 +19,12 @@ private:
 	Memory * m_Memory;
 	World * m_World;
 
-	std::list<Agent *> m_FreeUnits;		//De type "Agent" car problème d'inclusion croisée si je passe en "Unit"
-	std::list<Agent *> m_Lumberjacks; 
-	std::list<Agent *> m_Gatherers;
-	std::list<Agent *> m_Miners;
-	std::list<Agent *> m_Soldiers;
-	std::list<Agent *> m_Buildings;	//De type "Agent" car problème d'inclusion croisée si je passe en "Building"
+	std::list<Unit *> m_FreeUnits;
+	std::list<Unit *> m_Lumberjacks; 
+	std::list<Unit *> m_Gatherers;
+	std::list<Unit *> m_Miners;
+	std::list<Unit *> m_Soldiers;
+	std::list<Unit *> m_Buildings;
 	
 	double m_dWoodStock;
 	double m_dFoodStock;
@@ -39,6 +40,13 @@ public:
 	double getGoldStock(void);
 	double getFoodStock(void);
 	double getWoodStock(void);
+
+	const World & getWorld() const;
+
+	void locateFood(const Location & l);
+	void locateGold(const Location & l);
+	void locateWood(const Location & l);
+	void locateEmptinessSpace(const Location & l);
 };
 
 #endif

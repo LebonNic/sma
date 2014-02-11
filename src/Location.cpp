@@ -7,12 +7,32 @@ Location::Location()
 	setY(0.0);
 	setZ(0.0);
 }
+
 Location::Location(double x, double y, double z)
 {
 	setX(x);
 	setY(y);
 	setZ(z);
 }
+
+Location::Location(const Location & l)
+{
+	m_dX = l.m_dX;
+	m_dY = l.m_dY;
+	m_dZ = l.m_dZ;
+}
+
+Location & Location::operator=(const Location & l)
+{
+	if(this != &l)
+	{
+		m_dX = l.m_dX;
+		m_dY = l.m_dY;
+		m_dZ = l.m_dZ;
+	}
+	return *this;
+}
+
 Location::~Location(void)
 {
 

@@ -17,7 +17,7 @@ public:
 
 	void setLocation(const Location & location);
 
-	Location location(void) const;
+	const Location & location(void) const;
 	unsigned int id() const;
 	double x(void);
 	double y(void);

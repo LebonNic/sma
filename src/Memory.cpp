@@ -23,3 +23,33 @@ void Memory::initArray(std::vector<std::vector<bool>> & arr, bool value)
 Memory::~Memory(void)
 {
 }
+
+const std::vector<std::vector<bool>> & Memory::getFoodMap() const
+{
+	return m_FoodMap;
+}
+
+const std::vector<std::vector<bool>> & Memory::getGoldMap() const
+{
+	return m_GoldMap;
+}
+
+const std::vector<std::vector<bool>> & Memory::getWoodMap() const
+{
+	return m_WoodMap;
+}
+
+void Memory::setFoodMap(const Location & l, bool val)
+{
+	m_FoodMap[l.x()][l.y()] = val;
+}
+
+void Memory::setGoldMap(const Location & l, bool val)
+{
+	m_GoldMap[l.x()][l.y()] = val;
+}
+
+void Memory::setWoodMap(const Location & l, bool val)
+{
+	m_WoodMap[l.x()][l.y()] = val;
+}
