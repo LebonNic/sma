@@ -6,6 +6,7 @@
 #include "Civilization.h"
 #include "Location.h"
 #include "Node.h"
+#include "Ressource.h"
 
 enum UnitState{
 	building,
@@ -21,13 +22,13 @@ private:
 	std::list<Node *> m_Path;
 	Civilization * m_Civilization;
 	UnitState m_State;
+	unsigned int m_uRange;
 
-	void updateCivilizationMap();
+	void updateCivilizationMaps();
 
 public:
 	Unit(double x, double y, double z, Behaviour * behaviour, Civilization * civilization);
 	virtual ~Unit();
-
 	virtual void run();
 	void advanceOnPath();
 };

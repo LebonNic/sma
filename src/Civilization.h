@@ -34,7 +34,7 @@ public:
 	Civilization(double x, double y, double z, Behaviour * behaviour, World * world);
 	virtual ~Civilization();
 
-	const Memory & getMemory();
+	const Memory & getMemory() const;
 	void run();
 
 	double getGoldStock(void);

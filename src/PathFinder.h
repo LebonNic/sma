@@ -24,7 +24,6 @@ private:
 	void setGoal(Node * node);
 	double computeMovingCost(const Score & current, const Score & next);
 	double computeHScore(const Score & current);
-	//double getDiagonalDistance(const Score & from, const Score & to);
 	std::list<Node *> reconstructPath(void);
 	
 public:
@@ -36,7 +35,6 @@ public:
 	const std::vector<Score *> & getClosedSet() const;
 	Node * getStartingNode(void)const;
 	Node * getGoal(void) const;
-	
 };
 
 #endif

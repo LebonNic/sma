@@ -23,17 +23,18 @@ private:
 	std::vector<std::vector<Unit *>> m_UnitsMap;
 	std::vector<std::vector<Building *>> m_BuildingsMap;
 	Graph * m_Map;
+	unsigned int m_uSize;
 
 public:
 	World(unsigned int size, double scale, unsigned int seed);
 	~World(void);
-	
 	
 	void populateMap(double goldDensity, double woodDensity, double foodDensity);
 	void run();
 
 	const std::vector<std::vector<Ressource *>> & getRessourcesMap(void) const;
 
+	const int & getSize() const;
 	Graph & getMap(void);
 	const Graph & getMap(void) const;
 

@@ -21,14 +21,16 @@ private:
 	void setRessourceType(RessourceType type);
 	void setQuantity(double quantity);
 	void setWorld(World * world);
+	bool isConsumed();
 public:
 	Ressource(RessourceType type, double x, double y, double z, double quantity, World * world);
 	~Ressource(void);
 
 
 	double quantity(void) const;
+	
 	RessourceType ressourceType(void) const;
 	
-	bool consume(double quantity);
+	double consume(double quantity);
 };
 

@@ -8,7 +8,7 @@ private:
 	double m_dZ;
 public:
 	Location();
-	Location(double x, double y, double z);
+	Location(double x, double y, double z = 0);
 	Location(const Location & l);
 	Location & operator=(const Location & l);
 	~Location(void);

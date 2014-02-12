@@ -20,7 +20,7 @@ Civilization::~Civilization()
 	delete m_Memory;
 }
 
-const Memory & Civilization::getMemory()
+const Memory & Civilization::getMemory() const
 {
 	return (*m_Memory);
 }

@@ -5,21 +5,30 @@ using namespace std;
 World::World(unsigned int size, double scale, unsigned int seed)
 	: ActiveEntity(Location(0, 0, 0), new WorldBehaviour(this))
 {
+	m_uSize = size;
 	m_Map = new Graph();
 	m_Map->generateRandomPerlin(size, scale, seed);
 
 	m_RessourcesMap = std::vector<vector<Ressource * >>(size);
 	for(auto vec = m_RessourcesMap.begin(); vec != m_RessourcesMap.end(); ++vec)
+	{
 		(*vec) = std::vector<Ressource * >(size);
+		std::fill((*vec).begin(), (*vec).end(), (Ressource *)(NULL));
+	}
 
 	m_UnitsMap = std::vector<vector<Unit * >>(size);
 	for(auto vec = m_UnitsMap.begin(); vec != m_UnitsMap.end(); ++vec)
+	{
 		(*vec) = std::vector<Unit * >(size);
+		std::fill((*vec).begin(), (*vec).end(), (Unit *)(NULL));
+	}
 
 	m_BuildingsMap = std::vector<vector<Building * >>(size);
 	for(auto vec = m_BuildingsMap.begin(); vec != m_BuildingsMap.end(); ++vec)
+	{
 		(*vec) = std::vector<Building * >(size);
-
+		std::fill((*vec).begin(), (*vec).end(), (Building *)(NULL));
+	}
 }
 
 World::~World(void)
@@ -33,10 +42,6 @@ World::~World(void)
 	for(unsigned int i = 0; i < m_RessourcesMap.size(); ++i)
 		for(unsigned int j = 0; j < m_RessourcesMap[i].size(); ++j)
 			delete m_RessourcesMap[i][j];
-
-	/*for(auto vec = m_RessourcesMap.begin(); vec != m_RessourcesMap.end(); ++vec)
-		for(auto ressource = (*vec).begin(); ressource != (*vec).end(); ++ressource);
-			delete (*ressource);*/
 }
 
 void World::populateMap(double goldDensity, double woodDensity, double foodDensity)
@@ -97,6 +102,11 @@ const Graph & World::getMap(void) const
 Graph & World::getMap(void)
 {
 	return (*m_Map);
+}
+
+const int & World::getSize() const
+{
+	return m_uSize;
 }
 
 //void World::refresh(void)
