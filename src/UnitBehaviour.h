@@ -7,7 +7,7 @@ class Unit;
 
 class UnitBehaviour : public Behaviour
 {
-private:
+protected:
 	Unit * m_Unit;
 public:
 	UnitBehaviour(Unit * unit);

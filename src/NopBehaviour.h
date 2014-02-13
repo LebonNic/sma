@@ -1,8 +1,12 @@
 #pragma once
-class NopBehaviour
+
+#include "UnitBehaviour.h"
+
+class NopBehaviour : public UnitBehaviour
 {
 public:
-	NopBehaviour(void);
-	~NopBehaviour(void);
+	NopBehaviour(Unit * unit);
+	virtual ~NopBehaviour(void);
+	virtual void execute();
 };
 

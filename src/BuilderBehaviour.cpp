@@ -1,11 +1,16 @@
 #include "BuilderBehaviour.h"
 
 
-BuilderBehaviour::BuilderBehaviour(void)
+BuilderBehaviour::BuilderBehaviour(Unit * unit)
+	: UnitBehaviour(unit)
 {
 }
 
 
 BuilderBehaviour::~BuilderBehaviour(void)
+{
+}
+
+void BuilderBehaviour::execute()
 {
 }

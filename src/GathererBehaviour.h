@@ -1,8 +1,12 @@
 #pragma once
-class GathererBehaviour
+
+#include "UnitBehaviour.h"
+
+class GathererBehaviour : public UnitBehaviour
 {
 public:
-	GathererBehaviour(void);
+	GathererBehaviour(Unit * unit);
 	~GathererBehaviour(void);
+	virtual void execute();
 };
 

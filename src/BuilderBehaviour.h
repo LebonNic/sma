@@ -1,8 +1,12 @@
 #pragma once
-class BuilderBehaviour
+
+#include "UnitBehaviour.h"
+
+class BuilderBehaviour : public UnitBehaviour
 {
 public:
-	BuilderBehaviour(void);
+	BuilderBehaviour(Unit * unit);
 	~BuilderBehaviour(void);
+	virtual void execute();
 };
 
