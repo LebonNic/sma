@@ -98,7 +98,7 @@ Graph & World::getMap(void)
 	return (*m_Map);
 }
 
-const int & World::getSize() const
+const int World::getSize() const
 {
 	return m_uSize;
 }

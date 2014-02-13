@@ -2,6 +2,8 @@
 
 #include "UnitBehaviour.h"
 
+class Unit;
+
 class NopBehaviour : public UnitBehaviour
 {
 public:

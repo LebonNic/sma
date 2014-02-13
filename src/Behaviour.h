@@ -1,4 +1,6 @@
 #pragma once
+
+#include <QDebug>
 class Behaviour
 {
 public:

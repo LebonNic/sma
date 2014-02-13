@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     m_WorldView = new WorldView(m_World, this);
     this->setCentralWidget(m_WorldView);
     m_WorldView->update();
+	m_World->run();
 }
 
 MainWindow::~MainWindow()
