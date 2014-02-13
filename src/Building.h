@@ -9,7 +9,6 @@ class Civilization;
 class Building : public Agent
 {
 private:
-	Civilization * m_Civilization;
 public:
 	Building(double x, double y, double z, Civilization * civilization);
 	virtual ~Building(void);

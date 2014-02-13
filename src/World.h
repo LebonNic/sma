@@ -20,8 +20,6 @@ class World : public ActiveEntity
 private:
     std::list<Civilization *> m_Civilization;
 	std::vector<std::vector<Ressource *>> m_RessourcesMap;
-	std::vector<std::vector<Unit *>> m_UnitsMap;
-	std::vector<std::vector<Building *>> m_BuildingsMap;
 	Graph * m_Map;
 	unsigned int m_uSize;
 

@@ -11,6 +11,10 @@ Civilization::Civilization(double x, double y, double z, World * world)
 	m_Memory = new Memory((m_World->getMap()).size());
 
 	m_Buildings.push_back(new Building(x, y, z, this));
+	std::list<Node * > neighbourNodes = m_World->getMap()(x, y)->neighbours();
+
+	for(auto node = neighbourNodes.begin(); node != neighbourNodes.end(); ++node)
+		m_FreeUnits.push_back(new Unit((*node)->x(), (*node)->y(), (*node)->z(), this));
 
 	m_dFoodStock = 0;
 	m_dGoldStock = 0;

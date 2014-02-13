@@ -2,9 +2,8 @@
 
 
 Building::Building(double x, double y, double z, Civilization * civilization)
-	: Agent(x,y,z, new BuildingBehaviour(this))
+	: Agent(x,y,z, new BuildingBehaviour(this), civilization)
 {
-	m_Civilization = civilization;
 }
 
 

@@ -1,15 +1,16 @@
 #include "Unit.h"
 
 
-Unit::Unit(double x, double y, double z, Behaviour * behaviour, Civilization * civilization)
-	: Agent(x, y, z, behaviour)
+Unit::Unit(double x, double y, double z, Civilization * civilization)
+	: Agent(x, y, z, new NopBehaviour(this), civilization)
 {
-	m_Civilization = civilization;
 	m_Job = UnitJob::nop;
 }
 
 Unit::~Unit()
 {
+	for(auto node = m_Path.begin(); node != m_Path.end(); ++node)
+		delete (*node);
 }
 
 const UnitJob & Unit::getJob() const

@@ -14,8 +14,7 @@ ActiveEntity::ActiveEntity(const Location & location, Behaviour * behaviour)
 
 ActiveEntity::~ActiveEntity()
 {
-	if(m_Behaviour)
-		delete m_Behaviour;
+	delete m_Behaviour;
 }
 
 void ActiveEntity::run()
@@ -25,8 +24,6 @@ void ActiveEntity::run()
 
 void ActiveEntity::setBehaviour(Behaviour * behaviour)
 {
-	if(m_Behaviour)
-		delete m_Behaviour;
-
+	delete m_Behaviour;
 	m_Behaviour = behaviour;
 }

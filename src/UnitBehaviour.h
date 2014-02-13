@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Unit.h"
 #include "Behaviour.h"
 
 class Unit;

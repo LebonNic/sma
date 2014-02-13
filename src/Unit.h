@@ -1,12 +1,13 @@
 #ifndef UNIT_H
 #define UNIT_H
 
-#include "Behaviour.h"
+
 #include "Agent.h"
 #include "Civilization.h"
 #include "Location.h"
 #include "Node.h"
 #include "Ressource.h"
+#include "NopBehaviour.h"
 
 enum UnitJob{
 	builder,	//build buildings
@@ -22,14 +23,13 @@ class Unit : public Agent
 {
 private:
 	std::list<Node *> m_Path;
-	Civilization * m_Civilization;
 	UnitJob m_Job;
 	unsigned int m_uRange;
 
 	void updateCivilizationMaps();
 
 public:
-	Unit(double x, double y, double z, Behaviour * behaviour, Civilization * civilization);
+	Unit(double x, double y, double z, Civilization * civilization);
 	virtual ~Unit();
 
 	const UnitJob & getJob() const;

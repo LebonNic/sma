@@ -15,20 +15,6 @@ World::World(unsigned int size, double scale, unsigned int seed)
 		(*vec) = std::vector<Ressource * >(size);
 		std::fill((*vec).begin(), (*vec).end(), (Ressource *)(NULL));
 	}
-
-	m_UnitsMap = std::vector<vector<Unit * >>(size);
-	for(auto vec = m_UnitsMap.begin(); vec != m_UnitsMap.end(); ++vec)
-	{
-		(*vec) = std::vector<Unit * >(size);
-		std::fill((*vec).begin(), (*vec).end(), (Unit *)(NULL));
-	}
-
-	m_BuildingsMap = std::vector<vector<Building * >>(size);
-	for(auto vec = m_BuildingsMap.begin(); vec != m_BuildingsMap.end(); ++vec)
-	{
-		(*vec) = std::vector<Building * >(size);
-		std::fill((*vec).begin(), (*vec).end(), (Building *)(NULL));
-	}
 }
 
 World::~World(void)
