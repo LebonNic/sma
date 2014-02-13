@@ -20,6 +20,21 @@ Civilization::Civilization(double x, double y, double z, World * world)
 Civilization::~Civilization()
 {
 	delete m_Memory;
+
+	for(auto unit = m_FreeUnits.begin(); unit != m_FreeUnits.end(); ++unit)
+		delete (*unit);
+
+	for(auto unit = m_Gatherers.begin(); unit != m_Gatherers.end(); ++unit)
+		delete (*unit);
+
+	for(auto unit = m_Lumberjacks.begin(); unit != m_Lumberjacks.end(); ++unit)
+		delete (*unit);
+
+	for(auto unit = m_Miners.begin(); unit != m_Miners.end(); ++unit)
+		delete (*unit);
+
+	for(auto building = m_Buildings.begin(); building != m_Buildings.end(); ++building)
+		delete (*building);
 }
 
 const Memory & Civilization::getMemory() const

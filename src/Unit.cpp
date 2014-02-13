@@ -5,11 +5,21 @@ Unit::Unit(double x, double y, double z, Behaviour * behaviour, Civilization * c
 	: Agent(x, y, z, behaviour)
 {
 	m_Civilization = civilization;
-	m_State = UnitState::nop;
+	m_Job = UnitJob::nop;
 }
 
 Unit::~Unit()
 {
+}
+
+const UnitJob & Unit::getJob() const
+{
+	return m_Job;
+}
+
+void Unit::setJob(const UnitJob & j)
+{
+	m_Job = j;
 }
 
 void Unit::run()

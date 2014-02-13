@@ -34,9 +34,10 @@ World::World(unsigned int size, double scale, unsigned int seed)
 World::~World(void)
 {
 	delete m_Map;
-	for(auto it = m_Civilization.begin(); it != m_Civilization.end(); ++it)
+
+	for(auto civilization = m_Civilization.begin(); civilization != m_Civilization.end(); ++civilization)
 	{
-		delete (*it);
+		delete (*civilization);
 	}
 
 	for(unsigned int i = 0; i < m_RessourcesMap.size(); ++i)

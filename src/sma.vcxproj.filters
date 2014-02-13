@@ -78,6 +78,30 @@
     <Filter Include="Header Files\Model\Behaviours">
       <UniqueIdentifier>{4d7e41b3-9230-4e2f-8de0-5cdffda44608}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Model\Behaviours\Civilization">
+      <UniqueIdentifier>{4e504701-6ce7-403d-9507-bf103ad029b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model\Behaviours\Building">
+      <UniqueIdentifier>{b592d79c-35c3-4e39-829f-6288d05d3e0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model\Behaviours\World">
+      <UniqueIdentifier>{3769698a-259b-4906-99b4-5eb7dd49b221}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model\Behaviours\Unit">
+      <UniqueIdentifier>{661558b7-621a-4b6f-95c2-9f40aa2881f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model\Behaviours\Unit">
+      <UniqueIdentifier>{6fab97f5-1c77-40be-8f09-5af8b3aac516}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model\Behaviours\Building">
+      <UniqueIdentifier>{3aaa01b3-5fa8-41bf-874a-8a2ad53e9e92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model\Behaviours\Civilization">
+      <UniqueIdentifier>{11dd5a16-b3d9-4927-8dfd-b5ed5bbeba15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model\Behaviours\World">
+      <UniqueIdentifier>{9763069f-77a2-4385-a0a8-83e84dda8c85}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -158,20 +182,29 @@
     <ClCompile Include="Civilization.cpp">
       <Filter>Source Files\Model\World</Filter>
     </ClCompile>
-    <ClCompile Include="WorldBehaviour.cpp">
-      <Filter>Source Files\Model\Behaviours</Filter>
-    </ClCompile>
     <ClCompile Include="Behaviour.cpp">
       <Filter>Source Files\Model\Behaviours</Filter>
     </ClCompile>
-    <ClCompile Include="BuildingBehaviour.cpp">
-      <Filter>Source Files\Model\Behaviours</Filter>
+    <ClCompile Include="GathererBehaviour.cpp">
+      <Filter>Source Files\Model\Behaviours\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="NopBehaviour.cpp">
+      <Filter>Source Files\Model\Behaviours\Unit</Filter>
     </ClCompile>
     <ClCompile Include="UnitBehaviour.cpp">
-      <Filter>Source Files\Model\Behaviours</Filter>
+      <Filter>Source Files\Model\Behaviours\Unit</Filter>
     </ClCompile>
     <ClCompile Include="CivilizationBehaviour.cpp">
-      <Filter>Source Files\Model\Behaviours</Filter>
+      <Filter>Source Files\Model\Behaviours\Civilization</Filter>
+    </ClCompile>
+    <ClCompile Include="BuilderBehaviour.cpp">
+      <Filter>Source Files\Model\Behaviours\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingBehaviour.cpp">
+      <Filter>Source Files\Model\Behaviours\Building</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldBehaviour.cpp">
+      <Filter>Source Files\Model\Behaviours\World</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -226,20 +259,29 @@
     <ClInclude Include="Civilization.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="BuildingBehaviour.h">
-      <Filter>Header Files\Model\Behaviours</Filter>
-    </ClInclude>
-    <ClInclude Include="WorldBehaviour.h">
-      <Filter>Header Files\Model\Behaviours</Filter>
-    </ClInclude>
     <ClInclude Include="Behaviour.h">
       <Filter>Header Files\Model\Behaviours</Filter>
     </ClInclude>
+    <ClInclude Include="GathererBehaviour.h">
+      <Filter>Header Files\Model\Behaviours\Unit</Filter>
+    </ClInclude>
     <ClInclude Include="UnitBehaviour.h">
-      <Filter>Header Files\Model\Behaviours</Filter>
+      <Filter>Header Files\Model\Behaviours\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="BuilderBehaviour.h">
+      <Filter>Header Files\Model\Behaviours\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="NopBehaviour.h">
+      <Filter>Header Files\Model\Behaviours\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingBehaviour.h">
+      <Filter>Header Files\Model\Behaviours\Building</Filter>
     </ClInclude>
     <ClInclude Include="CivilizationBehaviour.h">
-      <Filter>Header Files\Model\Behaviours</Filter>
+      <Filter>Header Files\Model\Behaviours\Civilization</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldBehaviour.h">
+      <Filter>Header Files\Model\Behaviours\World</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

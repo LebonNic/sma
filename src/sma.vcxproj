@@ -264,6 +264,7 @@
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="Attribute.cpp" />
     <ClCompile Include="Behaviour.cpp" />
+    <ClCompile Include="BuilderBehaviour.cpp" />
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="BuildingBehaviour.cpp" />
     <ClCompile Include="Civilization.cpp" />
@@ -278,12 +279,14 @@
     </ClCompile>
     <ClCompile Include="Edge.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="GathererBehaviour.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="Group.cpp" />
     <ClCompile Include="Location.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="Memory.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="NopBehaviour.cpp" />
     <ClCompile Include="PassiveEntity.cpp" />
     <ClCompile Include="PathFinder.cpp" />
     <ClCompile Include="PerlinNoise.cpp" />
@@ -309,16 +312,19 @@
     <ClInclude Include="Agent.h" />
     <ClInclude Include="Attribute.h" />
     <ClInclude Include="Behaviour.h" />
+    <ClInclude Include="BuilderBehaviour.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="BuildingBehaviour.h" />
     <ClInclude Include="Civilization.h" />
     <ClInclude Include="CivilizationBehaviour.h" />
     <ClInclude Include="Edge.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="GathererBehaviour.h" />
     <ClInclude Include="GeneratedFiles\ui_MainWindow.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="Group.h" />
     <ClInclude Include="Location.h" />
+    <ClInclude Include="NopBehaviour.h" />
     <ClInclude Include="UnitBehaviour.h" />
     <ClInclude Include="WorldBehaviour.h" />
     <CustomBuild Include="MainWindow.h">

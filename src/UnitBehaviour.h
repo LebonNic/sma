@@ -12,6 +12,6 @@ private:
 public:
 	UnitBehaviour(Unit * unit);
 	virtual ~UnitBehaviour(void);
-	virtual void execute();
+	virtual void execute() = 0;
 };
 
