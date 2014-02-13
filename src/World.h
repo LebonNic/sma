@@ -18,7 +18,7 @@ class Unit;
 class World : public ActiveEntity
 {
 private:
-    std::list<Civilization *> m_Civilization;
+    std::list<Civilization *> m_Civilizations;
 	std::vector<std::vector<Ressource *>> m_RessourcesMap;
 	Graph * m_Map;
 	unsigned int m_uSize;
@@ -29,14 +29,15 @@ public:
 	
 	void populateMap(double goldDensity, double woodDensity, double foodDensity);
 	void run();
+	double consumeRessource(const Location & ressourceLocation, double quantity);
+	void display(void);
 
 	const std::vector<std::vector<Ressource *>> & getRessourcesMap(void) const;
-
+	const std::list<Civilization *> & getCivilizations(void) const;
 	const int & getSize() const;
 	Graph & getMap(void);
 	const Graph & getMap(void) const;
-	double consumeRessource(const Location & ressourceLocation, double quantity);
 
-	void display(void);
+	
 };
 

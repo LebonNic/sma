@@ -52,7 +52,7 @@ private:
 	 * @param z The node's elevation
      * @return A pointer on the added node
      */
-	Node *addNode(unsigned int x, unsigned int y, double z);
+	Node * addNode(unsigned int x, unsigned int y, double z);
 
 	/**
      * @brief linkNodeFromTo Create an edge between the two nodes passed as parameter

@@ -29,6 +29,8 @@ private:
     std::vector<QPixmap> m_TreeImage;
     std::vector<QPixmap> m_GoldImage;
     std::vector<QPixmap> m_FoodImage;
+	std::vector<QPixmap> m_BuildingImage;
+	std::vector<QPixmap> m_UnitImage;
 
     QPixmap WorldView::randomTexture(std::vector<QPixmap> textures);
 protected:

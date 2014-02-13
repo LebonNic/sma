@@ -20,6 +20,7 @@ private:
 	Memory * m_Memory;
 	World * m_World;
 
+	std::list<Unit *> m_Units;
 	std::list<Unit *> m_FreeUnits;
 	std::list<Unit *> m_Lumberjacks; 
 	std::list<Unit *> m_Gatherers;
@@ -40,6 +41,8 @@ public:
 	double getGoldStock(void);
 	double getFoodStock(void);
 	double getWoodStock(void);
+	const std::list<Unit *> & getUnits(void) const;
+	const std::list<Building *> & getBuildings(void) const;
 
 	const World & getWorld() const;
 

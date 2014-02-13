@@ -15,13 +15,15 @@ World::World(unsigned int size, double scale, unsigned int seed)
 		(*vec) = std::vector<Ressource * >(size);
 		std::fill((*vec).begin(), (*vec).end(), (Ressource *)(NULL));
 	}
+
+	m_Civilizations.push_back(new Civilization(70, 30, 0, this));
 }
 
 World::~World(void)
 {
 	delete m_Map;
 
-	for(auto civilization = m_Civilization.begin(); civilization != m_Civilization.end(); ++civilization)
+	for(auto civilization = m_Civilizations.begin(); civilization != m_Civilizations.end(); ++civilization)
 	{
 		delete (*civilization);
 	}
@@ -31,12 +33,17 @@ World::~World(void)
 			delete m_RessourcesMap[i][j];
 }
 
+const std::list<Civilization *> & World::getCivilizations(void) const
+{
+	return m_Civilizations;
+}
+
 void World::populateMap(double goldDensity, double woodDensity, double foodDensity)
 {
 	std::vector<std::vector<Node *>> nodes = m_Map->nodes();
-	PerlinNoise woodNoise(rand());
-	PerlinNoise goldNoise(rand());
-	PerlinNoise foodNoise(rand());
+	PerlinNoise woodNoise(/*rand()*/ 3);
+	PerlinNoise goldNoise(/*rand()*/ 2);
+	PerlinNoise foodNoise(/*rand()*/ 4);
 
 	for(unsigned int i = 0; i < m_Map->size(); ++ i)
 	{

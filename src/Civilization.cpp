@@ -14,7 +14,11 @@ Civilization::Civilization(double x, double y, double z, World * world)
 	std::list<Node * > neighbourNodes = m_World->getMap()(x, y)->neighbours();
 
 	for(auto node = neighbourNodes.begin(); node != neighbourNodes.end(); ++node)
-		m_FreeUnits.push_back(new Unit((*node)->x(), (*node)->y(), (*node)->z(), this));
+	{
+		Unit * unit = new Unit((*node)->x(), (*node)->y(), (*node)->z(), this);
+		m_FreeUnits.push_back(unit);
+		m_Units.push_back(unit);
+	}
 
 	m_dFoodStock = 0;
 	m_dGoldStock = 0;
@@ -25,20 +29,8 @@ Civilization::~Civilization()
 {
 	delete m_Memory;
 
-	for(auto unit = m_FreeUnits.begin(); unit != m_FreeUnits.end(); ++unit)
+	for(auto unit = m_Units.begin(); unit != m_Units.end(); ++unit)
 		delete (*unit);
-
-	for(auto unit = m_Gatherers.begin(); unit != m_Gatherers.end(); ++unit)
-		delete (*unit);
-
-	for(auto unit = m_Lumberjacks.begin(); unit != m_Lumberjacks.end(); ++unit)
-		delete (*unit);
-
-	for(auto unit = m_Miners.begin(); unit != m_Miners.end(); ++unit)
-		delete (*unit);
-
-	for(auto building = m_Buildings.begin(); building != m_Buildings.end(); ++building)
-		delete (*building);
 }
 
 const Memory & Civilization::getMemory() const
@@ -69,6 +61,16 @@ double Civilization::getWoodStock(void)
 const World & Civilization::getWorld() const
 {
 	return (*m_World);
+}
+
+const std::list<Unit *> & Civilization::getUnits(void) const
+{
+	return m_Units;
+}
+
+const std::list<Building *> & Civilization::getBuildings(void) const
+{
+	return m_Buildings;
 }
 
 void Civilization::locateFood(const Location & l)
