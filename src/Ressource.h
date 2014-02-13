@@ -21,7 +21,7 @@ private:
 	void setRessourceType(RessourceType type);
 	void setQuantity(double quantity);
 	void setWorld(World * world);
-	bool isConsumed();
+	
 public:
 	Ressource(RessourceType type, double x, double y, double z, double quantity, World * world);
 	~Ressource(void);
@@ -32,5 +32,6 @@ public:
 	RessourceType ressourceType(void) const;
 	
 	double consume(double quantity);
+	bool isConsumed();
 };
 

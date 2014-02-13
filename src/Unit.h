@@ -30,8 +30,9 @@ public:
 	Unit(double x, double y, double z, Behaviour * behaviour, Civilization * civilization);
 	virtual ~Unit();
 	virtual void run();
+
 	void advanceOnPath();
-	void setPathTo(const Location & goal);
+	void findPathTo(const Location & goal);
 };
 
 #endif

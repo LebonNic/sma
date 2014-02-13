@@ -37,6 +37,7 @@ public:
 	const int & getSize() const;
 	Graph & getMap(void);
 	const Graph & getMap(void) const;
+	double consumeRessource(const Location & ressourceLocation, double quantity);
 
 	void display(void);
 };

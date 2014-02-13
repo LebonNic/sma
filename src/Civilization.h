@@ -8,6 +8,7 @@
 #include "Memory.h"
 #include "Behaviour.h"
 #include "Unit.h"
+#include "CivilizationBehaviour.h"
 
 class World;
 class Unit;
@@ -23,15 +24,14 @@ private:
 	std::list<Unit *> m_Lumberjacks; 
 	std::list<Unit *> m_Gatherers;
 	std::list<Unit *> m_Miners;
-	std::list<Unit *> m_Soldiers;
-	std::list<Unit *> m_Buildings;
+	std::list<Building *> m_Buildings;
 	
 	double m_dWoodStock;
 	double m_dFoodStock;
 	double m_dGoldStock;
 
 public:
-	Civilization(double x, double y, double z, Behaviour * behaviour, World * world);
+	Civilization(double x, double y, double z, World * world);
 	virtual ~Civilization();
 
 	const Memory & getMemory() const;
@@ -47,6 +47,10 @@ public:
 	void locateGold(const Location & l);
 	void locateWood(const Location & l);
 	void locateEmptinessSpace(const Location & l);
+
+	void increaseFoodStockFromRessource(const Location & ressourceLocation, double quantity);
+	void increaseGoldStockFromRessource(const Location & ressourceLocation, double quantity);
+	void increaseWoodStockFromRessource(const Location & ressourceLocation, double quantity);
 };
 
 #endif

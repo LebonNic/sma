@@ -18,7 +18,7 @@ Ressource::~Ressource(void)
 
 bool Ressource::isConsumed()
 {
-	return true;
+	return (m_dQuantity <= 0);
 }
 
 void Ressource::setWorld(World * world)
@@ -48,9 +48,18 @@ RessourceType Ressource::ressourceType(void) const
 	
 double Ressource::consume(double quantity)
 {
-	if (quantity > 0 && quantity <= this->quantity())
+	double consumedQuantity;
+
+	if(this->m_dQuantity - quantity < 0)
 	{
-		setQuantity(this->quantity() - quantity);
+		consumedQuantity = m_dQuantity;
+		m_dQuantity = 0;
 	}
-	return 0;
+	else
+	{
+		consumedQuantity = quantity;
+		m_dQuantity -= quantity;
+	}
+
+	return consumedQuantity;
 }

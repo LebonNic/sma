@@ -1,7 +1,7 @@
 #include "Civilization.h"
 
-Civilization::Civilization(double x, double y, double z, Behaviour * behaviour, World * world)
-	: ActiveEntity(x, y, z, behaviour)
+Civilization::Civilization(double x, double y, double z, World * world)
+	: ActiveEntity(x, y, z, new CivilizationBehaviour(this))
 {
 	if(world)
 		m_World = world;
@@ -9,6 +9,8 @@ Civilization::Civilization(double x, double y, double z, Behaviour * behaviour, 
 		throw std::invalid_argument("Le pointeur sur le monde passe en parametre du constructeur de Civilization ne peut pas etre NULL.");
 
 	m_Memory = new Memory((m_World->getMap()).size());
+
+	m_Buildings.push_back(new Building(x, y, z, this));
 
 	m_dFoodStock = 0;
 	m_dGoldStock = 0;
@@ -70,5 +72,20 @@ void Civilization::locateEmptinessSpace(const Location & l)
 	m_Memory->setFoodMap(l, false);
 	m_Memory->setGoldMap(l, false);
 	m_Memory->setWoodMap(l, false);
+}
+
+void Civilization::increaseFoodStockFromRessource(const Location & ressourceLocation, double quantity)
+{
+	m_dFoodStock += m_World->consumeRessource(ressourceLocation, quantity);
+}
+
+void Civilization::increaseGoldStockFromRessource(const Location & ressourceLocation, double quantity)
+{
+	m_dGoldStock += m_World->consumeRessource(ressourceLocation, quantity);
+}
+
+void Civilization::increaseWoodStockFromRessource(const Location & ressourceLocation, double quantity)
+{
+	m_dWoodStock += m_World->consumeRessource(ressourceLocation, quantity);
 }
 

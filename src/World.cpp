@@ -109,6 +109,22 @@ const int & World::getSize() const
 	return m_uSize;
 }
 
+double World::consumeRessource(const Location & ressourceLocation, double quantity)
+{
+	double consumedQuantity;
+	Ressource * ressource = m_RessourcesMap[ressourceLocation.x()][ressourceLocation.y()];
+
+	consumedQuantity = ressource->consume(quantity);
+
+	if(ressource->isConsumed())
+	{
+		delete ressource;
+		m_RessourcesMap[ressourceLocation.x()][ressourceLocation.y()] = NULL;
+	}
+
+	return consumedQuantity;
+}
+
 //void World::refresh(void)
 //{
 //	Ressource *ressource = (Ressource *) m_PassiveEntities.front();
