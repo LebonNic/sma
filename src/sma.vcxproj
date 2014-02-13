@@ -395,10 +395,24 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="texture\building0.png" />
+    <Image Include="texture\building1.png" />
     <Image Include="texture\food0.png" />
     <Image Include="texture\gold0.png" />
     <Image Include="texture\grass0.png" />
     <Image Include="texture\tree0.png" />
+    <Image Include="texture\unit0.png" />
+    <Image Include="texture\unit1.png" />
+    <Image Include="texture\unit10.png" />
+    <Image Include="texture\unit11.png" />
+    <Image Include="texture\unit2.png" />
+    <Image Include="texture\unit3.png" />
+    <Image Include="texture\unit4.png" />
+    <Image Include="texture\unit5.png" />
+    <Image Include="texture\unit6.png" />
+    <Image Include="texture\unit7.png" />
+    <Image Include="texture\unit8.png" />
+    <Image Include="texture\unit9.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

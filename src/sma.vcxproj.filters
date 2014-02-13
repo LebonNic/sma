@@ -319,5 +319,47 @@
     <Image Include="texture\tree0.png">
       <Filter>Ressource Files</Filter>
     </Image>
+    <Image Include="texture\building0.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\building1.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\unit0.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\unit1.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\unit10.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\unit11.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\unit2.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\unit3.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\unit4.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\unit5.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\unit6.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\unit7.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\unit8.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
+    <Image Include="texture\unit9.png">
+      <Filter>Ressource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
