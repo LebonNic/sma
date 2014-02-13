@@ -31,6 +31,7 @@ public:
 	virtual ~Unit();
 	virtual void run();
 	void advanceOnPath();
+	void setPathTo(const Location & goal);
 };
 
 #endif

@@ -66,3 +66,9 @@ void Unit::updateCivilizationMaps()
 		}
 	}
 }
+
+void Unit::setPathTo(const Location & goal)
+{
+	Graph map = m_Civilization->getWorld().getMap();
+	m_Path = map.findPathFromTo( map( this->location().x(), this->location().y() ), map( goal.x(), goal.y() ) );
+}

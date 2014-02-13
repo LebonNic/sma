@@ -18,7 +18,7 @@ Ressource::~Ressource(void)
 
 bool Ressource::isConsumed()
 {
-
+	return true;
 }
 
 void Ressource::setWorld(World * world)
@@ -52,4 +52,5 @@ double Ressource::consume(double quantity)
 	{
 		setQuantity(this->quantity() - quantity);
 	}
+	return 0;
 }
