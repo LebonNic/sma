@@ -1,7 +1,6 @@
 #ifndef UNIT_H
 #define UNIT_H
 
-
 #include "Agent.h"
 #include "Civilization.h"
 #include "Location.h"
