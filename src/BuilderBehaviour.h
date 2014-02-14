@@ -1,6 +1,7 @@
 #pragma once
 
 #include "UnitBehaviour.h"
+#include "Unit.h"
 
 class BuilderBehaviour : public UnitBehaviour
 {

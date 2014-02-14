@@ -1,8 +1,7 @@
 #pragma once
 
 #include "UnitBehaviour.h"
-
-class Unit;
+#include "Unit.h"
 
 class NopBehaviour : public UnitBehaviour
 {
