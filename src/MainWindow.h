@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
 #include <ctime>
 
 #include "World.h"
@@ -19,6 +20,7 @@ public:
     ~MainWindow();
 private slots:
     void on_actionExit_triggered();
+	void refreshWorld();
 
 private:
     Ui::MainWindow *ui;

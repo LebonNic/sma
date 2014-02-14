@@ -9,12 +9,15 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     srand(time(NULL));
-    m_World = new World(100,0.05, rand()); //FIX THIS put rand() instead of 1
+    m_World = new World(100, 0.05, rand());
     m_World->populateMap(0.005, 0.15, 0.005);
     m_WorldView = new WorldView(m_World, this);
     this->setCentralWidget(m_WorldView);
     m_WorldView->update();
-	m_World->run();
+
+	QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(refreshWorld()));
+    timer->start(1000);
 }
 
 MainWindow::~MainWindow()
@@ -25,4 +28,10 @@ MainWindow::~MainWindow()
 void MainWindow::on_actionExit_triggered()
 {
     this->close();
+}
+
+void MainWindow::refreshWorld()
+{
+	m_World->run();
+	m_WorldView->update();
 }
