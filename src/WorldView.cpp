@@ -36,6 +36,8 @@ WorldView::WorldView(World *world, QWidget *parent) :
     setDragMode(ScrollHandDrag);
 }
 
+// INFO the following peace of code is usefull to show the world view in a different format
+// in order to see the A* algorithm perform
 
 //void WorldView::update(void)
 //{

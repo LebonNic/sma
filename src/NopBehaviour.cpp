@@ -13,6 +13,8 @@ NopBehaviour::~NopBehaviour(void)
 
 void NopBehaviour::execute()
 {
-	qDebug() << ">		[INFO] Run de l'unit d'ID : " << m_Unit->id();
-	qDebug() << ">		[INFO] L'unit est en mode NOP.";
+	//TODO implement the logic of the unit's nop behaviour here.
+	//The following peace of code is just a test.
+	qDebug() << UNIT_RUN_MESSAGE;
+	qDebug() << UNIT_NOP_MESSAGE;
 }

@@ -3,6 +3,8 @@
 #include "Behaviour.h"
 #include "Building.h"
 
+#define BUILDING_RUN_MESSAGE ">		[INFO] Building [" << m_Building->id() <<"] is running."
+
 class Building;
 
 class BuildingBehaviour : public Behaviour

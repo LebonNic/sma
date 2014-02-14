@@ -16,7 +16,7 @@ void CivilizationBehaviour::execute()
 	//TODO implement the logic of the civilization here.
 	//The following peace of code is just a test.
 
-	qDebug() << ">	[INFO] Run de la civilization d'ID : " << m_Civilization->id();
+	qDebug() << CIVILIZATION_RUN_MESSAGE;
 
 	std::list<Unit *> units = m_Civilization->getUnits();
 	for(auto uni = units.begin(); uni != units.end(); ++uni)

@@ -2,6 +2,8 @@
 
 #include "Behaviour.h"
 
+#define UNIT_RUN_MESSAGE ">		[INFO] Unit [" << m_Unit->id() << "] is running."
+
 class Unit;
 
 class UnitBehaviour : public Behaviour
