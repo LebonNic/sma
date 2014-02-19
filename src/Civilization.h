@@ -45,6 +45,7 @@ public:
 	const std::list<Building *> & getBuildings(void) const;
 
 	const World & getWorld() const;
+	World & getWorld();
 
 	//Interfaces used by the units
 	void locateFood(const Location & l);

@@ -2,6 +2,7 @@
 
 #include "Civilization.h"
 #include "Behaviour.h"
+#include "GathererBehaviour.h"
 
 #define CIVILIZATION_RUN_MESSAGE ">	[INFO] Civilization [" << m_Civilization->id() <<"] is running"
 

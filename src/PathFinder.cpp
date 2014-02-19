@@ -106,9 +106,6 @@ void PathFinder::processMemoryCleaning()
 	for(auto ite = m_ClosedSet.begin(); ite != m_ClosedSet.end(); ++ite)
 		delete (*ite);
 
-	for(auto ite = m_Path.begin(); ite != m_Path.end(); ++ite)
-		delete (*ite);
-
 	m_OpenSet.clear();
 	m_ClosedSet.clear();
 	m_Path.clear();
@@ -154,7 +151,7 @@ std::list<Node *> PathFinder::reconstructPath(void)
 	{
 		do
 		{
-			m_Path.push_back(current->m_N);
+			m_Path.push_front(current->m_N);
 			current = current->m_Father;
 
 		}while(current);

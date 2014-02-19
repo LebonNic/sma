@@ -57,6 +57,12 @@ const World & Civilization::getWorld() const
 	return (*m_World);
 }
 
+
+World & Civilization::getWorld()
+{
+	return (*m_World);
+}
+
 const std::list<Unit *> & Civilization::getUnits(void) const
 {
 	return m_Units;

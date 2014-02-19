@@ -13,6 +13,7 @@ Graph::Graph(void)
 {
 }
 
+
 Graph::~Graph(void)
 {
 	destroy();

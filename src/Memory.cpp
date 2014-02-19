@@ -17,7 +17,10 @@ Memory::Memory(unsigned int size)
 void Memory::initArray(std::vector<std::vector<bool>> & arr, bool value)
 {
 	for(auto vec = arr.begin(); vec != arr.end(); ++vec)
+	{
+		(*vec) = std::vector<bool>(m_uSize);
 		std::fill((*vec).begin(), (*vec).end(), value);
+	}
 }
 
 Memory::~Memory(void)

@@ -1,19 +1,19 @@
 #ifndef UNIT_H
 #define UNIT_H
 
+
+
+#include <limits>
 #include "Agent.h"
 #include "Civilization.h"
 #include "Location.h"
 #include "Node.h"
-#include "Ressource.h"
 #include "NopBehaviour.h"
 
-enum UnitJob{
-	builder,	//build buildings
-	lumberjack,	//collect wood
-	miner,		//collect gold
-	gatherer,	//collect food
-	nop			//no operation == no job
+enum UnitStates{
+	working,	//harvesting, building, mining...
+	moving,		//moving on a path
+	nop			//no operation
 };
 
 class Civilization;
@@ -21,9 +21,12 @@ class Civilization;
 class Unit : public Agent
 {
 private:
+	static const unsigned int m_DefaultRange;
 	std::list<Node *> m_Path;
-	UnitJob m_Job;
+	UnitStates m_State;
 	unsigned int m_uRange;
+
+	Location m_TargetLocation;
 
 	void updateCivilizationMaps();
 
@@ -31,13 +34,19 @@ public:
 	Unit(double x, double y, double z, Civilization * civilization);
 	virtual ~Unit();
 
-	const UnitJob & getJob() const;
-	void setJob(const UnitJob & j);
+	const UnitStates & getUnitState() const;
+	void setUnitState(const UnitStates & j);
+
+	const Location & getUnitTargetLocation(void) const;
+	void setUnitTargetLocation(const Location & targetLocation);
 
 	virtual void run();
 
 	void advanceOnPath();
-	void findPathTo(const Location & goal);
+	bool findPathTo(const Location & goal);
+
+	const Civilization & getCivilization(void) const;
+
 };
 
 #endif

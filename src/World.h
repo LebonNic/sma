@@ -7,7 +7,6 @@
 #include "Graph.h"
 #include "WorldBehaviour.h"
 #include "Civilization.h"
-#include "Unit.h"
 #include "Building.h"
 
 class Civilization;
