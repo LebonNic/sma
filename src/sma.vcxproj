@@ -285,6 +285,7 @@
     <ClCompile Include="Location.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="Memory.cpp" />
+    <ClCompile Include="MersenneTwister.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="NopBehaviour.cpp" />
     <ClCompile Include="PassiveEntity.cpp" />
@@ -324,6 +325,7 @@
     <ClInclude Include="Graph.h" />
     <ClInclude Include="Group.h" />
     <ClInclude Include="Location.h" />
+    <ClInclude Include="MersenneTwister.h" />
     <ClInclude Include="NopBehaviour.h" />
     <ClInclude Include="UnitBehaviour.h" />
     <ClInclude Include="WorldBehaviour.h" />

@@ -46,6 +46,7 @@ public:
 
 	const World & getWorld() const;
 
+	//Interfaces used by the units
 	void locateFood(const Location & l);
 	void locateGold(const Location & l);
 	void locateWood(const Location & l);
@@ -54,6 +55,10 @@ public:
 	void increaseFoodStockFromRessource(const Location & ressourceLocation, double quantity);
 	void increaseGoldStockFromRessource(const Location & ressourceLocation, double quantity);
 	void increaseWoodStockFromRessource(const Location & ressourceLocation, double quantity);
+
+	void createBuilding(const Location & emplacement);
+
+	//Interfaces used by the civilization's behaviours
 };
 
 #endif

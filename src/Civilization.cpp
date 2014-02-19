@@ -8,17 +8,11 @@ Civilization::Civilization(double x, double y, double z, World * world)
 	else
 		throw std::invalid_argument("Le pointeur sur le monde passe en parametre du constructeur de Civilization ne peut pas etre NULL.");
 
+	//Each civilization begins with one building
+	createBuilding(Location(x, y));
+
+	//Instantiates the civilization's memory
 	m_Memory = new Memory((m_World->getMap()).size());
-
-	m_Buildings.push_back(new Building(x, y, z, this));
-	std::list<Node * > neighbourNodes = m_World->getMap()(x, y)->neighbours();
-
-	for(auto node = neighbourNodes.begin(); node != neighbourNodes.end(); ++node)
-	{
-		Unit * unit = new Unit((*node)->x(), (*node)->y(), (*node)->z(), this);
-		m_FreeUnits.push_back(unit);
-		m_Units.push_back(unit);
-	}
 
 	m_dFoodStock = 0;
 	m_dGoldStock = 0;
@@ -108,5 +102,28 @@ void Civilization::increaseGoldStockFromRessource(const Location & ressourceLoca
 void Civilization::increaseWoodStockFromRessource(const Location & ressourceLocation, double quantity)
 {
 	m_dWoodStock += m_World->consumeRessource(ressourceLocation, quantity);
+}
+
+void Civilization::createBuilding(const Location & emplacement)
+{
+	//Check if the location is not used by a ressource
+	if( ( m_World->getRessourcesMap()[emplacement.x()][emplacement.y()]) == NULL)
+	{
+		double	x = emplacement.x(),
+				y = emplacement.y(),
+				z = emplacement.z();
+		m_Buildings.push_back(new Building(x, y, z, this));
+
+		//Create units on the locations surrounding the new building (in fonction of the free space arround the building)
+		std::list<Node * > neighbourNodes = m_World->getMap()(x, y)->neighbours();
+		for(auto node = neighbourNodes.begin(); node != neighbourNodes.end(); ++node)
+		{
+			Unit * unit = new Unit((*node)->x(), (*node)->y(), (*node)->z(), this);
+			m_FreeUnits.push_back(unit);
+			m_Units.push_back(unit);
+		}
+	}
+	else
+		throw std::runtime_error("Impossible to create a building because the emplacement specified is already occupied by a ressource.");
 }
 

@@ -102,6 +102,12 @@
     <Filter Include="Header Files\Model\Behaviours\World">
       <UniqueIdentifier>{9763069f-77a2-4385-a0a8-83e84dda8c85}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Model\Generator">
+      <UniqueIdentifier>{209bcce3-4418-4905-b6fb-87841c914831}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model\Generator">
+      <UniqueIdentifier>{88bd9fb6-1c3e-4d67-b687-db412f3e1b0c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -206,6 +212,9 @@
     <ClCompile Include="WorldBehaviour.cpp">
       <Filter>Source Files\Model\Behaviours\World</Filter>
     </ClCompile>
+    <ClCompile Include="MersenneTwister.cpp">
+      <Filter>Source Files\Model\Generator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_MainWindow.h">
@@ -282,6 +291,9 @@
     </ClInclude>
     <ClInclude Include="WorldBehaviour.h">
       <Filter>Header Files\Model\Behaviours\World</Filter>
+    </ClInclude>
+    <ClInclude Include="MersenneTwister.h">
+      <Filter>Header Files\Model\Generator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
