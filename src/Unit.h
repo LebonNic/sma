@@ -21,7 +21,8 @@ class Civilization;
 class Unit : public Agent
 {
 private:
-	static const unsigned int m_DefaultRange;
+	static const unsigned int m_uDefaultRange;
+	static const double m_dGatheringCapacity;
 	std::list<Node *> m_Path;
 	UnitStates m_State;
 	unsigned int m_uRange;
@@ -46,6 +47,8 @@ public:
 	bool findPathTo(const Location & goal);
 
 	const Civilization & getCivilization(void) const;
+	Civilization & getCivilization(void);
+	static double getGatheringCapacity(void);
 
 };
 

@@ -18,6 +18,9 @@ void CivilizationBehaviour::execute()
 	//The following peace of code is just a test.
 
 	qDebug() << CIVILIZATION_RUN_MESSAGE;
+	qDebug() << "Food : " << m_Civilization->getFoodStock();
+	qDebug() << "Gold : " << m_Civilization->getGoldStock();
+	qDebug() << "Wood : " << m_Civilization->getWoodStock();
 
 	std::list<Unit *> units = m_Civilization->getUnits();
 	for(auto uni = units.begin(); uni != units.end(); ++uni)

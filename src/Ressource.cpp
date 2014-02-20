@@ -14,6 +14,8 @@ Ressource::Ressource(RessourceType type, double x, double y, double z, double qu
 
 Ressource::~Ressource(void)
 {
+	if(this->m_RessourceType == RessourceType::wood)
+		(m_World->getMap()).removeObstacle(this->location());
 }
 
 bool Ressource::isConsumed()

@@ -1,13 +1,14 @@
 #include "Unit.h"
 
-const unsigned int Unit::m_DefaultRange = 10;
+const unsigned int Unit::m_uDefaultRange = 10;
+const double  Unit::m_dGatheringCapacity = 20.0;
 
 
 Unit::Unit(double x, double y, double z, Civilization * civilization)
 	: Agent(x, y, z, new NopBehaviour(this), civilization)
 {
 	m_State = UnitStates::nop;
-	m_uRange = Unit::m_DefaultRange;
+	m_uRange = Unit::m_uDefaultRange;
 }
 
 Unit::~Unit()
@@ -104,7 +105,6 @@ bool Unit::findPathTo(const Location & goal)
 	if(m_Path.size() > 0)
 	{
 		find = true;
-		m_TargetLocation = goal;
 		m_State = UnitStates::moving;
 	}
 
@@ -114,4 +114,14 @@ bool Unit::findPathTo(const Location & goal)
 const Civilization & Unit::getCivilization(void) const
 {
 	return (*m_Civilization);
+}
+
+Civilization & Unit::getCivilization(void)
+{
+	return (*m_Civilization);
+}
+
+double Unit::getGatheringCapacity(void)
+{
+	return m_dGatheringCapacity;
 }

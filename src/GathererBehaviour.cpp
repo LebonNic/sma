@@ -31,7 +31,6 @@ void GathererBehaviour::execute()
 			findPathToRessource();
 		else
 			m_Unit->setUnitState(UnitStates::working);
-
 		break;
 
 	case UnitStates::moving:
@@ -39,6 +38,36 @@ void GathererBehaviour::execute()
 		break;
 
 	case UnitStates::working:
+
+
+		const Location & target = m_Unit->getUnitTargetLocation();
+
+		//Check if the ressource is available (not already consumed by someone else)
+		if(!(m_Unit->getCivilization().getWorld().getRessourcesMap()[target.x()][target.y()]))
+		{
+			m_Unit->setUnitState(UnitStates::nop);
+			m_bRessourceFound = false;
+		}
+
+		//Not consumed
+		else
+		{
+			switch(m_FocusedRessource)
+			{
+			
+			case RessourceType::food:
+				(m_Unit->getCivilization()).increaseFoodStockFromRessource(target, Unit::getGatheringCapacity());
+				break;
+
+			case RessourceType::gold:
+				(m_Unit->getCivilization()).increaseGoldStockFromRessource(target, Unit::getGatheringCapacity());
+				break;
+
+			case RessourceType::wood:
+				(m_Unit->getCivilization()).increaseWoodStockFromRessource(target, Unit::getGatheringCapacity());
+				break;
+			}
+		}
 		break;
 	}
 }
@@ -113,8 +142,10 @@ void GathererBehaviour::findPathToRessource(void)
 	//Signifie qu'une ressource a été trouvée
 	if(minDist < std::numeric_limits<double>::max())
 	{
+		qDebug() << "x = " << ressourceLocation.x() << " y = " << ressourceLocation.y();
+		m_Unit->setUnitTargetLocation(ressourceLocation);
 		//Recherche un sommet voisin de celui sur lequel se situe la ressource. Celui-ci doit être atteignable (il ne doit pas être un obstacle).
-		std::list<Node *> neighbours = (unitCivilization.getWorld().getMap()(x, y))->neighbours();
+		std::list<Node *> neighbours = (unitCivilization.getWorld().getMap()(ressourceLocation.x(), ressourceLocation.y()))->neighbours();
 		auto node = neighbours.begin();
 		
 		while(node != neighbours.end() && !find)
@@ -123,6 +154,7 @@ void GathererBehaviour::findPathToRessource(void)
 		//Si un voisin est accessible, recherche d'un chemin jusqu'à celui-ci
 		if(find)
 		{
+			qDebug() << "x = " << (*node)->x() << " y = " << (*node)->y();
 			m_bRessourceFound = m_Unit->findPathTo(Location((*node)->x(), (*node)->y()));
 		}
 	}
