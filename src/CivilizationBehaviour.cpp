@@ -19,7 +19,7 @@ void CivilizationBehaviour::execute()
 
 	qDebug() << CIVILIZATION_RUN_MESSAGE;
 
-	//std::list<Unit *> units = m_Civilization->getUnits();
+	std::list<Unit *> units = m_Civilization->getUnits();
 	for(auto uni = units.begin(); uni != units.end(); ++uni)
 		(*uni)->run();
 
