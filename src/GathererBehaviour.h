@@ -16,6 +16,7 @@ class GathererBehaviour : public UnitBehaviour
 
 private:
 	RessourceType m_FocusedRessource;
+	bool m_bRessourceFound;
 	static const unsigned int m_strikesNumber;
 	static MersenneTwister m_Generator;
 

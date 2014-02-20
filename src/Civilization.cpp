@@ -11,6 +11,10 @@ Civilization::Civilization(double x, double y, double z, World * world)
 	//Each civilization begins with one building
 	createBuilding(Location(x, y));
 
+	//TODO This is a test to check the gatherer behaviour
+	for(auto uni = m_FreeUnits.begin(); uni != m_FreeUnits.end(); ++uni)
+		(*uni)->setBehaviour(new GathererBehaviour((*uni), RessourceType::wood));
+
 	//Instantiates the civilization's memory
 	m_Memory = new Memory((m_World->getMap()).size());
 

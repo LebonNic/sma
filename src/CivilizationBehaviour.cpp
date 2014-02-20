@@ -19,10 +19,6 @@ void CivilizationBehaviour::execute()
 
 	qDebug() << CIVILIZATION_RUN_MESSAGE;
 
-	std::list<Unit *> units = m_Civilization->getUnits();
-	for(auto uni = units.begin(); uni != units.end(); ++uni)
-		(*uni)->setBehaviour(new GathererBehaviour((*uni), RessourceType::wood));
-
 	//std::list<Unit *> units = m_Civilization->getUnits();
 	for(auto uni = units.begin(); uni != units.end(); ++uni)
 		(*uni)->run();

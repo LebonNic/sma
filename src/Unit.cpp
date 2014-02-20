@@ -1,6 +1,6 @@
 #include "Unit.h"
 
-const unsigned int Unit::m_DefaultRange = 2;
+const unsigned int Unit::m_DefaultRange = 10;
 
 
 Unit::Unit(double x, double y, double z, Civilization * civilization)

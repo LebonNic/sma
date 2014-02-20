@@ -8,6 +8,7 @@ GathererBehaviour::GathererBehaviour(Unit * unit, RessourceType focusedRessource
 	: UnitBehaviour(unit)
 {
 	m_FocusedRessource = focusedRessource;
+	m_bRessourceFound = false;
 }
 
 
@@ -25,7 +26,12 @@ void GathererBehaviour::execute()
 	switch(m_Unit->getUnitState())
 	{
 	case UnitStates::nop:
-		findPathToRessource();
+
+		if(!m_bRessourceFound)
+			findPathToRessource();
+		else
+			m_Unit->setUnitState(UnitStates::working);
+
 		break;
 
 	case UnitStates::moving:
@@ -116,11 +122,13 @@ void GathererBehaviour::findPathToRessource(void)
 		
 		//Si un voisin est accessible, recherche d'un chemin jusqu'à celui-ci
 		if(find)
-			find = m_Unit->findPathTo(Location((*node)->x(), (*node)->y()));
+		{
+			m_bRessourceFound = m_Unit->findPathTo(Location((*node)->x(), (*node)->y()));
+		}
 	}
 
 	//Si l'unité ne trouve pas de chemin jusqu'à la ressource alors, elle tente de trouver une direction aléatoire pour explorer la map
-	if(!find)
+	if(!m_bRessourceFound)
 		findRandomPath();
 }
 

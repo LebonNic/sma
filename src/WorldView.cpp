@@ -128,62 +128,151 @@ WorldView::WorldView(World *world, QWidget *parent) :
 //}
 
 
+//void WorldView::update(void)
+//{
+//    // Reset objects
+//    m_WorldScene->clear();
+//
+//	std::vector<std::vector<Node *>> nodes = m_World->getMap().nodes();
+//    for(auto vec = nodes.begin(); vec != nodes.end(); ++vec)
+//    {
+//		for(auto node = (*vec).begin(); node !=(*vec).end(); ++node)
+//		{
+//			double x = (*node)->x();
+//			double y = (*node)->y();
+//			QGraphicsPixmapItem *item = m_WorldScene->addPixmap(randomTexture(m_GrassImage));
+//			item->setPos(x*m_dScale,y*m_dScale);
+//		}
+//    }
+//
+//	std::vector<std::vector<Ressource *>> ressources = m_World->getRessourcesMap();
+//    for(auto vec = ressources.begin(); vec != ressources.end(); ++vec)
+//    {
+//		for(auto ress = (*vec).begin(); ress != (*vec).end(); ++ress)
+//		{
+//			if((*ress))
+//			{
+//				double x = (*ress)->x();
+//				double y = (*ress)->y();
+//				QGraphicsPixmapItem *item;
+//				switch((*ress)->ressourceType())
+//				{
+//				case RessourceType::wood:
+//					item = m_WorldScene->addPixmap(this->randomTexture(m_TreeImage));
+//					item->setPos(x*m_dScale,y*m_dScale);
+//					break;
+//
+//				case RessourceType::gold:
+//					item = m_WorldScene->addPixmap(this->randomTexture(m_GoldImage));
+//					item->setPos(x*m_dScale,y*m_dScale);
+//					break;
+//
+//				case RessourceType::food:
+//					item = m_WorldScene->addPixmap(this->randomTexture(m_FoodImage));
+//					item->setPos(x*m_dScale,y*m_dScale);
+//					break;
+//
+//				default:
+//					break;
+//				}
+//			}
+//		}
+//	}
+//
+//	std::list<Civilization *> civilizations = m_World->getCivilizations();
+//	for(auto civi = civilizations.begin(); civi != civilizations.end(); ++civi)
+//	{
+//		std::list<Unit *> units = (*civi)->getUnits();
+//		std::list<Building *> buildings = (*civi)->getBuildings();
+//
+//		for(auto uni = units.begin(); uni != units.end(); ++uni)
+//		{
+//			double x = (*uni)->x();
+//			double y = (*uni)->y();
+//			QGraphicsPixmapItem * item = m_WorldScene->addPixmap(m_UnitImage.front());
+//			item->setPos(x*m_dScale, y*m_dScale);
+//		}
+//
+//		for(auto bui = buildings.begin(); bui != buildings.end(); ++bui)
+//		{
+//			double x = (*bui)->x();
+//			double y = (*bui)->y();
+//			QGraphicsPixmapItem * item = m_WorldScene->addPixmap(m_BuildingImage.front());
+//			item->setPos(x*m_dScale, y*m_dScale);
+//		}
+//	}
+//}
+
 void WorldView::update(void)
 {
     // Reset objects
     m_WorldScene->clear();
 
-	std::vector<std::vector<Node *>> nodes = m_World->getMap().nodes();
-    for(auto vec = nodes.begin(); vec != nodes.end(); ++vec)
-    {
-		for(auto node = (*vec).begin(); node !=(*vec).end(); ++node)
-		{
-			double x = (*node)->x();
-			double y = (*node)->y();
-			QGraphicsPixmapItem *item = m_WorldScene->addPixmap(randomTexture(m_GrassImage));
-			item->setPos(x*m_dScale,y*m_dScale);
-		}
-    }
-
-	std::vector<std::vector<Ressource *>> ressources = m_World->getRessourcesMap();
-    for(auto vec = ressources.begin(); vec != ressources.end(); ++vec)
-    {
-		for(auto ress = (*vec).begin(); ress != (*vec).end(); ++ress)
-		{
-			if((*ress))
-			{
-				double x = (*ress)->x();
-				double y = (*ress)->y();
-				QGraphicsPixmapItem *item;
-				switch((*ress)->ressourceType())
-				{
-				case RessourceType::wood:
-					item = m_WorldScene->addPixmap(this->randomTexture(m_TreeImage));
-					item->setPos(x*m_dScale,y*m_dScale);
-					break;
-
-				case RessourceType::gold:
-					item = m_WorldScene->addPixmap(this->randomTexture(m_GoldImage));
-					item->setPos(x*m_dScale,y*m_dScale);
-					break;
-
-				case RessourceType::food:
-					item = m_WorldScene->addPixmap(this->randomTexture(m_FoodImage));
-					item->setPos(x*m_dScale,y*m_dScale);
-					break;
-
-				default:
-					break;
-				}
-			}
-		}
-	}
+	for(unsigned int i = 0; i < m_World->getSize(); ++i)
+		for(unsigned int j = 0; j < m_World->getSize(); ++j)
+			m_WorldScene->addRect(i * m_dScale, j * m_dScale, m_dScale, m_dScale);
 
 	std::list<Civilization *> civilizations = m_World->getCivilizations();
 	for(auto civi = civilizations.begin(); civi != civilizations.end(); ++civi)
 	{
 		std::list<Unit *> units = (*civi)->getUnits();
 		std::list<Building *> buildings = (*civi)->getBuildings();
+		const Memory & mem = (*civi)->getMemory();
+		const std::vector<std::vector<bool>> & foodMap = mem.getFoodMap();
+		const std::vector<std::vector<bool>> & woodMap = mem.getWoodMap();
+		const std::vector<std::vector<bool>> & goldMap = mem.getGoldMap();
+
+		unsigned int i = 0;
+		for(auto woodVec = woodMap.begin(); woodVec != woodMap.end(); ++woodVec)
+		{
+			unsigned int j = 0;
+			for(auto wood = (*woodVec).begin(); wood != (*woodVec).end(); ++wood)
+			{
+				
+				if((*wood))
+				{
+					QGraphicsPixmapItem * item = m_WorldScene->addPixmap(this->randomTexture(m_TreeImage));
+					item->setPos(i*m_dScale,j*m_dScale);
+				}
+				++j;
+			}
+			++i;
+		}
+
+		i = 0;
+		for(auto golddVec = goldMap.begin(); golddVec != goldMap.end(); ++golddVec)
+		{
+			unsigned int j = 0;
+			for(auto gold = (*golddVec).begin(); gold != (*golddVec).end(); ++gold)
+			{
+				
+				if((*gold))
+				{
+					QGraphicsPixmapItem * item = m_WorldScene->addPixmap(this->randomTexture(m_GoldImage));
+					item->setPos(i*m_dScale,j*m_dScale);
+				}
+				++j;
+			}
+			++i;
+		}
+
+		i = 0;
+		for(auto foodVec = foodMap.begin(); foodVec != foodMap.end(); ++foodVec)
+		{
+			unsigned int j = 0;
+			for(auto food = (*foodVec).begin(); food != (*foodVec).end(); ++food)
+			{
+				
+				if((*food))
+				{
+					QGraphicsPixmapItem * item = m_WorldScene->addPixmap(this->randomTexture(m_FoodImage));
+					item->setPos(i*m_dScale,j*m_dScale);
+				}
+				++j;
+			}
+			++i;
+		}
+
 
 		for(auto uni = units.begin(); uni != units.end(); ++uni)
 		{
