@@ -19,8 +19,8 @@ public:
 
 	const Location & location(void) const;
 	unsigned int id() const;
-	double x(void);
-	double y(void);
-	double z(void);
+	double x(void) const;
+	double y(void) const;
+	double z(void) const;
 };
 

@@ -41,15 +41,15 @@ unsigned int Entity::id() const
 	return m_uId;
 }
 
-double Entity::x()
+double Entity::x() const
 {
 	return m_Location.x();
 }
-double Entity::y()
+double Entity::y() const
 {
 	return m_Location.y();
 }
-double Entity::z()
+double Entity::z() const
 {
 	return m_Location.z();
 }
