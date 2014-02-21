@@ -288,6 +288,7 @@
     <ClCompile Include="MersenneTwister.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="NopBehaviour.cpp" />
+    <ClCompile Include="NormalDistributionGenerator.cpp" />
     <ClCompile Include="PassiveEntity.cpp" />
     <ClCompile Include="PathFinder.cpp" />
     <ClCompile Include="PerlinNoise.cpp" />
@@ -327,6 +328,7 @@
     <ClInclude Include="Location.h" />
     <ClInclude Include="MersenneTwister.h" />
     <ClInclude Include="NopBehaviour.h" />
+    <ClInclude Include="NormalDistributionGenerator.h" />
     <ClInclude Include="UnitBehaviour.h" />
     <ClInclude Include="WorldBehaviour.h" />
     <CustomBuild Include="MainWindow.h">

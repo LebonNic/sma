@@ -215,6 +215,9 @@
     <ClCompile Include="MersenneTwister.cpp">
       <Filter>Source Files\Model\Generator</Filter>
     </ClCompile>
+    <ClCompile Include="NormalDistributionGenerator.cpp">
+      <Filter>Source Files\Model\Generator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_MainWindow.h">
@@ -293,6 +296,9 @@
       <Filter>Header Files\Model\Behaviours\World</Filter>
     </ClInclude>
     <ClInclude Include="MersenneTwister.h">
+      <Filter>Header Files\Model\Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalDistributionGenerator.h">
       <Filter>Header Files\Model\Generator</Filter>
     </ClInclude>
   </ItemGroup>

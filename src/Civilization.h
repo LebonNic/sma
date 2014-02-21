@@ -17,14 +17,17 @@ class Building;
 class Civilization : public ActiveEntity
 {
 private:
+
+
 	Memory * m_Memory;
 	World * m_World;
 
 	std::list<Unit *> m_Units;
 	std::list<Unit *> m_FreeUnits;
 	std::list<Unit *> m_Lumberjacks; 
-	std::list<Unit *> m_Gatherers;
+	std::list<Unit *> m_FoodGatherers;
 	std::list<Unit *> m_Miners;
+	std::list<Unit *> m_Builders;
 	std::list<Building *> m_Buildings;
 	
 	double m_dWoodStock;
@@ -34,6 +37,10 @@ private:
 public:
 	Civilization(double x, double y, double z, World * world);
 	virtual ~Civilization();
+
+	static const double m_dBuildingWoodCost;
+	static const double m_dBuildingFoodCost;
+	static const double m_dBuildingGoldCost;
 
 	const Memory & getMemory() const;
 	void run();
@@ -60,6 +67,24 @@ public:
 	void createBuilding(const Location & emplacement);
 
 	//Interfaces used by the civilization's behaviours
+	const std::list<Unit *> & getFreeUnitsList() const;
+	std::list<Unit *> & getFreeUnitsList();
+
+	const std::list<Unit *> & getLumberjacksList() const;
+	std::list<Unit *> & getLumberjacksList();
+
+	const std::list<Unit *> & getBuildersList() const;
+	std::list<Unit *> & getBuildersList();
+
+	const std::list<Unit *> & getFoodGatherersList() const;
+	std::list<Unit *> & getFoodGatherersList();
+
+	const std::list<Unit *> & getMinersList() const;
+	std::list<Unit *> & getMinersList();
+
+	std::list<Unit *> & getRichestList();
+
+	void consumeRessource(RessourceType ressourceType, double quantity);
 };
 
 #endif

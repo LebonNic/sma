@@ -290,6 +290,9 @@ void WorldView::update(void)
 			item->setPos(x*m_dScale, y*m_dScale);
 		}
 	}
+
+	QString info = civilizationsInfoToString();
+	QGraphicsSimpleTextItem * item = m_WorldScene->addSimpleText(info);
 }
 
 
@@ -297,6 +300,57 @@ QPixmap WorldView::randomTexture(std::vector<QPixmap> textures)
 {
     return textures[rand() % textures.size()];
 }
+
+QString WorldView::civilizationsInfoToString() const
+{
+	QString info;
+	for(auto civi = m_World->getCivilizations().begin(); civi != m_World->getCivilizations().end(); ++civi)
+	{
+		info.append("Civilization[");
+		info.append(QString::number((*civi)->id()));
+		info.append("]\n");
+
+		info.append("Food : ");
+		info.append(QString::number((*civi)->getFoodStock(), 'g', 6));
+		info.append("\n");
+
+		info.append("Wood : ");
+		info.append(QString::number((*civi)->getWoodStock(), 'g', 6));
+		info.append("\n");
+
+		info.append("Gold : ");
+		info.append(QString::number((*civi)->getGoldStock(), 'g', 6));
+		info.append("\n");
+
+		info.append("Total units count : ");
+		info.append(QString::number((*civi)->getUnits().size(), 'g', 6));
+		info.append("\n");
+
+		info.append("Free units count : ");
+		info.append(QString::number((*civi)->getFreeUnitsList().size(), 'g', 6));
+		info.append("\n");
+
+		info.append("Food gatherer units count : ");
+		info.append(QString::number((*civi)->getFoodGatherersList().size(), 'g', 6));
+		info.append("\n");
+
+		info.append("Gold gatherer units count : ");
+		info.append(QString::number((*civi)->getMinersList().size(), 'g', 6));
+		info.append("\n");
+
+		info.append("Wood gatherer units count : ");
+		info.append(QString::number((*civi)->getLumberjacksList().size(), 'g', 6));
+		info.append("\n");
+
+		info.append("Builder units count : ");
+		info.append(QString::number((*civi)->getBuildersList().size(), 'g', 6));
+		info.append("\n");
+	}
+
+	return info;
+}
+
+
 
 void WorldView::wheelEvent(QWheelEvent* event)
 {

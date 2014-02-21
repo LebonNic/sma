@@ -22,6 +22,7 @@ void GathererBehaviour::execute()
 	//The following peace of code is just a test.
 	qDebug() << UNIT_RUN_MESSAGE;
 	qDebug() << UNIT_GATHERER_MESSAGE;
+	qDebug() << "Focused ressource : " << m_FocusedRessource;
 
 	switch(m_Unit->getUnitState())
 	{
@@ -142,7 +143,6 @@ void GathererBehaviour::findPathToRessource(void)
 	//Signifie qu'une ressource a été trouvée
 	if(minDist < std::numeric_limits<double>::max())
 	{
-		qDebug() << "x = " << ressourceLocation.x() << " y = " << ressourceLocation.y();
 		m_Unit->setUnitTargetLocation(ressourceLocation);
 		//Recherche un sommet voisin de celui sur lequel se situe la ressource. Celui-ci doit être atteignable (il ne doit pas être un obstacle).
 		std::list<Node *> neighbours = (unitCivilization.getWorld().getMap()(ressourceLocation.x(), ressourceLocation.y()))->neighbours();
@@ -154,7 +154,6 @@ void GathererBehaviour::findPathToRessource(void)
 		//Si un voisin est accessible, recherche d'un chemin jusqu'à celui-ci
 		if(find)
 		{
-			qDebug() << "x = " << (*node)->x() << " y = " << (*node)->y();
 			m_bRessourceFound = m_Unit->findPathTo(Location((*node)->x(), (*node)->y()));
 		}
 	}

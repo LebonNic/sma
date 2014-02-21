@@ -36,7 +36,5 @@ public:
 	const int getSize() const;
 	Graph & getMap(void);
 	const Graph & getMap(void) const;
-
-	
 };
 

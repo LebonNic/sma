@@ -4,6 +4,7 @@
 #include <QGraphicsView>
 #include <QGraphicsPixmapItem>
 #include <QPixmap>
+#include <QString>
 #include <QWheelEvent>
 #include <QTimeLine>
 #include "World.h"
@@ -32,7 +33,8 @@ private:
 	std::vector<QPixmap> m_BuildingImage;
 	std::vector<QPixmap> m_UnitImage;
 
-    QPixmap WorldView::randomTexture(std::vector<QPixmap> textures);
+    QPixmap randomTexture(std::vector<QPixmap> textures);
+	QString civilizationsInfoToString() const;
 protected:
     virtual void wheelEvent(QWheelEvent* event);
 };
