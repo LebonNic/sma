@@ -13,5 +13,5 @@ BuildingBehaviour::~BuildingBehaviour(void)
 
 void BuildingBehaviour::execute()
 {
-	qDebug() << BUILDING_RUN_MESSAGE;
+	/*qDebug() << BUILDING_RUN_MESSAGE;*/
 }

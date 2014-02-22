@@ -89,6 +89,12 @@ void CivilizationBehaviour::execute()
 	qDebug() << "Food : " << m_Civilization->getFoodStock();
 	qDebug() << "Gold : " << m_Civilization->getGoldStock();
 	qDebug() << "Wood : " << m_Civilization->getWoodStock();
+	qDebug() << "Total units count : " << m_Civilization->getUnits().size();
+	qDebug() << "Total building count : " << m_Civilization->getBuildings().size();
+	qDebug() << "Total food gatherers count : " << m_Civilization->getFoodGatherersList().size();
+	qDebug() << "Total gold gatherers count : " << m_Civilization->getMinersList().size();
+	qDebug() << "Total wood gatherers count : " << m_Civilization->getLumberjacksList().size();
+	qDebug() << "Total builders count : " << m_Civilization->getBuildersList().size();
 
 	affectUnitsToBuildingTasks();
 	affectFreeUnitsToGatheringTasks();

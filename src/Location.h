@@ -20,5 +20,9 @@ public:
 	void setX(double x);
 	void setY(double y);
 	void setZ(double z);
+
+	void setX(unsigned int x);
+	void setY(unsigned int y);
+	void setZ(unsigned int z);
 };
 

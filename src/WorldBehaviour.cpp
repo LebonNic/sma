@@ -12,7 +12,7 @@ WorldBehaviour::~WorldBehaviour()
 
 void WorldBehaviour::execute()
 {
-	qDebug() << WORLD_RUN_MESSAGE;
+	/*qDebug() << WORLD_RUN_MESSAGE;*/
 	std::list<Civilization *> civilizations = m_World->getCivilizations();
 	for(auto civi = civilizations.begin(); civi != civilizations.end(); ++civi)
 		(*civi)->run();

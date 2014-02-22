@@ -1,7 +1,7 @@
 #include "Civilization.h"
 
 const double Civilization::m_dBuildingWoodCost = 5000.0;
-const double Civilization::m_dBuildingFoodCost = 10.0;
+const double Civilization::m_dBuildingFoodCost = 5000.0;
 const double Civilization::m_dBuildingGoldCost = 5000.0;
 
 Civilization::Civilization(double x, double y, double z, World * world)

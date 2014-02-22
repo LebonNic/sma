@@ -26,7 +26,8 @@ void BuilderBehaviour::findConstructibleArea()
 	const Civilization & civi = m_Unit->getCivilization();
 	const World & world = civi.getWorld();
 	bool constructibleAreaFound = false;
-	unsigned int i = 0;
+	unsigned int	i = 0,
+					mapSize = world.getSize();
 	
 	m_NormalDistribGenerator.setStandardDeviation(civi.getBuildings().size() * BuilderBehaviour::m_dStandardDeviationCoefficient);
 
@@ -35,11 +36,11 @@ void BuilderBehaviour::findConstructibleArea()
 		double randomAngle = BuilderBehaviour::m_PseudoRandomGenerator.genrand_real1() * M_PI;
 		std::pair<double,double> pair = m_NormalDistribGenerator.getPair();
 
-		p1.setX(pair.first * cos(randomAngle) + civi.x());
-		p1.setY(pair.first * sin(randomAngle) + civi.y());
+		p1.setX((unsigned int)(abs(pair.first * cos(randomAngle) + civi.x())) % mapSize);
+		p1.setY((unsigned int)(abs(pair.first * sin(randomAngle) + civi.y())) % mapSize);
 
-		p2.setX(pair.second * cos(randomAngle) + civi.x());
-		p2.setY(pair.second * sin(randomAngle) + civi.y());
+		p2.setX((unsigned int)(abs(pair.second * cos(randomAngle) + civi.x())) % mapSize);
+		p2.setY((unsigned int)(abs(pair.second * sin(randomAngle) + civi.y())) % mapSize);
 
 		if(world.isConstructible(p1))
 		{
@@ -82,8 +83,8 @@ void BuilderBehaviour::constructBuilding()
 
 void BuilderBehaviour::execute()
 {
-	qDebug() << UNIT_RUN_MESSAGE;
-	qDebug() << UNIT_BUILDER_MESSAGE;
+	/*qDebug() << UNIT_RUN_MESSAGE;
+	qDebug() << UNIT_BUILDER_MESSAGE;*/
 
 	switch(m_Unit->getUnitState())
 	{

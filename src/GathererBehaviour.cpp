@@ -20,9 +20,9 @@ void GathererBehaviour::execute()
 {
 	//TODO implement the logic of the unit's gatherer behaviour here.
 	//The following peace of code is just a test.
-	qDebug() << UNIT_RUN_MESSAGE;
+	/*qDebug() << UNIT_RUN_MESSAGE;
 	qDebug() << UNIT_GATHERER_MESSAGE;
-	qDebug() << "Focused ressource : " << m_FocusedRessource;
+	qDebug() << "Focused ressource : " << m_FocusedRessource;*/
 
 	switch(m_Unit->getUnitState())
 	{

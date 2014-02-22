@@ -65,3 +65,19 @@ void Location::setZ(double z)
 {
 	this->m_dZ = z;
 }
+
+void Location::setX(unsigned int x)
+{
+	this->m_dX = (double)x;
+}
+
+void Location::setY(unsigned int y)
+{
+	this->m_dY = (double)y;
+}
+
+void Location::setZ(unsigned int z)
+{
+	this->m_dZ = (double)z;
+}
+
