@@ -14,8 +14,14 @@ class BuilderBehaviour : public UnitBehaviour
 private:
 	static NormalDistributionGenerator m_NormalDistribGenerator;
 	static MersenneTwister m_PseudoRandomGenerator;
+	static const double m_dStandardDeviationCoefficient;
+	static const unsigned int m_uConstructionDuration;
+
+	bool m_bConstructibleAreaFound;
+	unsigned int m_uConstructionProgress;
 
 	void findConstructibleArea();
+	void constructBuilding();
 public:
 	BuilderBehaviour(Unit * unit);
 	~BuilderBehaviour(void);

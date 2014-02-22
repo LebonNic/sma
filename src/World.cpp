@@ -119,6 +119,17 @@ double World::consumeRessource(const Location & ressourceLocation, double quanti
 	return consumedQuantity;
 }
 
+bool World::isConstructible(const Location & emplacement) const
+{
+	return this->isConstructible((unsigned int)(emplacement.x()), (unsigned int)(emplacement.y()));
+}
+
+bool World::isConstructible(unsigned int x, unsigned int y) const
+{
+	return ((*m_Map)(x, y)->isReachable() && m_RessourcesMap[x][y] == NULL);
+}
+
+
 //void World::refresh(void)
 //{
 //	Ressource *ressource = (Ressource *) m_PassiveEntities.front();

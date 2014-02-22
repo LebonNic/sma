@@ -23,7 +23,7 @@ void CivilizationBehaviour::affectUnitsToBuildingTasks()
 	{
 		Unit * uni = NULL;
 		//Check if there are no free units available
-		if(freeUnits.size() > 0)
+		if(!(freeUnits.empty()))
 		{
 			uni = freeUnits.front();
 			uni->setBehaviour(new BuilderBehaviour(uni));
@@ -39,6 +39,7 @@ void CivilizationBehaviour::affectUnitsToBuildingTasks()
 			{
 				uni = richestList.front();
 				uni->setBehaviour(new BuilderBehaviour(uni));
+				uni->setUnitState(UnitStates::nop);
 				builders.push_back(uni);
 				richestList.remove(uni);
 			}
@@ -89,7 +90,7 @@ void CivilizationBehaviour::execute()
 	qDebug() << "Gold : " << m_Civilization->getGoldStock();
 	qDebug() << "Wood : " << m_Civilization->getWoodStock();
 
-	//affectUnitsToBuildingTasks();
+	affectUnitsToBuildingTasks();
 	affectFreeUnitsToGatheringTasks();
 
 	std::list<Unit *> units = m_Civilization->getUnits();

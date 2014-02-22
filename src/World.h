@@ -31,6 +31,9 @@ public:
 	double consumeRessource(const Location & ressourceLocation, double quantity);
 	void display(void);
 
+	bool isConstructible(const Location & emplacement) const;
+	bool isConstructible(unsigned int x, unsigned int y) const;
+
 	const std::vector<std::vector<Ressource *>> & getRessourcesMap(void) const;
 	const std::list<Civilization *> & getCivilizations(void) const;
 	const int getSize() const;

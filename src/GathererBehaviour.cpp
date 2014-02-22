@@ -1,6 +1,6 @@
 #include "GathererBehaviour.h"
 
-const unsigned int GathererBehaviour::m_strikesNumber = 100;
+
 MersenneTwister GathererBehaviour::m_Generator(0); //TODO : Change the seed value to initialize randomly the generator
 
 
@@ -39,36 +39,7 @@ void GathererBehaviour::execute()
 		break;
 
 	case UnitStates::working:
-
-
-		const Location & target = m_Unit->getUnitTargetLocation();
-
-		//Check if the ressource is available (not already consumed by someone else)
-		if(!(m_Unit->getCivilization().getWorld().getRessourcesMap()[target.x()][target.y()]))
-		{
-			m_Unit->setUnitState(UnitStates::nop);
-			m_bRessourceFound = false;
-		}
-
-		//Not consumed
-		else
-		{
-			switch(m_FocusedRessource)
-			{
-			
-			case RessourceType::food:
-				(m_Unit->getCivilization()).increaseFoodStockFromRessource(target, Unit::getGatheringCapacity());
-				break;
-
-			case RessourceType::gold:
-				(m_Unit->getCivilization()).increaseGoldStockFromRessource(target, Unit::getGatheringCapacity());
-				break;
-
-			case RessourceType::wood:
-				(m_Unit->getCivilization()).increaseWoodStockFromRessource(target, Unit::getGatheringCapacity());
-				break;
-			}
-		}
+		gatherRessource();
 		break;
 	}
 }
@@ -142,22 +113,8 @@ void GathererBehaviour::findPathToRessource(void)
 
 	//Signifie qu'une ressource a été trouvée
 	if(minDist < std::numeric_limits<double>::max())
-	{
-		m_Unit->setUnitTargetLocation(ressourceLocation);
-		//Recherche un sommet voisin de celui sur lequel se situe la ressource. Celui-ci doit être atteignable (il ne doit pas être un obstacle).
-		std::list<Node *> neighbours = (unitCivilization.getWorld().getMap()(ressourceLocation.x(), ressourceLocation.y()))->neighbours();
-		auto node = neighbours.begin();
-		
-		while(node != neighbours.end() && !find)
-			find = (*node)->isReachable();
-		
-		//Si un voisin est accessible, recherche d'un chemin jusqu'à celui-ci
-		if(find)
-		{
-			m_bRessourceFound = m_Unit->findPathTo(Location((*node)->x(), (*node)->y()));
-		}
-	}
-
+		m_bRessourceFound = m_Unit->findPathArroundTarget(ressourceLocation);
+	
 	//Si l'unité ne trouve pas de chemin jusqu'à la ressource alors, elle tente de trouver une direction aléatoire pour explorer la map
 	if(!m_bRessourceFound)
 		findRandomPath();
@@ -182,5 +139,37 @@ void GathererBehaviour::findRandomPath(void)
 			find = m_Unit->findPathTo(Location(x,y));
 		}
 		++i;
+	}
+}
+
+void GathererBehaviour::gatherRessource(void)
+{
+	const Location & target = m_Unit->getUnitTargetLocation();
+
+	//Check if the ressource is available (not already consumed by someone else)
+	if(!(m_Unit->getCivilization().getWorld().getRessourcesMap()[target.x()][target.y()]))
+	{
+		m_Unit->setUnitState(UnitStates::nop);
+		m_bRessourceFound = false;
+	}
+
+	//Not consumed
+	else
+	{
+		switch(m_FocusedRessource)
+		{
+			
+		case RessourceType::food:
+			(m_Unit->getCivilization()).increaseFoodStockFromRessource(target, Unit::getGatheringCapacity());
+			break;
+
+		case RessourceType::gold:
+			(m_Unit->getCivilization()).increaseGoldStockFromRessource(target, Unit::getGatheringCapacity());
+			break;
+
+		case RessourceType::wood:
+			(m_Unit->getCivilization()).increaseWoodStockFromRessource(target, Unit::getGatheringCapacity());
+			break;
+		}
 	}
 }

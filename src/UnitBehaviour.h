@@ -10,6 +10,7 @@ class UnitBehaviour : public Behaviour
 {
 protected:
 	Unit * m_Unit;
+	static const unsigned int m_strikesNumber;
 public:
 	UnitBehaviour(Unit * unit);
 	virtual ~UnitBehaviour(void);

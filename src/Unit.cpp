@@ -97,18 +97,44 @@ void Unit::updateCivilizationMaps()
 
 bool Unit::findPathTo(const Location & goal)
 {
-	bool find = false;
+	bool found = false;
 
 	Graph & map = m_Civilization->getWorld().getMap();
 	m_Path = map.findPathFromTo( map( this->location().x(), this->location().y() ), map( goal.x(), goal.y() ) );
 
 	if(m_Path.size() > 0)
 	{
-		find = true;
+		found = true;
 		m_State = UnitStates::moving;
 	}
 
-	return find;
+	return found;
+}
+
+bool Unit::findPathArroundTarget(const Location & emplacement)
+{
+	bool found = false;
+	
+	//Recherche un sommet voisin de celui sur lequel se situe l'objectif cible. Celui-ci doit être atteignable (il ne doit pas être un obstacle).
+	std::list<Node *> neighbours = (m_Civilization->getWorld().getMap()(emplacement.x(), emplacement.y()))->neighbours();
+	auto node = neighbours.begin();
+	
+	while( !found && node != neighbours.end() )
+	{
+		found = (*node)->isReachable();
+
+		if(!found)
+			++node;
+	}
+		
+	//Si un voisin est accessible, recherche d'un chemin jusqu'à celui-ci
+	if(found)
+		found = this->findPathTo(Location((*node)->x(), (*node)->y()));
+
+	if(found)
+		this->setUnitTargetLocation(emplacement);
+
+	return found;
 }
 
 const Civilization & Unit::getCivilization(void) const

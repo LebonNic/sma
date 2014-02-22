@@ -45,6 +45,7 @@ public:
 
 	void advanceOnPath();
 	bool findPathTo(const Location & goal);
+	bool findPathArroundTarget(const Location & emplacement);
 
 	const Civilization & getCivilization(void) const;
 	Civilization & getCivilization(void);

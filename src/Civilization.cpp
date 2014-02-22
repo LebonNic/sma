@@ -1,7 +1,7 @@
 #include "Civilization.h"
 
 const double Civilization::m_dBuildingWoodCost = 5000.0;
-const double Civilization::m_dBuildingFoodCost = 5000.0;
+const double Civilization::m_dBuildingFoodCost = 10.0;
 const double Civilization::m_dBuildingGoldCost = 5000.0;
 
 Civilization::Civilization(double x, double y, double z, World * world)
@@ -13,14 +13,6 @@ Civilization::Civilization(double x, double y, double z, World * world)
 		throw std::invalid_argument("Le pointeur sur le monde passe en parametre du constructeur de Civilization ne peut pas etre NULL.");
 
 	//Each civilization begins with one building
-	createBuilding(Location(x, y));
-	createBuilding(Location(x, y));
-	createBuilding(Location(x, y));
-	createBuilding(Location(x, y));
-	createBuilding(Location(x, y));
-	createBuilding(Location(x, y));
-	createBuilding(Location(x, y));
-	createBuilding(Location(x, y));
 	createBuilding(Location(x, y));
 
 	//Instantiates the civilization's memory
@@ -124,13 +116,17 @@ void Civilization::increaseWoodStockFromRessource(const Location & ressourceLoca
 
 void Civilization::createBuilding(const Location & emplacement)
 {
-	//Check if the location is not used by a ressource
-	if( ( m_World->getRessourcesMap()[emplacement.x()][emplacement.y()]) == NULL)
+	//Check if the location is not used by a ressource and not already used by a building
+	const Graph & map = m_World->getMap();
+
+	double	x = emplacement.x(),
+			y = emplacement.y(),
+			z = emplacement.z();
+
+	if( m_World->isConstructible(emplacement) )
 	{
-		double	x = emplacement.x(),
-				y = emplacement.y(),
-				z = emplacement.z();
 		m_Buildings.push_back(new Building(x, y, z, this));
+		map(x, y)->setReachable(false);
 
 		//Create units on the locations surrounding the new building (in fonction of the free space arround the building)
 		std::list<Node * > neighbourNodes = m_World->getMap()(x, y)->neighbours();
