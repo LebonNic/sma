@@ -13,7 +13,11 @@ MainWindow::MainWindow(QWidget *parent) :
     m_World->populateMap(0.005, 0.15, 0.005);
     m_WorldView = new WorldView(m_World, this);
     this->setCentralWidget(m_WorldView);
+    this->setWindowState(Qt::WindowMaximized);
     m_WorldView->update();
+    // Scale graphics view to fit window
+    m_WorldView->fitInView(m_WorldView->sceneRect(), Qt::KeepAspectRatioByExpanding);
+    m_WorldView->scale(10,10);
 
 	QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(refreshWorld()));

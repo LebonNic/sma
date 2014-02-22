@@ -7,6 +7,7 @@
 #include <QString>
 #include <QWheelEvent>
 #include <QTimeLine>
+#include <QPixmapCache>
 #include "World.h"
 
 class WorldView
@@ -32,8 +33,9 @@ private:
     std::vector<QPixmap> m_FoodImage;
 	std::vector<QPixmap> m_BuildingImage;
 	std::vector<QPixmap> m_UnitImage;
+    std::vector<QPixmap> m_TiledGrassImage;
 
-    QPixmap randomTexture(std::vector<QPixmap> textures);
+    QPixmap randomTexture(const std::vector<QPixmap> &textures, unsigned int index);
 	QString civilizationsInfoToString() const;
 protected:
     virtual void wheelEvent(QWheelEvent* event);

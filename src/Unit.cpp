@@ -151,3 +151,37 @@ double Unit::getGatheringCapacity(void)
 {
 	return m_dGatheringCapacity;
 }
+
+Orientation Unit::getOrientation(void) const
+{
+    switch (this->getUnitState())
+    {
+    case UnitStates::moving:
+        if (!m_Path.empty())
+        {
+            if (this->x() > m_Path.front()->x())
+            {
+                return Orientation::WEST;
+            }
+            else if(this->x() < m_Path.front()->x())
+            {
+                return Orientation::EAST;
+            }
+            else
+            {
+                if (this->y() > m_Path.front()->y())
+                {
+                    return Orientation::NORTH;
+                }
+                else
+                {
+                    return Orientation::SOUTH;
+                }
+            }
+        }
+    case UnitStates::working:
+        // Implementation working direction
+    default:
+        return Orientation::SOUTH;
+    }
+}

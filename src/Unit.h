@@ -16,6 +16,13 @@ enum UnitStates{
 	nop			//no operation
 };
 
+enum Orientation {
+    NORTH,
+    SOUTH,
+    WEST,
+    EAST
+};
+
 class Civilization;
 
 class Unit : public Agent
@@ -50,7 +57,7 @@ public:
 	const Civilization & getCivilization(void) const;
 	Civilization & getCivilization(void);
 	static double getGatheringCapacity(void);
-
+    Orientation getOrientation() const;
 };
 
 #endif
