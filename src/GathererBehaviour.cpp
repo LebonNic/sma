@@ -70,7 +70,7 @@ void GathererBehaviour::findPathToRessource(void)
 	unsigned int	x,
 					y;
 
-	bool find = false;
+//	bool find = false;
 
 	//Sélection de la map de ressources que l'unité doit récolter
 	switch(m_FocusedRessource)

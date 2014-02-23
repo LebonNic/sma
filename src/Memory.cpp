@@ -44,15 +44,15 @@ const std::vector<std::vector<bool>> & Memory::getWoodMap() const
 
 void Memory::setFoodMap(const Location & l, bool val)
 {
-	m_FoodMap[l.x()][l.y()] = val;
+	m_FoodMap[(unsigned int) l.x()][(unsigned int) l.y()] = val;
 }
 
 void Memory::setGoldMap(const Location & l, bool val)
 {
-	m_GoldMap[l.x()][l.y()] = val;
+	m_GoldMap[(unsigned int) l.x()][(unsigned int) l.y()] = val;
 }
 
 void Memory::setWoodMap(const Location & l, bool val)
 {
-	m_WoodMap[l.x()][l.y()] = val;
+	m_WoodMap[(unsigned int) l.x()][(unsigned int) l.y()] = val;
 }

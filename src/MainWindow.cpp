@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 	QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(refreshWorld()));
-    timer->start(50);
+    timer->start(250);
 }
 
 MainWindow::~MainWindow()

@@ -17,23 +17,24 @@ WorldView::WorldView(World *world, QWidget *parent) :
 
     // Load textures
     for(unsigned int i = 0; i < 1; ++i)
-        m_GrassImage.push_back(QPixmap("texture/grass" + QString::number(i) + ".png"));
+        m_GrassImage.push_back(QPixmap("../texture/grass" + QString::number(i) + ".png"));
     for(unsigned int i = 0; i < 6; ++i)
-        m_TreeImage.push_back(QPixmap("texture/tree" + QString::number(i) + ".png"));
+        m_TreeImage.push_back(QPixmap("../texture/tree" + QString::number(i) + ".png"));
     for(unsigned int i = 0; i < 3; ++i)
-        m_GoldImage.push_back(QPixmap("texture/rock" + QString::number(i) + ".png"));
+        m_GoldImage.push_back(QPixmap("../texture/rock" + QString::number(i) + ".png"));
     for(unsigned int i = 0; i < 4; ++i)
-        m_FoodImage.push_back(QPixmap("texture/food" + QString::number(i) + ".png"));
+        m_FoodImage.push_back(QPixmap("../texture/food" + QString::number(i) + ".png"));
 
-    m_TiledGrassImage.push_back(QPixmap("texture/tilledGrass" + QString::number(0) + ".png"));
-	m_BuildingImage.push_back(QPixmap("texture/building" + QString::number(0) + ".png"));
+    m_TiledGrassImage.push_back(QPixmap("../texture/tilledGrass" + QString::number(0) + ".png"));
+    m_BuildingImage.push_back(QPixmap("../texture/building" + QString::number(0) + ".png"));
     for(unsigned int i = 0; i < 12; ++i)
-        m_UnitImage.push_back(QPixmap("texture/unit" + QString::number(i) + ".png"));
+        m_UnitImage.push_back(QPixmap("../texture/unit" + QString::number(i) + ".png"));
 	
 
     this->m_World = world;
     this->m_WorldScene = new QGraphicsScene(this);
     this->setScene(m_WorldScene);
+    this->setSceneRect(0, 0, m_World->getSize() * m_dScale, m_World->getSize() * m_dScale);
 
     setRenderHint(QPainter::Antialiasing, true);
     setDragMode(ScrollHandDrag);
@@ -45,30 +46,21 @@ void WorldView::update(void)
     m_WorldScene->clear();
     unsigned int worldSize = m_World->getSize();
 
-    for(unsigned int i = 0; i < worldSize; ++i)
+    std::list<Civilization *> civilizations = m_World->getCivilizations();
+    for(auto civi = civilizations.begin(); civi != civilizations.end(); ++civi)
     {
-		for(unsigned int j = 0; j < worldSize; ++j)
-        {
-            QGraphicsPixmapItem * item = m_WorldScene->addPixmap(this->randomTexture(m_GrassImage, i * worldSize + j));
-			item->setPos(i*m_dScale,j*m_dScale);
-        }
-    }
-
-	std::list<Civilization *> civilizations = m_World->getCivilizations();
-	for(auto civi = civilizations.begin(); civi != civilizations.end(); ++civi)
-	{
-		std::list<Unit *> units = (*civi)->getUnits();
-		std::list<Building *> buildings = (*civi)->getBuildings();
-		const Memory & mem = (*civi)->getMemory();
-		const std::vector<std::vector<bool>> & foodMap = mem.getFoodMap();
-		const std::vector<std::vector<bool>> & woodMap = mem.getWoodMap();
-		const std::vector<std::vector<bool>> & goldMap = mem.getGoldMap();
+        std::list<Unit *> units = (*civi)->getUnits();
+        std::list<Building *> buildings = (*civi)->getBuildings();
+        const Memory & mem = (*civi)->getMemory();
+        const std::vector<std::vector<bool>> & foodMap = mem.getFoodMap();
+        const std::vector<std::vector<bool>> & woodMap = mem.getWoodMap();
+        const std::vector<std::vector<bool>> & goldMap = mem.getGoldMap();
 
         #pragma region Tree
         for(unsigned int i = 0; i < worldSize; ++i)
-		{
+        {
             for(unsigned int j = 0; j < worldSize; ++j)
-			{
+            {
                 if (woodMap[i][j])
                 {
                     bool north = false;
@@ -127,84 +119,82 @@ void WorldView::update(void)
                         }
                     }
                 }
-			}
-		}
+            }
+        }
         #pragma endregion
 
         #pragma region Gold
         for(unsigned int i = 0; i < worldSize; ++i)
-		{
+        {
             for(unsigned int j = 0; j < worldSize; ++j)
-			{
+            {
                 if (goldMap[i][j])
                 {
                     QGraphicsPixmapItem *item = m_WorldScene->addPixmap(this->randomTexture(m_GoldImage, i * worldSize + j));
-					item->setPos((i) * m_dScale, (j) * m_dScale);
+                    item->setPos((i) * m_dScale, (j) * m_dScale);
                 }
-			}
-		}
+            }
+        }
         #pragma endregion
 
         #pragma region Food
-		for(unsigned int i = 0; i < worldSize; ++i)
-		{
+        for(unsigned int i = 0; i < worldSize; ++i)
+        {
             for(unsigned int j = 0; j < worldSize; ++j)
-			{
+            {
                 if (foodMap[i][j])
                 {
                     MersenneTwister ms(j + i * worldSize);
                     double dx = (double) ms.genrand_real1() / 2.0;
                     double dy = (double) ms.genrand_real1() / 2.0;
                     QGraphicsPixmapItem *item = m_WorldScene->addPixmap(this->randomTexture(m_FoodImage, i * worldSize + j));
-					item->setPos((i + dx) * m_dScale, (j + dy) * m_dScale);
+                    item->setPos((i + dx) * m_dScale, (j + dy) * m_dScale);
                 }
-			}
-		}
+            }
+        }
         #pragma endregion
 
-		for(auto uni = units.begin(); uni != units.end(); ++uni)
-		{
+        #pragma region Unit
+        for(auto uni = units.begin(); uni != units.end(); ++uni)
+        {
             Unit *unit = *uni;
-			double x = unit->x();
-			double y = unit->y();
-            QGraphicsPixmapItem *item = NULL;
+            double x = unit->x();
+            double y = unit->y();
             Orientation orientation = unit->getOrientation();
-            switch (orientation)
+            if (unit->getUnitState() == UnitStates::moving)
             {
-            case NORTH:
-                item = m_WorldScene->addPixmap(m_UnitImage[10]);
-                break;
-            case SOUTH:
-                item = m_WorldScene->addPixmap(m_UnitImage[1]);
-                break;
-            case WEST:
-                item = m_WorldScene->addPixmap(m_UnitImage[4]);
-                break;
-            case EAST:
-                item = m_WorldScene->addPixmap(m_UnitImage[7]);
-                break;
-            default:
-                item = m_WorldScene->addPixmap(m_UnitImage[1]);
-                break;
+                QTimeLine *animation = new QTimeLine(50, this);
+                animation->setUpdateInterval(10);
+                UnitGraphicItem *item = new UnitGraphicItem(this->m_UnitImage[1], orientation);
+                // Add 0.25 to coordinates to center
+                QPointF start = QPointF((x + 0.25) * m_dScale, (y + 0.25) * m_dScale);
+                QPointF end = QPointF((unit->getNextLocation()->x() + 0.25) * m_dScale, (unit->getNextLocation()->y() + 0.25) * m_dScale);
+                item->animatePosition(start, end);
+                m_WorldScene->addItem(item);
             }
-			 
-            
-			item->setPos((x+0.25)*m_dScale, (y+0.25)*m_dScale);
-		}
+            else
+            {
+                UnitGraphicItem *item = new UnitGraphicItem(this->m_UnitImage[1]);
+                item->setPos((x+0.25)*m_dScale, (y+0.25)*m_dScale);
+                m_WorldScene->addItem(item);
+            }
+        }
+        #pragma endregion
 
-		for(auto bui = buildings.begin(); bui != buildings.end(); ++bui)
-		{
-			double x = (*bui)->x();
-			double y = (*bui)->y();
-			QGraphicsPixmapItem *item = m_WorldScene->addPixmap(m_BuildingImage.front());
-			item->setPos(x*m_dScale, y*m_dScale);
-		}
-	}
+        #pragma region Building
+        for(auto bui = buildings.begin(); bui != buildings.end(); ++bui)
+        {
+            double x = (*bui)->x();
+            double y = (*bui)->y();
+            QGraphicsPixmapItem *item = m_WorldScene->addPixmap(m_BuildingImage.front());
+            item->setPos(x*m_dScale, y*m_dScale);
+        }
+        #pragma endregion
+    }
 
 	QString info = civilizationsInfoToString();
 	m_WorldScene->addSimpleText(info);
 }
-
 
 QPixmap WorldView::randomTexture(const std::vector<QPixmap> &textures, unsigned int index)
 {
@@ -277,6 +267,14 @@ void WorldView::wheelEvent(QWheelEvent* event)
     connect(anim, SIGNAL(finished()), SLOT(animFinished()));
     anim->start();
 }
+
+void WorldView::drawBackground(QPainter *painter, const QRectF &)
+{
+    unsigned int worldSize = m_World->getSize();
+
+    painter->fillRect(QRect(0, 0, worldSize * m_dScale, worldSize * m_dScale), QBrush(this->m_GrassImage[0]));
+}
+
 void WorldView::scalingTime(qreal) {
     qreal factor = 1.0 + qreal(m_iScheduledScalings) / 200.0;
     scale(factor, factor);
@@ -288,4 +286,5 @@ void WorldView::animFinished() {
         m_iScheduledScalings++;
     sender()->~QObject();
 }
+
 

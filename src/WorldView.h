@@ -9,6 +9,7 @@
 #include <QTimeLine>
 #include <QPixmapCache>
 #include "World.h"
+#include "UnitGraphicItem.h"
 
 class WorldView
     : public QGraphicsView
@@ -39,6 +40,7 @@ private:
 	QString civilizationsInfoToString() const;
 protected:
     virtual void wheelEvent(QWheelEvent* event);
+    virtual void drawBackground(QPainter *painter, const QRectF &rect);
 };
 
 #endif // WORLDVIEW_H

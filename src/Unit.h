@@ -58,6 +58,8 @@ public:
 	Civilization & getCivilization(void);
 	static double getGatheringCapacity(void);
     Orientation getOrientation() const;
+
+    Node *getNextLocation();
 };
 
 #endif

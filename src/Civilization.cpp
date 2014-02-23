@@ -193,8 +193,8 @@ std::list<Unit *> & Civilization::getMinersList()
 std::list<Unit *> & Civilization::getRichestList()
 {
 		std::list<Unit *> * richestList = (&m_FoodGatherers);
-		unsigned int	max = richestList->size(),
-						size = m_Miners.size();
+		unsigned int	max = (unsigned int) richestList->size(),
+						size = (unsigned int) m_Miners.size();
 
 		if(max < size)
 		{
@@ -202,7 +202,7 @@ std::list<Unit *> & Civilization::getRichestList()
 			richestList = (&m_Miners);
 		}
 
-		size = m_Lumberjacks.size();
+		size = (unsigned int) m_Lumberjacks.size();
 		if(max < size)
 		{
 			max = size;

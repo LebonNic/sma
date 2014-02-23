@@ -175,12 +175,12 @@ void Graph::generateRandomPerlin(unsigned int size, double scale, unsigned int s
 
 void Graph::addObstacle(const Location & l)
 {
-	m_Nodes[l.x()][l.y()]->setReachable(false);
+	m_Nodes[(unsigned int) l.x()][(unsigned int) l.y()]->setReachable(false);
 }
 
 void Graph::removeObstacle(const Location & l)
 {
-	m_Nodes[l.x()][l.y()]->setReachable(true);
+	m_Nodes[(unsigned int) l.x()][(unsigned int) l.y()]->setReachable(true);
 }
 
 void Graph::removeObstacle(unsigned int x, unsigned int y)

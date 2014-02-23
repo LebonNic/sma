@@ -185,3 +185,11 @@ Orientation Unit::getOrientation(void) const
         return Orientation::SOUTH;
     }
 }
+
+Node *Unit::getNextLocation()
+{
+    if (!m_Path.empty())
+        return m_Path.front();
+    else
+        return NULL;
+}
