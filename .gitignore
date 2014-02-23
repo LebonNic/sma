@@ -1,7 +1,6 @@
 build-*
 *.pri
 *.pro
-*vcxproj*
 
 
 #################
