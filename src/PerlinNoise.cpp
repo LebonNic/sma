@@ -8,7 +8,7 @@ PerlinNoise::PerlinNoise(unsigned int seed) {
 	iota(p.begin(), p.end(), 0);
 
 	// Initialize a random engine with seed
-	default_random_engine engine(seed);
+	mt19937 engine(seed);
 
 	// Suffle  using the above random engine
 	shuffle(p.begin(), p.end(), engine);
