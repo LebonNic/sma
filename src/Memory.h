@@ -10,6 +10,7 @@ private:
 	std::vector<std::vector<bool>> m_FoodMap;
 	std::vector<std::vector<bool>> m_GoldMap;
 	std::vector<std::vector<bool>> m_WoodMap;
+	std::vector<std::vector<bool>> m_DiscoveredArea;
 
 	void initArray(std::vector<std::vector<bool>> & arr, bool value);
 
@@ -20,10 +21,12 @@ public:
 	const std::vector<std::vector<bool>> & getFoodMap() const;
 	const std::vector<std::vector<bool>> & getGoldMap() const;
 	const std::vector<std::vector<bool>> & getWoodMap() const;
+	const std::vector<std::vector<bool>> & getDiscoveredArea() const;
 
 	void setFoodMap(const Location & l, bool val);
 	void setGoldMap(const Location & l, bool val);
 	void setWoodMap(const Location & l, bool val);
+	void setDiscoveredArea(const Location & l, bool val);
 
 };
 

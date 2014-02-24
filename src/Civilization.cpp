@@ -99,6 +99,11 @@ void Civilization::locateEmptinessSpace(const Location & l)
 	m_Memory->setWoodMap(l, false);
 }
 
+void Civilization::locateDiscoveredArea(const Location & l)
+{
+	m_Memory->setDiscoveredArea(l, true);
+}
+
 void Civilization::increaseFoodStockFromRessource(const Location & ressourceLocation, double quantity)
 {
 	m_dFoodStock += m_World->consumeRessource(ressourceLocation, quantity);

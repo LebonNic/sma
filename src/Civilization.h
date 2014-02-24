@@ -59,6 +59,7 @@ public:
 	void locateGold(const Location & l);
 	void locateWood(const Location & l);
 	void locateEmptinessSpace(const Location & l);
+	void locateDiscoveredArea(const Location & l);
 
 	void increaseFoodStockFromRessource(const Location & ressourceLocation, double quantity);
 	void increaseGoldStockFromRessource(const Location & ressourceLocation, double quantity);

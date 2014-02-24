@@ -71,6 +71,7 @@ void Unit::updateCivilizationMaps()
 	{
 		for(unsigned int j = j_begin; j < j_end; ++j)
 		{
+			m_Civilization->locateDiscoveredArea(Location(i, j));
 			Ressource * ressource = ressourceMap[i][j];
 			if(ressource)
 			{
