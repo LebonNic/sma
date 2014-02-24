@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Ui_MainWindow" Collapsed="true">
+    <Position X="0.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAIAAAIAAAAQAIAAAgIAAAgAAAAA=</HashCode>
+      <FileName>GeneratedFiles\ui_MainWindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActiveEntity" Collapsed="true">
+    <Position X="6.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAICgAAAAAAAAAAAAAAAAABAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ActiveEntity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Agent" Collapsed="true">
+    <Position X="8.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAABAEAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Agent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Attribute" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAACAAAAAAIAAAAAAFABACAAAgAAAAAAAAA=</HashCode>
+      <FileName>Attribute.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Building" Collapsed="true">
+    <Position X="7.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAhAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Building.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Civilization" Collapsed="true">
+    <Position X="5.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADERCwIEAQCBmMBQEAEAAAAAQAAIGoEAIAAQAAAABWo=</HashCode>
+      <FileName>Civilization.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entity" Collapsed="true">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAQAAAAACAIAAACgCAAAAAAAABgAQAAAgA=</HashCode>
+      <FileName>Entity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Group" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Group.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Location" Collapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAIWAAAAAAAAAAAAAHBgAQAAAAA=</HashCode>
+      <FileName>Location.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Memory" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAICAAsAAAAAAAAAIAAAAQAAsAAgAAAAAA=</HashCode>
+      <FileName>Memory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PassiveEntity" Collapsed="true">
+    <Position X="0.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIIAAAAAAAAAAAAAAAAAAAABABBAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PassiveEntity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ressource" Collapsed="true">
+    <Position X="0.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAQgACAAQAAAEAAAAAAhAACiQAAAAAAAAAAA=</HashCode>
+      <FileName>Ressource.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unit" Collapsed="true">
+    <Position X="9.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAAAgAgAAABBAgAaIAAAAAAAACARCACGAAAAAEAAAA=</HashCode>
+      <FileName>Unit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="World" Collapsed="true">
+    <Position X="3" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAiAQAJAAgACgBAAAAAAAAQECAAAEEAAQAAAAAAA=</HashCode>
+      <FileName>World.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Edge" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAAJACAIAAAAAAEAAAAgAAAAQRIAgAAEgAQAAgAQ=</HashCode>
+      <FileName>Edge.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graph" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABgAIAIAAEAAAkIAkIEAEAAAAAAiEQAgAAAAAIQA=</HashCode>
+      <FileName>Graph.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Node" Collapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAIABCAAAAIACACAAAEAABAIABgAQEEAwA=</HashCode>
+      <FileName>Node.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PathFinder" Collapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgMAgAAAAAAAAgIEIAABAGAEAAwAgAAACACAAAAA=</HashCode>
+      <FileName>PathFinder.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PerlinNoise" Collapsed="true">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAIAAAAAAAAAAAAgAASAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>PerlinNoise.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Score" Collapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAQAAQAEAAAAAAAAgAQAAAAI=</HashCode>
+      <FileName>Score.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Behaviour" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAEAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Behaviour.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuilderBehaviour" Collapsed="true">
+    <Position X="3.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAQAAAAAAACACEAAAAAAAAAAAABAECAAAAAAE=</HashCode>
+      <FileName>BuilderBehaviour.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GathererBehaviour" Collapsed="true">
+    <Position X="5.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AggAQAAAAcAAAAAAAAAEAAAAgAAAIAAAQAAIAAAAAAA=</HashCode>
+      <FileName>GathererBehaviour.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NopBehaviour" Collapsed="true">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAEAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NopBehaviour.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnitBehaviour" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAEAAAAAAQAAAAAAAAQAAAAAAI=</HashCode>
+      <FileName>UnitBehaviour.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuildingBehaviour" Collapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAEAEAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>BuildingBehaviour.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CivilizationBehaviour" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAQAABAAEAAAAAAAAAAAAIAAAAAAAACA=</HashCode>
+      <FileName>CivilizationBehaviour.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorldBehaviour" Collapsed="true">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACgAgAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WorldBehaviour.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MersenneTwister" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>LAAAAAEAAAAASAAASAAAAAAAAAAFAAAAgAAAAAgAAAA=</HashCode>
+      <FileName>MersenneTwister.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NormalDistributionGenerator" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABABCgAAAAAACAAAAAAAAAAAggAAAgACAAAgAAAAAA=</HashCode>
+      <FileName>NormalDistributionGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainWindow" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAGAIAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnitGraphicItem" Collapsed="true">
+    <Position X="16.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAEAAAAAAAEEAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UnitGraphicItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorldView" Collapsed="true">
+    <Position X="18.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAgAAAAAYCBIgAAAAAAAAAgAAIAQEAIAAgAAEAAA=</HashCode>
+      <FileName>WorldView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui::MainWindow" Collapsed="true">
+    <Position X="0.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedFiles\ui_MainWindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="qt_meta_stringdata_UnitGraphicItem_t" Collapsed="true">
+    <Position X="16.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAQAAAAAAA=</HashCode>
+      <FileName>Release\moc_UnitGraphicItem.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="qt_meta_stringdata_MainWindow_t" Collapsed="true">
+    <Position X="14.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAQAAAAAAA=</HashCode>
+      <FileName>Release\moc_MainWindow.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="qt_meta_stringdata_WorldView_t" Collapsed="true">
+    <Position X="18.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAQAAAAAAA=</HashCode>
+      <FileName>Release\moc_WorldView.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="AttributeType" Collapsed="true">
+    <Position X="14.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEIAAAAAAAAAAgAIAgAAAAEAAABEAAAAABAAiAAA=</HashCode>
+      <FileName>Attribute.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PassiveEntityType" Collapsed="true">
+    <Position X="18.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PassiveEntity.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RessourceType" Collapsed="true">
+    <Position X="20" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Ressource.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UnitStates" Collapsed="true">
+    <Position X="14.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Unit.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Orientation" Collapsed="true">
+    <Position X="16.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAABAAAQAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Unit.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

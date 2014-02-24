@@ -336,4 +336,7 @@
       <Filter>Header Files\Model\Graph</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
 </Project>
