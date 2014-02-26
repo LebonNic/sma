@@ -37,6 +37,7 @@ WorldView::WorldView(World *world, QWidget *parent) :
     this->setSceneRect(0, 0, m_World->getSize() * m_dScale, m_World->getSize() * m_dScale);
 
     setRenderHint(QPainter::Antialiasing, true);
+    setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
     setDragMode(ScrollHandDrag);
 }
 
@@ -45,6 +46,7 @@ void WorldView::update(void)
     // Reset objects
     m_WorldScene->clear();
     unsigned int worldSize = m_World->getSize();
+
 
     std::list<Civilization *> civilizations = m_World->getCivilizations();
     for(auto civi = civilizations.begin(); civi != civilizations.end(); ++civi)
@@ -272,7 +274,23 @@ void WorldView::drawBackground(QPainter *painter, const QRectF &)
 {
     unsigned int worldSize = m_World->getSize();
 
-    painter->fillRect(QRect(0, 0, worldSize * m_dScale, worldSize * m_dScale), QBrush(this->m_GrassImage[0]));
+    std::list<Civilization *> civilizations = m_World->getCivilizations();
+    for(auto civi = civilizations.begin(); civi != civilizations.end(); ++civi)
+    {
+        const Memory & mem = (*civi)->getMemory();
+        const std::vector<std::vector<bool>> & warFog = mem.getDiscoveredArea();
+        painter->fillRect(QRect(0, 0, worldSize * m_dScale, worldSize * m_dScale), QBrush(this->m_GrassImage[0]));
+        painter->setCompositionMode(QPainter::CompositionMode_Source);
+        for (unsigned int i = 0; i < worldSize; ++i)
+        {
+            for (unsigned int j = 0; j < worldSize; ++j)
+            {
+                if (!warFog[i][j])
+                    painter->fillRect(i * m_dScale - 1.0, j * m_dScale - 1.0, m_dScale + 1.0, m_dScale + 1.0, QBrush(Qt::black));
+                    // One pixel margin to avoid in view
+            }
+        }
+    }
 }
 
 void WorldView::scalingTime(qreal) {
