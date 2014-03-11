@@ -31,7 +31,7 @@ private:
 	std::list<Edge *> m_Edges;					//!< @brief A edges list
 	unsigned int m_uWidth;						//!< @brief The matrix's width
 	unsigned int m_uHeight;						//!< @brief The matrix's height
-	PathFinder m_PathFinder;					//!< @brief A pathfinder object used to calculate shortest paths
+	PathFinder * m_PathFinder;					//!< @brief A pathfinder object used to calculate shortest paths
 
 	/**
      * @brief setWidth Sets the graph's width
@@ -70,7 +70,7 @@ public:
 	/**
      * @brief Graph Default constructor
      */
-	Graph(void);
+	Graph(unsigned int size);
 
 	/**
      * @brief ~Graph Destructor
@@ -94,18 +94,6 @@ public:
      * @return The graph's size
      */
 	unsigned int size(void) const;
-
-	///**
- //    * @brief width Gets the graph's width
- //    * @return The graph's width
- //    */
-	//unsigned int width(void);
-
-	///**
- //    * @brief height Gets the graph's height
- //    * @return The graph's height
- //    */
-	//unsigned int height(void);
 
 	/**
      * @brief getPathFinder Gets the graph's PathFinder object
@@ -162,7 +150,7 @@ public:
 	 * @param scale A scale value to control the spacing between nodes
 	 * @param seed A seed to initialize the generator used to create the Perlin noise
      */
-	void generateRandomPerlin(unsigned int size, double scale = 1.0, unsigned int seed = 0);
+	void generateRandomPerlin(double scale = 1.0, unsigned int seed = 0);
 
 	/*std::vector<std::vector<unsigned int>> heightMap(void);*/
 };

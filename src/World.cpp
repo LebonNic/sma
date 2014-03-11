@@ -6,8 +6,8 @@ World::World(unsigned int size, double scale, unsigned int seed)
 	: ActiveEntity(Location(0, 0, 0), new WorldBehaviour(this))
 {
 	m_uSize = size;
-	m_Map = new Graph();
-	m_Map->generateRandomPerlin(size, scale, seed);
+	m_Map = new Graph(size);
+	m_Map->generateRandomPerlin(scale, seed);
 
 	m_RessourcesMap = std::vector<vector<Ressource * >>(size);
 	for(auto vec = m_RessourcesMap.begin(); vec != m_RessourcesMap.end(); ++vec)
@@ -128,15 +128,6 @@ bool World::isConstructible(unsigned int x, unsigned int y) const
 {
 	return ((*m_Map)(x, y)->isReachable() && m_RessourcesMap[x][y] == NULL);
 }
-
-
-//void World::refresh(void)
-//{
-//	Ressource *ressource = (Ressource *) m_PassiveEntities.front();
-//	m_PassiveEntities.erase(m_PassiveEntities.begin());
-//	ressource->consume(100.0);
-//	this->display();
-//}
 
 void World::display(void)
 {

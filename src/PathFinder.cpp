@@ -1,13 +1,14 @@
 #include "PathFinder.h"
 
-PathFinder::PathFinder(void)
+PathFinder::PathFinder(unsigned int size)
 {
 	m_bGoalReached = false;
+	m_ScorePool = new ScorePool(size * size * size);
 }
 
 PathFinder::~PathFinder(void)
 {
-	processMemoryCleaning();
+	delete m_ScorePool;
 }
 
 Node * PathFinder::getStartingNode(void) const
@@ -42,7 +43,7 @@ std::list<Node *> PathFinder::findPathFromTo(Node * from, Node * to)
 	m_StartingNode.m_dGScore = 0;
 	m_StartingNode.m_dFScore = m_StartingNode.m_dGScore + this->computeHScore(m_StartingNode);
 
-	m_OpenSet.push_back(new Score(m_StartingNode));
+	m_OpenSet.push_back(m_ScorePool->getAvailableScore(m_StartingNode));
 
 	//Tant que le vecteur de noeuds à explorer n'est pas vide et que l'on n'a pas attent l'objectif
 	while(!m_OpenSet.empty() && !m_bGoalReached)
@@ -62,7 +63,7 @@ std::list<Node *> PathFinder::findPathFromTo(Node * from, Node * to)
 		{
 			//On retire le premier élément des noeuds à parcourir
 			m_OpenSet.erase(m_OpenSet.begin());
-			m_ClosedSet.push_back(new Score(*current));
+			m_ClosedSet.push_back(m_ScorePool->getAvailableScore((*current)));
 
 			//Parcours des voisins du noeuds courrant
 			std::list<Node *> neighboursList = (current->m_N)->neighbours();
@@ -85,7 +86,7 @@ std::list<Node *> PathFinder::findPathFromTo(Node * from, Node * to)
 						neighbour.m_dFScore = neighbour.m_dGScore +  (this->computeHScore(neighbour)); //TODO Possibilité d'ajouter un tie breaker ici
 
 						if(ite == m_OpenSet.end())
-							m_OpenSet.push_back(new Score(neighbour));
+							m_OpenSet.push_back(m_ScorePool->getAvailableScore(neighbour));
 					}
 				}
 			}
@@ -100,12 +101,7 @@ std::list<Node *> PathFinder::findPathFromTo(Node * from, Node * to)
 
 void PathFinder::processMemoryCleaning()
 {
-	for(auto ite = m_OpenSet.begin(); ite != m_OpenSet.end(); ++ite)
-		delete (*ite);
-
-	for(auto ite = m_ClosedSet.begin(); ite != m_ClosedSet.end(); ++ite)
-		delete (*ite);
-
+	m_ScorePool->resetPool();
 	m_OpenSet.clear();
 	m_ClosedSet.clear();
 	m_Path.clear();

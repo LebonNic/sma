@@ -41,7 +41,7 @@ public:
 	 * @param z The z coordinate of the node (elevation)
 	 * @param reachable The boolean to specify if the node is reachable or not
 	*/
-	Node(double x, double y, double z, bool reachable = true);
+	Node(double x, double y, double z = 0, bool reachable = true);
 
 	/**
      * @brief Node copy constructor
@@ -77,6 +77,10 @@ public:
      * @return The z coordinate of the node
      */
 	double z(void) const;
+
+	void setX(double x);
+	void setY(double y);
+	void setZ(double z);
 
 	/**
      * @brief location Gets the node's coordinates as a Location object

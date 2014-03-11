@@ -36,77 +36,50 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{81b048b9-fd10-414a-9deb-63bca787b48a}</UniqueIdentifier>
+      <UniqueIdentifier>{f0cd24fd-c875-4eb1-a112-473a7b724993}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{92447496-2649-4062-a34f-f58b5757288f}</UniqueIdentifier>
+      <UniqueIdentifier>{7105d506-14dc-4cce-931c-65d87f8cf94a}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Header Files\Model">
-      <UniqueIdentifier>{4f24ee0f-1d9e-456b-a1a7-1fbe5bd1fbaf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Model\World">
-      <UniqueIdentifier>{26f2e705-0e11-4749-bc3b-e27eba91eac1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Model\Graph">
-      <UniqueIdentifier>{efc8b82e-de29-485d-a0d7-7f5c5d544b86}</UniqueIdentifier>
+      <UniqueIdentifier>{79f3a5d5-f4f2-41be-8578-8e1eae4e86c7}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\View">
-      <UniqueIdentifier>{1b4be560-b44b-4cb6-ae1a-82f779bd0c06}</UniqueIdentifier>
+      <UniqueIdentifier>{98e2cba9-a988-4f89-aaac-4b7dd8b1717d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Model">
-      <UniqueIdentifier>{b9f6666b-c2ff-4315-9137-acd7842f0a14}</UniqueIdentifier>
+    <Filter Include="Header Files\Model\Graph">
+      <UniqueIdentifier>{b4fdcd2a-1019-4a95-98aa-e6d28ba98e79}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\View">
-      <UniqueIdentifier>{1566c6a6-fe40-48b2-a70e-cfaf3b37482c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Model\World">
-      <UniqueIdentifier>{a19349c5-880d-4b46-8dfa-105f17db5ab0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Model\Graph">
-      <UniqueIdentifier>{7b555be6-485e-4cb2-bd45-1cf722bc5f18}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Ressource Files">
-      <UniqueIdentifier>{d9fe79ba-cdf0-4898-a9f3-073a8e27f03a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Model\Behaviours">
-      <UniqueIdentifier>{2ad9e6a6-5484-44aa-865c-cbfb13e28d80}</UniqueIdentifier>
+    <Filter Include="Header Files\Model\World">
+      <UniqueIdentifier>{38e30670-5182-4a9a-be47-2e07e9602323}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Model\Behaviours">
-      <UniqueIdentifier>{4d7e41b3-9230-4e2f-8de0-5cdffda44608}</UniqueIdentifier>
+      <UniqueIdentifier>{c2f19d6d-da91-42cb-aab5-b85e38588b2d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Model\Behaviours\Civilization">
-      <UniqueIdentifier>{4e504701-6ce7-403d-9507-bf103ad029b8}</UniqueIdentifier>
+    <Filter Include="Header Files\Model\Generators">
+      <UniqueIdentifier>{ecad2ebd-fafa-48fd-a6df-fbff54ac5c80}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Model\Behaviours\Building">
-      <UniqueIdentifier>{b592d79c-35c3-4e39-829f-6288d05d3e0d}</UniqueIdentifier>
+    <Filter Include="Source Files\Model">
+      <UniqueIdentifier>{a194c014-7c0a-4f79-9a9d-c0fa64d5654d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Model\Behaviours\World">
-      <UniqueIdentifier>{3769698a-259b-4906-99b4-5eb7dd49b221}</UniqueIdentifier>
+    <Filter Include="Source Files\View">
+      <UniqueIdentifier>{72dc64f0-67c1-418d-a2c7-9995b5e0751f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Model\Behaviours\Unit">
-      <UniqueIdentifier>{661558b7-621a-4b6f-95c2-9f40aa2881f6}</UniqueIdentifier>
+    <Filter Include="Source Files\Model\Graph">
+      <UniqueIdentifier>{6801d660-1846-40a8-bd48-199636922750}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Model\Behaviours\Unit">
-      <UniqueIdentifier>{6fab97f5-1c77-40be-8f09-5af8b3aac516}</UniqueIdentifier>
+    <Filter Include="Source Files\Model\Behaviours">
+      <UniqueIdentifier>{ab974854-b185-4b71-ba4f-d9d88266f0f6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Model\Behaviours\Building">
-      <UniqueIdentifier>{3aaa01b3-5fa8-41bf-874a-8a2ad53e9e92}</UniqueIdentifier>
+    <Filter Include="Source Files\Model\Generators">
+      <UniqueIdentifier>{29db15eb-ab70-4c25-bedd-72a6a34a96a2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Model\Behaviours\Civilization">
-      <UniqueIdentifier>{11dd5a16-b3d9-4927-8dfd-b5ed5bbeba15}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Model\Behaviours\World">
-      <UniqueIdentifier>{9763069f-77a2-4385-a0a8-83e84dda8c85}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Model\Generator">
-      <UniqueIdentifier>{209bcce3-4418-4905-b6fb-87841c914831}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Model\Generator">
-      <UniqueIdentifier>{88bd9fb6-1c3e-4d67-b687-db412f3e1b0c}</UniqueIdentifier>
+    <Filter Include="Source Files\Model\World">
+      <UniqueIdentifier>{9bbe462d-3a27-4f76-8e1c-409faa684fc6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -119,112 +92,109 @@
     <ClCompile Include="Release\moc_MainWindow.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Debug\moc_UnitGraphicItem.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_UnitGraphicItem.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
     <ClCompile Include="Debug\moc_WorldView.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="Release\moc_WorldView.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="WorldView.cpp">
-      <Filter>Source Files\View</Filter>
-    </ClCompile>
-    <ClCompile Include="MainWindow.cpp">
-      <Filter>Source Files\View</Filter>
-    </ClCompile>
     <ClCompile Include="ActiveEntity.cpp">
       <Filter>Source Files\Model\World</Filter>
     </ClCompile>
-    <ClCompile Include="Attribute.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="Building.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="Group.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="Location.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="Memory.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="PassiveEntity.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="Ressource.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="Unit.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="World.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="Edge.cpp">
-      <Filter>Source Files\Model\Graph</Filter>
-    </ClCompile>
-    <ClCompile Include="Graph.cpp">
-      <Filter>Source Files\Model\Graph</Filter>
-    </ClCompile>
-    <ClCompile Include="Node.cpp">
-      <Filter>Source Files\Model\Graph</Filter>
-    </ClCompile>
-    <ClCompile Include="PerlinNoise.cpp">
-      <Filter>Source Files\Model\Graph</Filter>
-    </ClCompile>
-    <ClCompile Include="Score.cpp">
-      <Filter>Source Files\Model\Graph</Filter>
-    </ClCompile>
-    <ClCompile Include="PathFinder.cpp">
-      <Filter>Source Files\Model\Graph</Filter>
-    </ClCompile>
     <ClCompile Include="Agent.cpp">
-      <Filter>Source Files\Model\World</Filter>
-    </ClCompile>
-    <ClCompile Include="Civilization.cpp">
       <Filter>Source Files\Model\World</Filter>
     </ClCompile>
     <ClCompile Include="Behaviour.cpp">
       <Filter>Source Files\Model\Behaviours</Filter>
     </ClCompile>
-    <ClCompile Include="GathererBehaviour.cpp">
-      <Filter>Source Files\Model\Behaviours\Unit</Filter>
-    </ClCompile>
-    <ClCompile Include="NopBehaviour.cpp">
-      <Filter>Source Files\Model\Behaviours\Unit</Filter>
-    </ClCompile>
-    <ClCompile Include="UnitBehaviour.cpp">
-      <Filter>Source Files\Model\Behaviours\Unit</Filter>
-    </ClCompile>
-    <ClCompile Include="CivilizationBehaviour.cpp">
-      <Filter>Source Files\Model\Behaviours\Civilization</Filter>
-    </ClCompile>
     <ClCompile Include="BuilderBehaviour.cpp">
-      <Filter>Source Files\Model\Behaviours\Unit</Filter>
+      <Filter>Source Files\Model\Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Building.cpp">
+      <Filter>Source Files\Model\World</Filter>
     </ClCompile>
     <ClCompile Include="BuildingBehaviour.cpp">
-      <Filter>Source Files\Model\Behaviours\Building</Filter>
+      <Filter>Source Files\Model\Behaviours</Filter>
     </ClCompile>
-    <ClCompile Include="WorldBehaviour.cpp">
-      <Filter>Source Files\Model\Behaviours\World</Filter>
+    <ClCompile Include="Civilization.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="CivilizationBehaviour.cpp">
+      <Filter>Source Files\Model\Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Edge.cpp">
+      <Filter>Source Files\Model\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="GathererBehaviour.cpp">
+      <Filter>Source Files\Model\Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Source Files\Model\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="Location.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindow.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory.cpp">
+      <Filter>Source Files\Model\World</Filter>
     </ClCompile>
     <ClCompile Include="MersenneTwister.cpp">
-      <Filter>Source Files\Model\Generator</Filter>
+      <Filter>Source Files\Model\Generators</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Source Files\Model\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="NopBehaviour.cpp">
+      <Filter>Source Files\Model\Behaviours</Filter>
     </ClCompile>
     <ClCompile Include="NormalDistributionGenerator.cpp">
-      <Filter>Source Files\Model\Generator</Filter>
+      <Filter>Source Files\Model\Generators</Filter>
     </ClCompile>
-    <ClCompile Include="Debug\moc_UnitGraphicItem.cpp">
-      <Filter>Generated Files\Debug</Filter>
+    <ClCompile Include="PassiveEntity.cpp">
+      <Filter>Source Files\Model\World</Filter>
     </ClCompile>
-    <ClCompile Include="Release\moc_UnitGraphicItem.cpp">
-      <Filter>Generated Files\Debug</Filter>
+    <ClCompile Include="PathFinder.cpp">
+      <Filter>Source Files\Model\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="PerlinNoise.cpp">
+      <Filter>Source Files\Model\Generators</Filter>
+    </ClCompile>
+    <ClCompile Include="Ressource.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>Source Files\Model\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="ScorePool.cpp">
+      <Filter>Source Files\Model\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitBehaviour.cpp">
+      <Filter>Source Files\Model\Behaviours</Filter>
     </ClCompile>
     <ClCompile Include="UnitGraphicItem.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source Files\Model\World</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldBehaviour.cpp">
+      <Filter>Source Files\Model\Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldView.cpp">
       <Filter>Source Files\View</Filter>
     </ClCompile>
   </ItemGroup>
@@ -235,29 +205,71 @@
     <ClInclude Include="ActiveEntity.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="Attribute.h">
+    <ClInclude Include="Agent.h">
       <Filter>Header Files\Model\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Behaviour.h">
+      <Filter>Header Files\Model\Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="BuilderBehaviour.h">
+      <Filter>Header Files\Model\Behaviours</Filter>
     </ClInclude>
     <ClInclude Include="Building.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
+    <ClInclude Include="BuildingBehaviour.h">
+      <Filter>Header Files\Model\Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Civilization.h">
+      <Filter>Header Files\Model\World</Filter>
+    </ClInclude>
+    <ClInclude Include="CivilizationBehaviour.h">
+      <Filter>Header Files\Model\Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Edge.h">
+      <Filter>Header Files\Model\Graph</Filter>
+    </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="Group.h">
-      <Filter>Header Files\Model\World</Filter>
+    <ClInclude Include="GathererBehaviour.h">
+      <Filter>Header Files\Model\Behaviours</Filter>
     </ClInclude>
-    <ClInclude Include="Location.h">
-      <Filter>Header Files\Model\World</Filter>
+    <ClInclude Include="Graph.h">
+      <Filter>Header Files\Model\Graph</Filter>
     </ClInclude>
     <ClInclude Include="Memory.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
+    <ClInclude Include="MersenneTwister.h">
+      <Filter>Header Files\Model\Generators</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Header Files\Model\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="NopBehaviour.h">
+      <Filter>Header Files\Model\Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalDistributionGenerator.h">
+      <Filter>Header Files\Model\Generators</Filter>
+    </ClInclude>
     <ClInclude Include="PassiveEntity.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
+    <ClInclude Include="PathFinder.h">
+      <Filter>Header Files\Model\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="PerlinNoise.h">
+      <Filter>Header Files\Model\Generators</Filter>
+    </ClInclude>
     <ClInclude Include="Ressource.h">
       <Filter>Header Files\Model\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>Header Files\Model\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="ScorePool.h">
+      <Filter>Header Files\Model\Graph</Filter>
     </ClInclude>
     <ClInclude Include="Unit.h">
       <Filter>Header Files\Model\World</Filter>
@@ -265,78 +277,30 @@
     <ClInclude Include="World.h">
       <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <CustomBuild Include="MainWindow.h">
-      <Filter>Header Files\View</Filter>
-    </CustomBuild>
-    <ClInclude Include="Score.h">
-      <Filter>Header Files\Model\Graph</Filter>
-    </ClInclude>
-    <ClInclude Include="PathFinder.h">
-      <Filter>Header Files\Model\Graph</Filter>
-    </ClInclude>
-    <ClInclude Include="Agent.h">
-      <Filter>Header Files\Model\World</Filter>
-    </ClInclude>
-    <ClInclude Include="Civilization.h">
-      <Filter>Header Files\Model\World</Filter>
-    </ClInclude>
-    <ClInclude Include="Behaviour.h">
-      <Filter>Header Files\Model\Behaviours</Filter>
-    </ClInclude>
-    <ClInclude Include="GathererBehaviour.h">
-      <Filter>Header Files\Model\Behaviours\Unit</Filter>
-    </ClInclude>
-    <ClInclude Include="UnitBehaviour.h">
-      <Filter>Header Files\Model\Behaviours\Unit</Filter>
-    </ClInclude>
-    <ClInclude Include="BuilderBehaviour.h">
-      <Filter>Header Files\Model\Behaviours\Unit</Filter>
-    </ClInclude>
-    <ClInclude Include="NopBehaviour.h">
-      <Filter>Header Files\Model\Behaviours\Unit</Filter>
-    </ClInclude>
-    <ClInclude Include="BuildingBehaviour.h">
-      <Filter>Header Files\Model\Behaviours\Building</Filter>
-    </ClInclude>
-    <ClInclude Include="CivilizationBehaviour.h">
-      <Filter>Header Files\Model\Behaviours\Civilization</Filter>
-    </ClInclude>
-    <ClInclude Include="WorldBehaviour.h">
-      <Filter>Header Files\Model\Behaviours\World</Filter>
-    </ClInclude>
-    <ClInclude Include="MersenneTwister.h">
-      <Filter>Header Files\Model\Generator</Filter>
-    </ClInclude>
-    <ClInclude Include="NormalDistributionGenerator.h">
-      <Filter>Header Files\Model\Generator</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="MainWindow.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="WorldView.h">
+    <CustomBuild Include="MainWindow.h">
       <Filter>Header Files\View</Filter>
     </CustomBuild>
     <CustomBuild Include="UnitGraphicItem.h">
       <Filter>Header Files\View</Filter>
     </CustomBuild>
+    <CustomBuild Include="WorldView.h">
+      <Filter>Header Files\View</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Graph.h">
-      <Filter>Header Files\Model\Graph</Filter>
+    <ClInclude Include="Location.h">
+      <Filter>Header Files\Model\World</Filter>
     </ClInclude>
-    <ClInclude Include="Node.h">
-      <Filter>Header Files\Model\Graph</Filter>
+    <ClInclude Include="UnitBehaviour.h">
+      <Filter>Header Files\Model\Behaviours</Filter>
     </ClInclude>
-    <ClInclude Include="Edge.h">
-      <Filter>Header Files\Model\Graph</Filter>
+    <ClInclude Include="WorldBehaviour.h">
+      <Filter>Header Files\Model\Behaviours</Filter>
     </ClInclude>
-    <ClInclude Include="PerlinNoise.h">
-      <Filter>Header Files\Model\Graph</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

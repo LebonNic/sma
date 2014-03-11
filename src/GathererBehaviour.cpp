@@ -18,8 +18,6 @@ GathererBehaviour::~GathererBehaviour(void)
 
 void GathererBehaviour::execute()
 {
-	//TODO implement the logic of the unit's gatherer behaviour here.
-	//The following peace of code is just a test.
 	/*qDebug() << UNIT_RUN_MESSAGE;
 	qDebug() << UNIT_GATHERER_MESSAGE;
 	qDebug() << "Focused ressource : " << m_FocusedRessource;*/
@@ -69,8 +67,6 @@ void GathererBehaviour::findPathToRessource(void)
 
 	unsigned int	x,
 					y;
-
-//	bool find = false;
 
 	//Sélection de la map de ressources que l'unité doit récolter
 	switch(m_FocusedRessource)

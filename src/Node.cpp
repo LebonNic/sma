@@ -56,6 +56,21 @@ double Node::z(void) const
 	return this->m_Location.z();
 }
 
+void Node::setX(double x)
+{
+	m_Location.setX(x);
+}
+
+void Node::setY(double y)
+{
+	m_Location.setY(y);
+}
+
+void Node::setZ(double z)
+{
+	m_Location.setZ(z);
+}
+
 Location Node::location(void) const
 {
 	return this->m_Location;

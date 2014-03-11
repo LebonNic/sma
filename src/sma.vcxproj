@@ -1,47 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|x64">
+    <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
+      <Platform>Win32</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|Win32">
-      <Configuration>Debug</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64">
-      <Configuration>Release</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{84E785C8-2D32-38CC-B410-AC9C4C37DED6}</ProjectGuid>
+    <ProjectGuid>{4F3DD5E6-D99E-39F4-A64F-843931E31B35}</ProjectGuid>
     <RootNamespace>sma</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <PlatformToolSet>v110</PlatformToolSet>
-    <OutputDirectory>release\</OutputDirectory>
-    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
-    <CharacterSet>NotSet</CharacterSet>
-    <ConfigurationType>Application</ConfigurationType>
-    <IntermediateDirectory>release\</IntermediateDirectory>
-    <PrimaryOutput>sma</PrimaryOutput>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <PlatformToolSet>v110</PlatformToolSet>
-    <OutputDirectory>release\</OutputDirectory>
-    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
-    <CharacterSet>NotSet</CharacterSet>
-    <ConfigurationType>Application</ConfigurationType>
-    <IntermediateDirectory>release\</IntermediateDirectory>
-    <PrimaryOutput>sma</PrimaryOutput>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <PlatformToolSet>v110</PlatformToolSet>
     <OutputDirectory>debug\</OutputDirectory>
@@ -51,136 +25,38 @@
     <IntermediateDirectory>debug\</IntermediateDirectory>
     <PrimaryOutput>sma</PrimaryOutput>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <PlatformToolSet>v110</PlatformToolSet>
-    <OutputDirectory>debug\</OutputDirectory>
+    <OutputDirectory>release\</OutputDirectory>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
     <CharacterSet>NotSet</CharacterSet>
     <ConfigurationType>Application</ConfigurationType>
-    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <IntermediateDirectory>release\</IntermediateDirectory>
     <PrimaryOutput>sma</PrimaryOutput>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
-  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">sma</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">sma</TargetName>
-    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
-    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">sma</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">sma</TargetName>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
-    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">sma</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IntDir>$(Platform)\$(Configuration)</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IntDir>$(Platform)\$(Configuration)\</IntDir>
-  </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>release;.;$(QTDIR)\mkspecs\win32-msvc2012;GeneratedFiles;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtCore;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
-      <AssemblerListingLocation>release\</AssemblerListingLocation>
-      <BrowseInformation>false</BrowseInformation>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;_WINDOWS;QT_WIDGETS_LIB;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessToFile>false</PreprocessToFile>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <WarningLevel>Level3</WarningLevel>
-      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
-    </ClCompile>
-    <Link>
-      <AdditionalDependencies>qtmain.lib;glu32.lib;opengl32.lib;gdi32.lib;user32.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
-      <DataExecutionPrevention>true</DataExecutionPrevention>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
-      <IgnoreImportLibrary>true</IgnoreImportLibrary>
-      <LinkIncremental>false</LinkIncremental>
-      <OutputFile>$(OutDir)\sma.exe</OutputFile>
-      <RandomizedBaseAddress>true</RandomizedBaseAddress>
-      <SubSystem>Windows</SubSystem>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-    </Link>
-    <Midl>
-      <DefaultCharType>Unsigned</DefaultCharType>
-      <EnableErrorChecks>None</EnableErrorChecks>
-      <WarningLevel>0</WarningLevel>
-    </Midl>
-    <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;_WINDOWS;QT_WIDGETS_LIB;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ResourceCompile>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>release;.;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012;GeneratedFiles;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore;release;GeneratedFiles;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
-      <AssemblerListingLocation>release\</AssemblerListingLocation>
-      <BrowseInformation>false</BrowseInformation>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;_WINDOWS;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_WIDGETS_LIB;UNICODE;UNICODE;WIN32;WIN32;WIN64;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessToFile>false</PreprocessToFile>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <WarningLevel>Level3</WarningLevel>
-      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
-    </ClCompile>
-    <Link>
-      <AdditionalDependencies>qtmain.lib;glu32.lib;opengl32.lib;gdi32.lib;user32.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>"/MANIFESTDEPENDENCY:type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27 processorArchitecture=%27*%27"  /SUBSYSTEM:WINDOWS %(AdditionalOptions)</AdditionalOptions>
-      <DataExecutionPrevention>true</DataExecutionPrevention>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
-      <IgnoreImportLibrary>true</IgnoreImportLibrary>
-      <LinkIncremental>false</LinkIncremental>
-      <OutputFile>$(OutDir)\sma.exe</OutputFile>
-      <RandomizedBaseAddress>true</RandomizedBaseAddress>
-      <SubSystem>Windows</SubSystem>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <TargetMachine>MachineX64</TargetMachine>
-    </Link>
-    <Midl>
-      <DefaultCharType>Unsigned</DefaultCharType>
-      <EnableErrorChecks>None</EnableErrorChecks>
-      <WarningLevel>0</WarningLevel>
-    </Midl>
-    <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;_WINDOWS;QT_WIDGETS_LIB;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ResourceCompile>
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>release;.;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012;GeneratedFiles;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore;debug;GeneratedFiles;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>release;.;GeneratedFiles;$(QTDIR)\msvc2012\include;$(QTDIR)\msvc2012\QtWidgets;$(QTDIR)\msvc2012\QtGui;$(QTDIR)\msvc2012\QtCore;debug;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWidgets;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtGui;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtANGLE;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtCore;debug;GeneratedFiles;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\mkspecs\win32-msvc2012;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>debug\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -188,7 +64,7 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;_WINDOWS;QT_WIDGETS_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;_WINDOWS;_WINDOWS;QT_WIDGETS_LIB;QT_WIDGETS_LIB;QT_DLL;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_ES_2;QT_OPENGL_ES_2_ANGLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
@@ -198,8 +74,8 @@
       <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>qtmaind.lib;glu32.lib;opengl32.lib;gdi32.lib;user32.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>qtmaind.lib;glu32.lib;opengl32.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Cored.lib;libEGLd.lib;libGLESv2d.lib;gdi32.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(QTDIR)\msvc2012\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -215,22 +91,21 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;_WINDOWS;QT_WIDGETS_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;_WINDOWS;_WINDOWS;QT_WIDGETS_LIB;QT_WIDGETS_LIB;QT_DLL;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_ES_2;QT_OPENGL_ES_2_ANGLE;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>release;.;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012;GeneratedFiles;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore;debug;GeneratedFiles;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>release;.;GeneratedFiles;$(QTDIR)\msvc2012\include;$(QTDIR)\msvc2012\QtWidgets;$(QTDIR)\msvc2012\QtGui;$(QTDIR)\msvc2012\QtCore;debug;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWidgets;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtGui;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtANGLE;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtCore;release;GeneratedFiles;..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\mkspecs\win32-msvc2012;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
-      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ObjectFileName>$(IntDir)</ObjectFileName>
-      <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;_WINDOWS;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_WIDGETS_LIB;UNICODE;UNICODE;WIN32;WIN32;WIN64;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;_WINDOWS;_WINDOWS;QT_WIDGETS_LIB;QT_WIDGETS_LIB;QT_DLL;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_ES_2;QT_OPENGL_ES_2_ANGLE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -238,17 +113,17 @@
       <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>qtmaind.lib;glu32.lib;opengl32.lib;gdi32.lib;user32.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>"/MANIFESTDEPENDENCY:type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27 processorArchitecture=%27*%27"  /SUBSYSTEM:WINDOWS %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>qtmain.lib;glu32.lib;opengl32.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Core.lib;libEGL.lib;libGLESv2.lib;gdi32.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(QTDIR)\msvc2012\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
       <OutputFile>$(OutDir)\sma.exe</OutputFile>
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <SubSystem>Windows</SubSystem>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <Midl>
       <DefaultCharType>Unsigned</DefaultCharType>
@@ -256,13 +131,12 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;_WINDOWS;QT_WIDGETS_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;_WINDOWS;_WINDOWS;QT_WIDGETS_LIB;QT_WIDGETS_LIB;QT_DLL;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_ES_2;QT_OPENGL_ES_2_ANGLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ActiveEntity.cpp" />
     <ClCompile Include="Agent.cpp" />
-    <ClCompile Include="Attribute.cpp" />
     <ClCompile Include="Behaviour.cpp" />
     <ClCompile Include="BuilderBehaviour.cpp" />
     <ClCompile Include="Building.cpp" />
@@ -271,21 +145,17 @@
     <ClCompile Include="CivilizationBehaviour.cpp" />
     <ClCompile Include="Debug\moc_MainWindow.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Debug\moc_UnitGraphicItem.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Debug\moc_WorldView.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Edge.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="GathererBehaviour.cpp" />
     <ClCompile Include="Graph.cpp" />
-    <ClCompile Include="Group.cpp" />
     <ClCompile Include="Location.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="Memory.cpp" />
@@ -298,18 +168,16 @@
     <ClCompile Include="PerlinNoise.cpp" />
     <ClCompile Include="Release\moc_MainWindow.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Release\moc_UnitGraphicItem.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Release\moc_WorldView.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Ressource.cpp" />
     <ClCompile Include="Score.cpp" />
+    <ClCompile Include="ScorePool.cpp" />
     <ClCompile Include="Unit.cpp" />
     <ClCompile Include="UnitBehaviour.cpp" />
     <ClCompile Include="UnitGraphicItem.cpp" />
@@ -321,7 +189,6 @@
   <ItemGroup>
     <ClInclude Include="ActiveEntity.h" />
     <ClInclude Include="Agent.h" />
-    <ClInclude Include="Attribute.h" />
     <ClInclude Include="Behaviour.h" />
     <ClInclude Include="BuilderBehaviour.h" />
     <ClInclude Include="Building.h" />
@@ -333,25 +200,16 @@
     <ClInclude Include="GathererBehaviour.h" />
     <ClInclude Include="GeneratedFiles\ui_MainWindow.h" />
     <ClInclude Include="Graph.h" />
-    <ClInclude Include="Group.h" />
     <ClInclude Include="Location.h" />
     <CustomBuild Include="MainWindow.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -DQT_DLL  "-I.\release" "-I." "-I$(QTDIR)\mkspecs\win32-msvc2012" "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtCore" "-I.\GeneratedFiles"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DQT_DLL  "-I.\release" "-I." "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012" "-I.\GeneratedFiles" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore" "-I.\GeneratedFiles"</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing MainWindow.h...</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing MainWindow.h...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_DLL  "-I.\release" "-I." "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012" "-I.\GeneratedFiles" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore" "-I.\debug" "-I.\GeneratedFiles"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DQT_DLL  "-I.\release" "-I." "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012" "-I.\GeneratedFiles" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore" "-I.\debug" "-I.\GeneratedFiles"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-I.\release" "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\msvc2012\include" "-I$(QTDIR)\msvc2012\QtWidgets" "-I$(QTDIR)\msvc2012\QtGui" "-I$(QTDIR)\msvc2012\QtCore" "-I.\debug" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtANGLE" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtCore" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing MainWindow.h...</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing MainWindow.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-I.\release" "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\msvc2012\include" "-I$(QTDIR)\msvc2012\QtWidgets" "-I$(QTDIR)\msvc2012\QtGui" "-I$(QTDIR)\msvc2012\QtCore" "-I.\debug" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtANGLE" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtCore" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing MainWindow.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
     </CustomBuild>
     <ClInclude Include="Memory.h" />
     <ClInclude Include="MersenneTwister.h" />
@@ -363,76 +221,50 @@
     <ClInclude Include="PerlinNoise.h" />
     <ClInclude Include="Ressource.h" />
     <ClInclude Include="Score.h" />
+    <ClInclude Include="ScorePool.h" />
     <ClInclude Include="Unit.h" />
     <ClInclude Include="UnitBehaviour.h" />
     <CustomBuild Include="UnitGraphicItem.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -DQT_DLL  "-I.\release" "-I." "-I$(QTDIR)\mkspecs\win32-msvc2012" "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtCore" "-I.\GeneratedFiles"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DQT_DLL  "-I.\release" "-I." "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012" "-I.\GeneratedFiles" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore" "-I.\GeneratedFiles"</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing UnitGraphicItem.h...</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing UnitGraphicItem.h...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_DLL  "-I.\release" "-I." "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012" "-I.\GeneratedFiles" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore" "-I.\debug" "-I.\GeneratedFiles"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DQT_DLL  "-I.\release" "-I." "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012" "-I.\GeneratedFiles" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore" "-I.\debug" "-I.\GeneratedFiles"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-I.\release" "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\msvc2012\include" "-I$(QTDIR)\msvc2012\QtWidgets" "-I$(QTDIR)\msvc2012\QtGui" "-I$(QTDIR)\msvc2012\QtCore" "-I.\debug" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtANGLE" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtCore" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing UnitGraphicItem.h...</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing UnitGraphicItem.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-I.\release" "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\msvc2012\include" "-I$(QTDIR)\msvc2012\QtWidgets" "-I$(QTDIR)\msvc2012\QtGui" "-I$(QTDIR)\msvc2012\QtCore" "-I.\debug" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtANGLE" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtCore" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing UnitGraphicItem.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
     </CustomBuild>
     <ClInclude Include="World.h" />
     <ClInclude Include="WorldBehaviour.h" />
     <CustomBuild Include="WorldView.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -DQT_DLL  "-I.\release" "-I." "-I$(QTDIR)\mkspecs\win32-msvc2012" "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtCore" "-I.\GeneratedFiles"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DQT_DLL  "-I.\release" "-I." "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012" "-I.\GeneratedFiles" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore" "-I.\GeneratedFiles"</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing WorldView.h...</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing WorldView.h...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_DLL  "-I.\release" "-I." "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012" "-I.\GeneratedFiles" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore" "-I.\debug" "-I.\GeneratedFiles"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DQT_DLL  "-I.\release" "-I." "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\mkspecs\win32-msvc2012" "-I.\GeneratedFiles" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore" "-I.\debug" "-I.\GeneratedFiles"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-I.\release" "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\msvc2012\include" "-I$(QTDIR)\msvc2012\QtWidgets" "-I$(QTDIR)\msvc2012\QtGui" "-I$(QTDIR)\msvc2012\QtCore" "-I.\debug" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtANGLE" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtCore" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing WorldView.h...</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing WorldView.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-I.\release" "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\msvc2012\include" "-I$(QTDIR)\msvc2012\QtWidgets" "-I$(QTDIR)\msvc2012\QtGui" "-I$(QTDIR)\msvc2012\QtCore" "-I.\debug" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWidgets" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtGui" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtANGLE" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtCore" "-I.\..\..\..\..\..\..\Qt\Qt5.1.1\5.1.1\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing WorldView.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="MainWindow.ui">
       <FileType>Document</FileType>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties Qt5Version_x0020_x64="5.1.1" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" Qt5Version_x0020_Win32="msvc2012" />
+      <UserProperties Qt5Version_x0020_Win32="msvc2012" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

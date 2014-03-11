@@ -52,7 +52,7 @@ void CivilizationBehaviour::affectUnitsToBuildingTasks()
 
 void CivilizationBehaviour::affectFreeUnitsToGatheringTasks()
 {
-	std::list<Unit *>	& freeUnits = m_Civilization->getFreeUnitsList();
+	std::list<Unit *> & freeUnits = m_Civilization->getFreeUnitsList();
 
 	unsigned int i = 0;
 
@@ -99,11 +99,11 @@ void CivilizationBehaviour::execute()
 	affectUnitsToBuildingTasks();
 	affectFreeUnitsToGatheringTasks();
 
-	std::list<Unit *> units = m_Civilization->getUnits();
+	const std::list<Unit *> & units = m_Civilization->getUnits();
 	for(auto uni = units.begin(); uni != units.end(); ++uni)
 		(*uni)->run();
 
-	std::list<Building *> buildings = m_Civilization->getBuildings();
+	const std::list<Building *> & buildings = m_Civilization->getBuildings();
 	for(auto bui = buildings.begin(); bui != buildings.end(); ++bui)
 		(*bui)->run();
 }

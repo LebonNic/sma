@@ -5,12 +5,15 @@
 #include <algorithm>
 #include "Node.h"
 #include "Score.h"
+#include "ScorePool.h"
 
 class PathFinder
 {
 private:
 	Score	m_StartingNode,
 			m_Goal;
+
+	ScorePool * m_ScorePool;
 
 	std::vector<Score *>	m_OpenSet,
 							m_ClosedSet;
@@ -28,7 +31,7 @@ private:
 	
 public:
 
-	PathFinder(void);
+	PathFinder(unsigned int size);
 	~PathFinder(void);
 	std::list<Node *> findPathFromTo(Node * from, Node * to);
 	const std::vector<Score *> & getOpenSet() const;
